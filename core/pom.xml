@@ -64,6 +64,13 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>rome</groupId>
+			<artifactId>rome</artifactId>
+			<version>0.9</version>
+			<scope>provided</scope>			
+		</dependency> 		
+		
+		<dependency>
 			<groupId>org.apache.shale</groupId>
 			<artifactId>shale-test</artifactId>
 			<version>1.0.3</version>
