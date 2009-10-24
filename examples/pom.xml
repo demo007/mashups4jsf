@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.googlecode.mashups4jsf</groupId>
+	<artifactId>mashups4jsf-examples</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.2-SNAPSHOT</version>
+	<name>Mashups4JSF Examples Project</name>
+	<url>http://maven.apache.org</url>
+
+	<build>
+		<finalName>mashups4jsf-examples</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/webapp/WEB-INF</directory>
+				<targetPath>../mashups4jsf-examples/WEB-INF</targetPath>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		
+		<plugins>
+			<plugin>
+				<groupId>com.googlecode.mashups4jsf</groupId>
+				<artifactId>maven-jsf-plugin</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<executions>
+          			<execution>
+            			<phase>generate-sources</phase>
+            			<goals>
+              				<goal>inject-timestamp</goal>
+	            		</goals>
+					</execution>
+	    		</executions>
+			</plugin>
+			
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-war-plugin</artifactId>
+		        <version>2.0</version>
+		        <configuration>
+		         	<webXml>target/classes/web.xml</webXml>
+		         </configuration>
+		       </plugin>
+		</plugins>
+		
+		
+	</build>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>com.googlecode.mashups4jsf</groupId>
+			<artifactId>mashups4jsf-core</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-api</artifactId>
+			<version>1.1.5</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-impl</artifactId>
+			<version>1.1.5</version>
+			<scope>compile</scope>
+		</dependency>	
+		
+		<dependency>
+		    <groupId>net.java.dev.ajax4jsf</groupId>
+		    <artifactId>ajax4jsf</artifactId>
+		    <version>1.0.6</version>
+		</dependency> 
+		
+		<dependency>
+		    <groupId>org.apache.myfaces.tomahawk</groupId>
+		    <artifactId>tomahawk</artifactId>
+		    <version>1.1.6</version>
+		</dependency> 			
+
+	</dependencies>
+	
+</project>
