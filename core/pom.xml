@@ -46,7 +46,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
-			<scope>test</scope>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -121,6 +121,13 @@
 		</resources>
 
 		<plugins>
+			<plugin>  
+				<artifactId>maven-compiler-plugin</artifactId>  
+				<configuration>  
+				  <source>1.5</source>  
+				  <target>1.5</target>  
+				</configuration>  
+			</plugin>  			
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>xslt-maven-plugin</artifactId>
