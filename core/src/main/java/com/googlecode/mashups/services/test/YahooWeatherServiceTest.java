@@ -18,8 +18,34 @@
  */
 package com.googlecode.mashups.services.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.googlecode.mashups.services.common.ServiceParameter;
+import com.googlecode.mashups.services.factory.YahooServicesFactory;
+import com.googlecode.mashups.services.yahoo.api.YahooWeatherService;
+import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceParameters;
+import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceStatus;
+
 import junit.framework.TestCase;
 
 public class YahooWeatherServiceTest extends TestCase {
-
+    public void testGetWeatherStatus() {
+        List<ServiceParameter> weatherStatusParameters = new ArrayList<ServiceParameter>();
+        
+        weatherStatusParameters.add(new ServiceParameter(YahooWeatherServiceParameters.ZIP_CODE, "94089"));
+        weatherStatusParameters.add(new ServiceParameter(YahooWeatherServiceParameters.TEMPERATURE_TYPE, "c"));
+        
+        YahooWeatherService yahooWeatherService = YahooServicesFactory.getYahooWeatherService();
+        
+        try {
+            YahooWeatherServiceStatus status = yahooWeatherService.getWeatherStatus(weatherStatusParameters);
+            
+            System.out.println("Output: \n\r" + status);
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail("Unable to get the weather status ...");
+        }
+        
+    }
 }

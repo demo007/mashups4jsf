@@ -28,7 +28,7 @@
 	<tag>yahooWeather</tag>
 	<tagClass>com.googlecode.mashups4jsf.component.YahooWeatherTag</tagClass>
 	<componentClass>com.googlecode.mashups4jsf.component.YahooWeather</componentClass>
-	<componentType>com.googlecode.mashups4jsf.YahooWeather</componentType>
+	<componentType>com.googlecode.mashups4jsf.component.YahooWeather</componentType>
 	<componentFamily>com.googlecode.mashups4jsf.YahooWeather</componentFamily>
 	<rendererType>com.googlecode.mashups4jsf.component.YahooWeatherRenderer</rendererType>
 	<rendererClass>com.googlecode.mashups4jsf.component.YahooWeatherRenderer</rendererClass>
