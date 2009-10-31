@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:mashup="http://code.google.com/p/mashups4jsf/">
 <h:head>
     <title>Welcome to the Weather application</title>
 </h:head>
@@ -21,10 +22,9 @@
     		</h:selectOneMenu>
 		</h:panelGrid>
 		
-    		
-    	<h:outputText id="weatherResult" escape="true" 
-    				  value="#{weatherBean.currentWeatherStatus}" 
-    				  rendered="#{weatherBean.currentWeatherStatus ne null}"/>		
+    	<mashup:yahooWeather id="yahooWeather" 
+    				         locationCode="#{weatherBean.selectedLocation}" 
+    				         temperatureType="c"/>		
     </h:form>
 </h:body>
 </html>  
