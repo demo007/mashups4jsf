@@ -18,7 +18,21 @@
  */
 package com.googlecode.mashups4jsf.component;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.context.ResponseWriter;
 import javax.faces.render.Renderer;
+
+import com.googlecode.mashups.services.common.ServiceParameter;
+import com.googlecode.mashups.services.factory.YahooServicesFactory;
+import com.googlecode.mashups.services.yahoo.api.YahooWeatherService;
+import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceParameters;
+import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceStatus;
+import com.googlecode.mashups4jsf.component.component.YahooWeather;
 
 /**
  * @author Hazem Saleh
@@ -27,4 +41,30 @@ import javax.faces.render.Renderer;
  */
 public class YahooWeatherRenderer extends Renderer {
 
+    @Override
+    public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
+    }
+
+    @Override
+    public void encodeEnd(FacesContext context, UIComponent component) throws IOException {
+        ResponseWriter         writer              = context.getResponseWriter();        
+        YahooWeather           yahooWeather        = (YahooWeather) component;
+        String                 locationCode        = yahooWeather.getLocationCode();
+        String                 temperatureType     = yahooWeather.getTemperatureType();
+        List<ServiceParameter> parameters          = new ArrayList<ServiceParameter>();
+        YahooWeatherService    yahooWeatherService = YahooServicesFactory.getYahooWeatherService();
+        
+        parameters.add(new ServiceParameter(YahooWeatherServiceParameters.ZIP_CODE, locationCode));
+        parameters.add(new ServiceParameter(YahooWeatherServiceParameters.TEMPERATURE_TYPE, temperatureType));
+        
+         try {
+            YahooWeatherServiceStatus status = yahooWeatherService.getWeatherStatus(parameters);
+            
+            writer.write(status.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+            writer.write("");
+        }
+    }
+    
 }

@@ -23,6 +23,7 @@ import java.net.URL;
 import java.util.List;
 
 import com.googlecode.mashups.services.common.ServiceParameter;
+import com.googlecode.mashups.services.common.ServiceParametersUtility;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherService;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceStatus;
 import com.sun.syndication.feed.synd.SyndEntry;
@@ -30,12 +31,16 @@ import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.SyndFeedInput;
 
 public class YahooWeatherServiceImpl implements YahooWeatherService {
+    public static YahooWeatherService getInstance() {
+        return yahooWeatherService;
+    }
     
     public YahooWeatherServiceStatus getWeatherStatus(List<ServiceParameter> parameters) throws Exception {
-        URL                  feedUrl               = new URL(YAHOO_WEATHER_SERVICE_URL + "?p=" + "12"
-                                                  + "&u=" + "22");
-        SyndFeedInput        input                = new SyndFeedInput();
-        SyndFeed             feed                 = input.build(new InputStreamReader(feedUrl.openStream()));    
+        URL                       feedUrl              = new URL(YAHOO_WEATHER_SERVICE_URL
+                                                       + "?"
+                                                       + ServiceParametersUtility.toParametersString(parameters));
+        SyndFeedInput             input                = new SyndFeedInput();
+        SyndFeed                  feed                 = input.build(new InputStreamReader(feedUrl.openStream()));    
         YahooWeatherServiceStatus weatherServiceStatus = new YahooWeatherServiceStatus();
         
         if (feed.getEntries() != null && feed.getEntries().size() > 0) {
@@ -44,10 +49,19 @@ public class YahooWeatherServiceImpl implements YahooWeatherService {
             String title = entry.getTitle();            
             String description = entry.getDescription().getValue();
             
+            if (description.indexOf(RESPONSE_INVALID_KEYWORD) >= 0) {
+                throw new Exception(RESPONSE_INVALID_LOCATION);
+            }
+            
             weatherServiceStatus.setTitle(title);
             weatherServiceStatus.setDescription(description);
         }         
         
         return weatherServiceStatus;
     }
+    
+    private YahooWeatherServiceImpl() {
+    }
+    
+    private static YahooWeatherService yahooWeatherService = new YahooWeatherServiceImpl();
 }

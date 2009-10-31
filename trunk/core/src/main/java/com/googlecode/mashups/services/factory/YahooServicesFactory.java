@@ -18,6 +18,11 @@
  */
 package com.googlecode.mashups.services.factory;
 
+import com.googlecode.mashups.services.yahoo.api.YahooWeatherService;
+import com.googlecode.mashups.services.yahoo.impl.YahooWeatherServiceImpl;
+
 public class YahooServicesFactory {
-    
+    public static YahooWeatherService getYahooWeatherService() {
+        return YahooWeatherServiceImpl.getInstance();
+    }
 }

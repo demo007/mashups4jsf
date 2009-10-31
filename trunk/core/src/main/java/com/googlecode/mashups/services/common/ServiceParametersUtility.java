@@ -16,17 +16,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.yahoo.api;
+package com.googlecode.mashups.services.common;
 
 import java.util.List;
 
-import com.googlecode.mashups.services.common.ServiceParameter;
-
-
-public interface YahooWeatherService {
-    public final static String YAHOO_WEATHER_SERVICE_URL = "http://weather.yahooapis.com/forecastrss";
-    public final static String RESPONSE_INVALID_KEYWORD  = "Invalid";
-    public static final String RESPONSE_INVALID_LOCATION = "Invalid location!!!";    
-    
-	public YahooWeatherServiceStatus getWeatherStatus(List<ServiceParameter> parameters) throws Exception;
+public class ServiceParametersUtility {
+    public static String toParametersString (List<ServiceParameter> parameters) {
+        if (parameters == null) {
+            return "";
+        }
+        
+        String parameterString = "";
+        int    currentIndex    = 1;
+        
+        for (ServiceParameter parameter : parameters) {
+            parameterString += parameter.getParameterName() + "=" + parameter.getParameterValue();
+            
+            if (currentIndex < parameters.size()) {
+                parameterString += "&";
+            }
+            
+            currentIndex ++;
+        }
+        
+        return parameterString;
+    }
 }
