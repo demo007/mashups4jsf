@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups4jsf.component;
+package com.googlecode.mashups4jsf.component.yahoo;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,7 +32,8 @@ import com.googlecode.mashups.services.factory.YahooServicesFactory;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherService;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceParameters;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceStatus;
-import com.googlecode.mashups4jsf.component.component.YahooWeather;
+import com.googlecode.mashups4jsf.common.util.ComponentConstants;
+import com.googlecode.mashups4jsf.component.yahoo.YahooWeather;
 
 /**
  * @author Hazem Saleh
@@ -40,31 +41,44 @@ import com.googlecode.mashups4jsf.component.component.YahooWeather;
  * The (YahooWeatherRenderer) renders yahoo weather widget.
  */
 public class YahooWeatherRenderer extends Renderer {
-
+    
     @Override
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
+        ResponseWriter         writer              = context.getResponseWriter();        
+        YahooWeather           yahooWeather        = (YahooWeather) component;
+        
+        writer.startElement  (ComponentConstants.DIV_ELEMENT, component);
+        writer.writeAttribute(ComponentConstants.ID_ATTRIBUTE, yahooWeather.getClientId(context),
+                              ComponentConstants.ID_ATTRIBUTE);
+    }
+    
+    @Override
+    public boolean getRendersChildren() {
+        return true;
     }
 
     @Override
     public void encodeEnd(FacesContext context, UIComponent component) throws IOException {
-        ResponseWriter         writer              = context.getResponseWriter();        
-        YahooWeather           yahooWeather        = (YahooWeather) component;
-        String                 locationCode        = yahooWeather.getLocationCode();
-        String                 temperatureType     = yahooWeather.getTemperatureType();
-        List<ServiceParameter> parameters          = new ArrayList<ServiceParameter>();
-        YahooWeatherService    yahooWeatherService = YahooServicesFactory.getYahooWeatherService();
-        
-        parameters.add(new ServiceParameter(YahooWeatherServiceParameters.ZIP_CODE, locationCode));
-        parameters.add(new ServiceParameter(YahooWeatherServiceParameters.TEMPERATURE_TYPE, temperatureType));
-        
-         try {
-            YahooWeatherServiceStatus status = yahooWeatherService.getWeatherStatus(parameters);
+        if (component.isRendered()) {
+            ResponseWriter         writer              = context.getResponseWriter();        
+            YahooWeather           yahooWeather        = (YahooWeather) component;
+            String                 locationCode        = yahooWeather.getLocationCode();
+            String                 temperatureType     = yahooWeather.getTemperatureType();
+            List<ServiceParameter> parameters          = new ArrayList<ServiceParameter>();
+            YahooWeatherService    yahooWeatherService = YahooServicesFactory.getYahooWeatherService();
             
-            writer.write(status.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-            writer.write("");
+            parameters.add(new ServiceParameter(YahooWeatherServiceParameters.ZIP_CODE, locationCode));
+            parameters.add(new ServiceParameter(YahooWeatherServiceParameters.TEMPERATURE_TYPE, temperatureType));
+            
+            try {
+                YahooWeatherServiceStatus status = yahooWeatherService.getWeatherStatus(parameters);
+                 
+                writer.write(status.toString());
+                
+                writer.endElement(ComponentConstants.DIV_ELEMENT);
+            } catch (Exception e) {
+                writer.write("");
+            }
         }
-    }
-    
+    } 
 }
