@@ -44,12 +44,14 @@ public class YahooWeatherRenderer extends Renderer {
     
     @Override
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
-        ResponseWriter         writer              = context.getResponseWriter();        
-        YahooWeather           yahooWeather        = (YahooWeather) component;
-        
-        writer.startElement  (ComponentConstants.DIV_ELEMENT, component);
-        writer.writeAttribute(ComponentConstants.ID_ATTRIBUTE, yahooWeather.getClientId(context),
-                              ComponentConstants.ID_ATTRIBUTE);
+        if (component.isRendered()) {
+            ResponseWriter         writer              = context.getResponseWriter();        
+            YahooWeather           yahooWeather        = (YahooWeather) component;
+            
+            writer.startElement  (ComponentConstants.DIV_ELEMENT, component);
+            writer.writeAttribute(ComponentConstants.ID_ATTRIBUTE, yahooWeather.getClientId(context),
+                                  ComponentConstants.ID_ATTRIBUTE);
+        }
     }
     
     @Override
@@ -74,11 +76,11 @@ public class YahooWeatherRenderer extends Renderer {
                 YahooWeatherServiceStatus status = yahooWeatherService.getWeatherStatus(parameters);
                  
                 writer.write(status.toString());
-                
-                writer.endElement(ComponentConstants.DIV_ELEMENT);
             } catch (Exception e) {
                 writer.write("");
             }
+            
+            writer.endElement(ComponentConstants.DIV_ELEMENT);            
         }
     } 
 }
