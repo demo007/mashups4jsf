@@ -2,7 +2,7 @@
  * Place the the latest library jar in your web application WEB-INF/lib folder.
  * Include the tag library in your JSF page as follows:
 {{{
- <%@ taglib uri="http://code.google.com/p/mashups4jsf/" prefix="m" %>
+ <%@ taglib uri="http://code.google.com/p/mashups4jsf/" prefix="mashup" %>
 }}}
   And if you are using Facelets:
 {{{
