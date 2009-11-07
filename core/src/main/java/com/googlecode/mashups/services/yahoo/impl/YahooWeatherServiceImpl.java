@@ -26,6 +26,7 @@ import com.googlecode.mashups.services.common.ServiceParameter;
 import com.googlecode.mashups.services.common.ServiceParametersUtility;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherService;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceStatus;
+import com.googlecode.mashups.services.yahoo.exceptions.InvalidLocationException;
 import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.feed.synd.SyndFeed;
 import com.sun.syndication.io.SyndFeedInput;
@@ -35,7 +36,7 @@ public class YahooWeatherServiceImpl implements YahooWeatherService {
         return yahooWeatherService;
     }
     
-    public YahooWeatherServiceStatus getWeatherStatus(List<ServiceParameter> parameters) throws Exception {
+    public YahooWeatherServiceStatus getWeatherStatus(List<ServiceParameter> parameters) throws InvalidLocationException, Exception {
         URL                       feedUrl              = new URL(YAHOO_WEATHER_SERVICE_URL
                                                        + "?"
                                                        + ServiceParametersUtility.toParametersString(parameters));
@@ -50,12 +51,12 @@ public class YahooWeatherServiceImpl implements YahooWeatherService {
             String description = entry.getDescription().getValue();
             
             if (description.indexOf(RESPONSE_INVALID_KEYWORD) >= 0) {
-                throw new Exception(RESPONSE_INVALID_LOCATION);
+                throw new InvalidLocationException(RESPONSE_INVALID_LOCATION);
             }
             
             weatherServiceStatus.setTitle(title);
             weatherServiceStatus.setDescription(description);
-        }         
+        }
         
         return weatherServiceStatus;
     }

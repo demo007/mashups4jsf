@@ -32,6 +32,7 @@ import com.googlecode.mashups.services.factory.YahooServicesFactory;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherService;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceParameters;
 import com.googlecode.mashups.services.yahoo.api.YahooWeatherServiceStatus;
+import com.googlecode.mashups.services.yahoo.exceptions.InvalidLocationException;
 import com.googlecode.mashups4jsf.common.util.ComponentConstants;
 import com.googlecode.mashups4jsf.component.yahoo.YahooWeather;
 
@@ -76,8 +77,11 @@ public class YahooWeatherRenderer extends Renderer {
                 YahooWeatherServiceStatus status = yahooWeatherService.getWeatherStatus(parameters);
                  
                 writer.write(status.toString());
-            } catch (Exception e) {
-                writer.write("");
+            } catch (InvalidLocationException exception) {
+                writer.write("");                
+            } catch (Exception exception) {
+                exception.printStackTrace();
+                writer.write("Yahoo Weather Service Error: " + exception.getMessage());
             }
             
             writer.endElement(ComponentConstants.DIV_ELEMENT);            
