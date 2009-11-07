@@ -16,18 +16,39 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.yahoo.api;
+package com.googlecode.mashups.services.yahoo.exceptions;
 
-import java.util.List;
-
-import com.googlecode.mashups.services.common.ServiceParameter;
-import com.googlecode.mashups.services.yahoo.exceptions.InvalidLocationException;
-
-
-public interface YahooWeatherService {
-    public final static String YAHOO_WEATHER_SERVICE_URL = "http://weather.yahooapis.com/forecastrss";
-    public final static String RESPONSE_INVALID_KEYWORD  = "Invalid";
-    public static final String RESPONSE_INVALID_LOCATION = "Invalid location!!!";    
+/**
+ * @author hazems
+ *
+ */
+public class InvalidLocationException extends Exception {
     
-	public YahooWeatherServiceStatus getWeatherStatus(List<ServiceParameter> parameters) throws InvalidLocationException, Exception;
+    public InvalidLocationException() {
+        super();
+    }
+
+    /**
+     * @param message
+     * @param cause
+     */
+    public InvalidLocationException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    /**
+     * @param message
+     */
+    public InvalidLocationException(String message) {
+        super(message);
+    }
+
+    /**
+     * @param cause
+     */
+    public InvalidLocationException(Throwable cause) {
+        super(cause);
+    }
+
+    private static final long serialVersionUID = -4143347641773005877L;    
 }
