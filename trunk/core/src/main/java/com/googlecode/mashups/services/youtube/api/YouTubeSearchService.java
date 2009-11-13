@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.factory;
+package com.googlecode.mashups.services.youtube.api;
 
-import com.googlecode.mashups.services.youtube.api.YouTubeSearchService;
-import com.googlecode.mashups.services.youtube.impl.YouTubeSearchServiceImpl;
+import java.util.List;
 
-public class YouTubeServicesFactory {
-    public static YouTubeSearchService getYouTubeSearchService() {
-        return YouTubeSearchServiceImpl.getInstance();
-    }
+import com.googlecode.mashups.services.common.ServiceParameter;
+
+
+public interface YouTubeSearchService {
+    public final static String YOU_TUBE_SEARCH_SERVICE_URL = "http://gdata.youtube.com/feeds/api/videos";
+    
+	public List<YouTubeSearchResultItem> getVideoList(List<ServiceParameter> parameters) throws Exception;
 }
