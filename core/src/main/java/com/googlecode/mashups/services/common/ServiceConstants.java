@@ -16,13 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.factory;
+package com.googlecode.mashups.services.common;
 
-import com.googlecode.mashups.services.youtube.api.YouTubeSearchService;
-import com.googlecode.mashups.services.youtube.impl.YouTubeSearchServiceImpl;
-
-public class YouTubeServicesFactory {
-    public static YouTubeSearchService getYouTubeSearchService() {
-        return YouTubeSearchServiceImpl.getInstance();
-    }
+/**
+ * @author hazems
+ *
+ */
+public interface ServiceConstants {
+    public static final String RSS_FORMAT  = "rss";
+    public static final String ATOM_FORMAT = "atom";
+   
+    // RSS attributes
+    public static final String RSS_CHANNEL  = "channel";
+    public static final String RSS_ITEM     = "item";  
+    public static final String RSS_PUB_DATE = "pubDate";
+    public static final String RSS_AUTHOR   = "author";
+    public static final String RSS_LINK     = "link";
+    public static final String RSS_TITLE    = "title";    
 }

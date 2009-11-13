@@ -54,7 +54,7 @@ public class YahooWeatherRenderer extends Renderer {
                                   ComponentConstants.ID_ATTRIBUTE);
         }
     }
-    
+
     @Override
     public boolean getRendersChildren() {
         return true;

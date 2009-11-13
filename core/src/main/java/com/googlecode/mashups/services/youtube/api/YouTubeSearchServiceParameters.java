@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.factory;
+package com.googlecode.mashups.services.youtube.api;
 
-import com.googlecode.mashups.services.youtube.api.YouTubeSearchService;
-import com.googlecode.mashups.services.youtube.impl.YouTubeSearchServiceImpl;
-
-public class YouTubeServicesFactory {
-    public static YouTubeSearchService getYouTubeSearchService() {
-        return YouTubeSearchServiceImpl.getInstance();
-    }
+public interface YouTubeSearchServiceParameters {
+    final static String VERSION         = "v"; 
+    final static String ALT             = "alt";            /* only rss is supported */
+    final static String MAX_RESULTS     = "max-results";
+    final static String CATEGORY        = "category";
+    final static String LOCATION        = "location";
+    final static String LOCATION_RADIUS = "location-radius";
+    final static String QUERY           = "q";
 }

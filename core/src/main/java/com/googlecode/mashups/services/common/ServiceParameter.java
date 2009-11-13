@@ -27,6 +27,13 @@ public class ServiceParameter {
 
     /**
      * @param parameterName
+     */
+    public ServiceParameter(String parameterName) {
+        this.parameterName = parameterName;
+    }
+
+    /**
+     * @param parameterName
      * @param parameterValue
      */
     public ServiceParameter(String parameterName, String parameterValue) {
@@ -58,4 +65,20 @@ public class ServiceParameter {
     public void setParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;
     }
+
+
+    @Override
+    public boolean equals(Object serviceParameterObj) {
+        if (serviceParameterObj != null && serviceParameterObj instanceof ServiceParameter) {
+            ServiceParameter serviceParameter = (ServiceParameter) serviceParameterObj;
+            
+            if (parameterName.equalsIgnoreCase(serviceParameter.getParameterName())) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    
 }
