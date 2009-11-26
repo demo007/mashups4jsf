@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to Mashups4JSF</ui:define>
+
+<ui:define name="mashup">
+    <h1>Mashups4JSF components</h1>
+    
+    <h:form id="mashups4JSFForm">
+    
+                <h:outputText value="YahooWeather Component" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="yahooWeatherComponent.xhtml">
+                        <f:verbatim>A component that visualizes the yahoo weather service</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="YouTube Search Service" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="youTubeSearchService.xhtml">
+                        <f:verbatim>A service that is implemented by Mashups4JSF that wraps the youTube search REST API</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+        
+    </h:form>
+</ui:define>    
+<ui:define name="footer">
+</ui:define>    
+
+</ui:composition>
+</html>  
