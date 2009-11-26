@@ -6,6 +6,7 @@
 <h:head>
     <title><ui:insert name="title">Welcome to Mashups4JSF</ui:insert></title>
 	<link rel="stylesheet" type="text/css" href="../css/basic.css" />    
+	
 </h:head>
 <h:body bgcolor="white">
 	<table class="pageHeader">
@@ -20,6 +21,31 @@
 		</tr>
 	</table>
 	
+	<ui:insert name="ajaxIncludes">
+		<script>
+		function statusUpdate(data) {
+			var statusArea = document.getElementById("lblProgress");
+			var status     = "";
+			if (data.status == "begin") {
+				status = "Executing ...";
+			} else if (data.status == "success") {
+				status = "Execution Successfully ...";					
+			} else if (data.status == "complete") {
+				status = "Execution Complete ...";		
+			} else {
+				status = data.status;
+			}
+			
+			statusArea.innerHTML = status;
+		};	
+		
+		// Setup the statusUpdate function to hear all events on the page
+		jsf.ajax.addOnEvent(statusUpdate);	
+		</script>		
+		<span id="lblProgress" class="progress_indicatorMessage">	
+			No requests ...
+		</span>
+	</ui:insert>	
 	
 	<ui:insert name="mashup">
 	    Insert your Mashup Widget here ...

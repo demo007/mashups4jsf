@@ -651,3 +651,11 @@ background-color: #EAF4F4;
     }
 
     */
+
+    
+.progress_indicatorMessage {
+	color: white;
+	background: gray;
+	font-size: 12px;
+	padding: 3;
+}	
