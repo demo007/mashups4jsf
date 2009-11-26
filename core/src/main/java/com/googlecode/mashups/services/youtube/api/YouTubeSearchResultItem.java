@@ -25,6 +25,7 @@ public class YouTubeSearchResultItem {
     private String author;
     private String videoID;    
     private String pubDate;
+    private String previewURL;
     
     /**
      * 
@@ -42,12 +43,30 @@ public class YouTubeSearchResultItem {
      */
     public YouTubeSearchResultItem(String title, String link, String author, String videoID, String pubDate) {
         super();
-        this.title = title;
-        this.link = link;
-        this.author = author;
+        this.title   = title;
+        this.link    = link;
+        this.author  = author;
         this.videoID = videoID;
         this.pubDate = pubDate;
     }
+    
+    /**
+     * @param title
+     * @param link
+     * @param author
+     * @param videoID
+     * @param pubDate
+     * @param previewURL
+     */
+    public YouTubeSearchResultItem(String title, String link, String author, String videoID, String pubDate, String previewURL) {
+        super();
+        this.title      = title;
+        this.link       = link;
+        this.author     = author;
+        this.videoID    = videoID;
+        this.pubDate    = pubDate;
+        this.previewURL = previewURL;
+    }    
     
     /**
      * @return the title
@@ -119,7 +138,21 @@ public class YouTubeSearchResultItem {
         this.pubDate = pubDate;
     }
     
+    /**
+     * @return the previewURL
+     */
+    public String getPreviewURL() {
+        return previewURL;
+    }
+
+    /**
+     * @param previewURL the previewURL to set
+     */
+    public void setPreviewURL(String previewURL) {
+        this.previewURL = previewURL;
+    }
+
     public String toString () {
-        return "title: '" + title + "', link: '" + link + "', author: '" + author + "', videoID: '" + videoID + "', pubDate: '" + pubDate + "'";
+        return "title: '" + title + "', link: '" + link + "', author: '" + author + "', videoID: '" + videoID + "', pubDate: '" + pubDate + "', previewURL: '" + previewURL +  "'";
     }
 }

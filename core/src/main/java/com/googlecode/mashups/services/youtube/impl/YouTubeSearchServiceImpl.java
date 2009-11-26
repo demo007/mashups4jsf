@@ -40,7 +40,9 @@ public class YouTubeSearchServiceImpl implements YouTubeSearchService {
     private static final String YOUTUBE_NAMESPACE     = "yt";    
     private static final String MEDIA_NAMESPACE       = "media";
     private static final String VIDEOID_ELEMENT       = "videoid";
-    private static final String GROUP_ELEMENT         = "group";    
+    private static final String GROUP_ELEMENT         = "group";
+    private static final String THUMBNAIL_ELEMENT     = "thumbnail";
+    private static final String URL_ATTRIBUTE         = "url";    
 
     public static YouTubeSearchService getInstance() {
         return youTubeSearchService;
@@ -68,11 +70,12 @@ public class YouTubeSearchServiceImpl implements YouTubeSearchService {
             
             // get the video id
             Namespace mediaNamespace   = Namespace.getNamespace(MEDIA_NAMESPACE, MEDIA_NAMESPACE_URL);
-            Namespace youTubeNamespace = Namespace.getNamespace(YOUTUBE_NAMESPACE, YOUTUBE_NAMESPACE_URL);            
+            Namespace youTubeNamespace = Namespace.getNamespace(YOUTUBE_NAMESPACE, YOUTUBE_NAMESPACE_URL);        
             
-            String videoID = element.getChild(GROUP_ELEMENT, mediaNamespace).getChild(VIDEOID_ELEMENT, youTubeNamespace).getValue();
+            String previewURL = element.getChild(GROUP_ELEMENT, mediaNamespace).getChild(THUMBNAIL_ELEMENT, mediaNamespace).getAttributeValue(URL_ATTRIBUTE);            
+            String videoID    = element.getChild(GROUP_ELEMENT, mediaNamespace).getChild(VIDEOID_ELEMENT, youTubeNamespace).getValue();
             
-            searchResults.add(new YouTubeSearchResultItem(title, link, author, videoID, pubDate));         
+            searchResults.add(new YouTubeSearchResultItem(title, link, author, videoID, pubDate, previewURL));         
         }
         
         return searchResults;
@@ -91,7 +94,12 @@ public class YouTubeSearchServiceImpl implements YouTubeSearchService {
             parameters.remove(new ServiceParameter(YouTubeSearchServiceParameters.ALT));
         }
         
+        if (parameters.contains(new ServiceParameter(YouTubeSearchServiceParameters.VERSION))) {
+            parameters.remove(new ServiceParameter(YouTubeSearchServiceParameters.VERSION));
+        }
+        
         parameters.add(new ServiceParameter(YouTubeSearchServiceParameters.ALT, ServiceConstants.RSS_FORMAT));
+        parameters.add(new ServiceParameter(YouTubeSearchServiceParameters.VERSION, "2"));
         
         return parameters;
     }    
