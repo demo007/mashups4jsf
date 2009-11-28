@@ -1,4 +1,0 @@
-*The library components:*
- * resources.
- * yahooWeather.
- * youTubePlayer.
