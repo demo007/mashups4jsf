@@ -1,1 +1,1 @@
-This is a main component that is used for loading all the Mashups4JSF libraries' resources.
+This component is used for loading all the Mashups4JSF libraries' resources.
