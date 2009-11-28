@@ -23,6 +23,10 @@ package com.googlecode.mashups4jsf.common.util;
  *
  */
 public class ComponentConstants {
-    public static final String ID_ATTRIBUTE = "id";
-    public static final String DIV_ELEMENT = "DIV";
+    public static final String ID_ATTRIBUTE       = "id";
+    public static final String SRC_ATTRIBUTE      = "src";
+    public static final String TYPE_ATTRIBUTE     = "type";
+    public static final String JS_ATTRIBUTE_VALUE = "text/javascript";    
+    public static final String DIV_ELEMENT        = "div";
+    public static final String SCRIPT_ELEMENT     = "script";    
 }

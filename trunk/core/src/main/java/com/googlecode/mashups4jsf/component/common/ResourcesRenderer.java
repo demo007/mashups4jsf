@@ -25,23 +25,30 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.Renderer;
 
+import com.googlecode.mashups4jsf.common.util.ComponentConstants;
+import com.googlecode.mashups4jsf.common.util.ResourceLoader;
+
 /**
  * @author Hazem Saleh
  * @date Nov. 28, 2009
  * The (ResourcesRenderer) renders all of the mashups related resources.
  */
 public class ResourcesRenderer extends Renderer {
-    
+    private static final String SWFOBJECT_2_2_JS = "swfobject-2.2.js";
+
     @Override
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
         if (component.isRendered()) {
-            ResponseWriter         writer              = context.getResponseWriter();        
-            
-            // encode the jsapi.
-            writer.write("<script src=\"http://www.google.com/jsapi\"></script>");
-            
-            // encode the swf object version 2.1
-            writer.write("<script>google.load(\"swfobject\", \"2.1\");</script>");
+            ResponseWriter         writer              = context.getResponseWriter();
+
+            // encode include the the SWF object version 2.2.
+            writer.write("\n\r");
+            writer.startElement(ComponentConstants.SCRIPT_ELEMENT, component);
+            writer.write("\n\r");            
+            writer.write(ResourceLoader.getResourceContent(SWFOBJECT_2_2_JS));
+            writer.write("\n\r");            
+            writer.endElement(ComponentConstants.SCRIPT_ELEMENT);
+            writer.write("\n\r");            
         }
     }
 
