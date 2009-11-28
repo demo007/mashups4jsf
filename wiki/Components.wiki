@@ -1,3 +1,4 @@
+#labels Featured
 *The library components:*
  * The [resources] component.
  * The [yahooWeather] component.
