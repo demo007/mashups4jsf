@@ -26,7 +26,7 @@ import javax.faces.context.ResponseWriter;
 import javax.faces.render.Renderer;
 
 import com.googlecode.mashups4jsf.common.util.ComponentConstants;
-import com.googlecode.mashups4jsf.common.util.FileUtil;
+import com.googlecode.mashups4jsf.common.util.ResourceLoader;
 
 /**
  * @author Hazem Saleh
@@ -71,7 +71,7 @@ public class YouTubePlayerRenderer extends Renderer {
                               throws IOException {
         
         // encode the script.
-        String playerScript = FileUtil.getTemplateContent(TEMPLATE_FILE_NAME); 
+        String playerScript = ResourceLoader.getResourceContent(TEMPLATE_FILE_NAME); 
         playerScript        = playerScript.replaceAll("#ID", getPlayerID(context, youTubePlayer))
                                           .replaceAll("#BG_COLOR", youTubePlayer.getBgcolor())
                                           .replaceAll("#VIDEO_ID", youTubePlayer.getVideoID())

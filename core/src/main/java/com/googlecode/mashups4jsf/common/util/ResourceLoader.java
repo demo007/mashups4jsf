@@ -27,14 +27,14 @@ import java.io.InputStreamReader;
  * @author hazems
  *
  */
-public class FileUtil {
-    public final static String getTemplateContent(String fileName) {
+public class ResourceLoader {
+    public final static String getResourceContent(String resourceName) throws IOException {
         BufferedReader reader = null;
         StringBuffer contents = new StringBuffer();
         
         try {
             String      text = null;
-            InputStream is   = FileUtil.class.getResourceAsStream("/META-INF/" + fileName);
+            InputStream is   = ResourceLoader.class.getResourceAsStream("/META-INF/" + resourceName);
             reader           = new BufferedReader(new InputStreamReader(is));
             
             while ((text = reader.readLine()) != null) {
@@ -42,7 +42,7 @@ public class FileUtil {
             }
         
         } catch (IOException e) {
-            e.printStackTrace();
+            throw e;
         } finally {
             try {
                 if (reader != null) {
@@ -53,5 +53,5 @@ public class FileUtil {
             }
         }
         return contents.toString();
-    }
+    }  
 }
