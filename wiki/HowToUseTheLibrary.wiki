@@ -1,5 +1,5 @@
 #labels Featured
-*How to configure the library:*
+*How to use the library:*
  * Place the the latest library jar in your web application WEB-INF/lib folder.
  * Include the tag library in your JSF page as follows:
 {{{
