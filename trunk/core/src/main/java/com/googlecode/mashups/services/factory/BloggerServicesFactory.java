@@ -18,11 +18,11 @@
  */
 package com.googlecode.mashups.services.factory;
 
-import com.googlecode.mashups.services.twitter.api.TwitterSearchService;
-import com.googlecode.mashups.services.twitter.impl.TwitterSearchServiceImpl;
+import com.googlecode.mashups.services.blogger.api.BloggerSearchService;
+import com.googlecode.mashups.services.blogger.impl.BloggerSearchServiceImpl;
 
-public class TwitterServicesFactory {
-    public static TwitterSearchService getTwitterSearchService() {
-        return TwitterSearchServiceImpl.getInstance();
+public class BloggerServicesFactory {
+    public static BloggerSearchService getBloggerSearchService() {
+        return BloggerSearchServiceImpl.getInstance();
     }
 }

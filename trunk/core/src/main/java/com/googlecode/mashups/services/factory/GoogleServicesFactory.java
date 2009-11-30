@@ -18,6 +18,11 @@
  */
 package com.googlecode.mashups.services.factory;
 
-public class GoogleServicesFactory {
+import com.googlecode.mashups.services.google.api.GoogleSearchService;
+import com.googlecode.mashups.services.google.impl.GoogleSearchServiceImpl;
 
+public class GoogleServicesFactory {
+    public static GoogleSearchService getGoogleSearchService() {
+        return GoogleSearchServiceImpl.getInstance();
+    }
 }

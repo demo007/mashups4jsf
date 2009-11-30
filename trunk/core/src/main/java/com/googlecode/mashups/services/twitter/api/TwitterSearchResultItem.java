@@ -16,8 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.factory;
+package com.googlecode.mashups.services.twitter.api;
 
-public class AmazonServicesFactory {
 
+public class TwitterSearchResultItem {
 }
