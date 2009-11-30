@@ -16,13 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.factory;
+package com.googlecode.mashups.services.facebook.impl;
 
-import com.googlecode.mashups.services.twitter.api.TwitterSearchService;
-import com.googlecode.mashups.services.twitter.impl.TwitterSearchServiceImpl;
+import java.util.List;
 
-public class TwitterServicesFactory {
-    public static TwitterSearchService getTwitterSearchService() {
-        return TwitterSearchServiceImpl.getInstance();
+import com.googlecode.mashups.services.common.ServiceParameter;
+import com.googlecode.mashups.services.facebook.api.FaceBookSearchResultItem;
+import com.googlecode.mashups.services.facebook.api.FaceBookSearchService;
+
+public class FaceBookSearchServiceImpl implements FaceBookSearchService {
+    public static FaceBookSearchService getInstance() {
+        return faceBookSearchService;
     }
+    
+	public List<FaceBookSearchResultItem> getUpdatesList(List<ServiceParameter> parameters) throws Exception {
+		return null;
+	}	    
+    
+    private FaceBookSearchServiceImpl() {
+    }
+    
+    private static FaceBookSearchService faceBookSearchService = new FaceBookSearchServiceImpl();
 }

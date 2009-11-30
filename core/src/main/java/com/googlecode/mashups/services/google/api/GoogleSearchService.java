@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.factory;
+package com.googlecode.mashups.services.google.api;
 
-import com.googlecode.mashups.services.twitter.api.TwitterSearchService;
-import com.googlecode.mashups.services.twitter.impl.TwitterSearchServiceImpl;
+import java.util.List;
 
-public class TwitterServicesFactory {
-    public static TwitterSearchService getTwitterSearchService() {
-        return TwitterSearchServiceImpl.getInstance();
-    }
+import com.googlecode.mashups.services.common.ServiceParameter;
+
+
+public interface GoogleSearchService {
+    public final static String GOOGLE_SEARCH_SERVICE_URL = "";
+    
+	public List<GoogleSearchResultItem> getSearchList(List<ServiceParameter> parameters) throws Exception;
 }
