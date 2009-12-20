@@ -71,31 +71,6 @@
 		</dependency> 		
 		
 		<dependency>
-			<groupId>org.apache.shale</groupId>
-			<artifactId>shale-test</artifactId>
-			<version>1.0.3</version>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.myfaces</groupId>
-					<artifactId>myfaces-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.apache.myfaces</groupId>
-					<artifactId>myfaces-impl</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>myfaces</groupId>
-					<artifactId>myfaces-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>myfaces</groupId>
-					<artifactId>myfaces-impl</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		
-		<dependency>
 			<groupId>commons-fileupload</groupId>
   			<artifactId>commons-fileupload</artifactId>
   			<version>1.0</version>
