@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:mashup="http://code.google.com/p/mashups4jsf/">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to Digg Services</ui:define>
+
+<ui:define name="mashup">
+    <h1>Digg Search Story service</h1>
+    
+    <h:form id="searchForm">
+    
+        <h:panelGrid columns="3">
+            <h:outputText styleClass="standard_bold" value="Enter keywords for searching digg: "/>
+            <h:inputText id="txtSearchQuery" styleClass="standard"  value="#{diggSearchForm.searchQuery}" required="true"/>
+            <h:commandButton value="Get Stories" styleClass="standard" action="#{diggSearchForm.getStoryList}">            
+                 <f:ajax execute="txtSearchQuery" render="searchResults"/>            
+            </h:commandButton>
+        </h:panelGrid>
+        
+        <h:panelGroup id="searchResults">
+            <ui:repeat value="#{diggSearchForm.results.searchResultList}" var="resultItem">
+                <h:panelGrid columns="2">                                    
+                    <h:outputText styleClass="standard_bold" value="## ---------------------New Story Information ------------------------"/> <h:outputText styleClass="" value=""/>
+                    <h:outputText styleClass="standard_bold" value="Title: "/>    <h:outputText styleClass="standard" value="#{resultItem.title}"/>                                                            
+                    <h:outputText styleClass="standard_bold" value="Story Link : "/>   <h:outputLink styleClass="standard" value="#{resultItem.storyLink}"><h:outputText value="#{resultItem.storyLink}"/></h:outputLink>                    
+                    <h:outputText styleClass="standard_bold" value="Submit Date: "/> <h:outputText styleClass="standard" value="#{resultItem.storySubmitDate}"/>
+                    <h:outputText styleClass="standard_bold" value="Digg Href : "/>     <h:outputLink styleClass="standard" value="#{resultItem.storyHref}"><h:outputText styleClass="standard_bold" value="#{resultItem.storyHref}" /></h:outputLink>
+                    <h:outputText styleClass="standard_bold" value="Diggs: "/>    <h:outputText styleClass="standard" value="#{resultItem.storyDiggs}"/>
+                    <h:outputText styleClass="standard_bold" value="Comments : "/>     <h:outputText styleClass="standard" value="#{resultItem.storyComments}" />
+                    <h:outputText styleClass="standard_bold" value="Status : "/>     <h:outputText styleClass="standard" value="#{resultItem.storyStatus}" />
+                    <h:outputText styleClass="standard_bold" value="Media : "/>     <h:outputText styleClass="standard" value="#{resultItem.storyMedia}" />
+                    <h:outputText styleClass="standard_bold" value="Story Desctription: "/>    <h:outputText styleClass="standard" value="#{resultItem.description}"/>                    
+                    <h:outputText styleClass="standard_bold" value="## User Information ##"/> <h:outputText styleClass="" value=""/>
+                    <h:outputText styleClass="standard_bold" value="Name: "/>          <h:outputText styleClass="standard" value="#{resultItem.userName}"/>
+                    <h:outputText styleClass="standard_bold" value="Icon: "/>          <h:outputText styleClass="standard" value="#{resultItem.userIcon}"/>
+                    <h:outputText styleClass="standard_bold" value="Profile views: "/>          <h:outputText styleClass="standard" value="#{resultItem.userProfileviews}"/>
+                    <h:outputText styleClass="standard_bold" value="Registered: "/>          <h:outputText styleClass="standard" value="#{resultItem.userRegistered}"/>
+                    <h:outputText styleClass="standard_bold" value="## Topic Information ##"/> <h:outputText styleClass="" value=""/>
+                    <h:outputText styleClass="standard_bold" value="Name : "/>          <h:outputText styleClass="standard" value="#{resultItem.topicName}"/>
+                    <h:outputText styleClass="standard_bold" value="Short Name : "/>          <h:outputText styleClass="standard" value="#{resultItem.topicShortName}"/>
+                    <h:outputText styleClass="standard_bold" value="## Container Information ##"/> <h:outputText styleClass="" value=""/>
+                    <h:outputText styleClass="standard_bold" value="Name : "/>          <h:outputText styleClass="standard" value="#{resultItem.containerName}"/>
+                    <h:outputText styleClass="standard_bold" value="Short Name : "/>          <h:outputText styleClass="standard" value="#{resultItem.containerShortName}"/>
+                    <h:outputText styleClass="standard_bold" value="## Short URL Information ##"/> <h:outputText styleClass="" value=""/>
+                    <h:outputText styleClass="standard_bold" value="URL : "/>          <h:outputText styleClass="standard" value="#{resultItem.shorturl}"/>
+                    <h:outputText styleClass="standard_bold" value="View Count : "/>          <h:outputText styleClass="standard" value="#{resultItem.shorturlViewCount}"/>
+                    <f:verbatim ><hr /></f:verbatim><f:verbatim ><hr /></f:verbatim>
+                </h:panelGrid>        
+                <br/>        
+            </ui:repeat>
+        </h:panelGroup>
+    </h:form>
+</ui:define>
+
+</ui:composition>
+</html>  
