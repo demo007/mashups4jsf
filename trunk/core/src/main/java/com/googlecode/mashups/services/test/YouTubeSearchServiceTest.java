@@ -30,7 +30,7 @@ import com.googlecode.mashups.services.youtube.api.YouTubeSearchService;
 import com.googlecode.mashups.services.youtube.api.YouTubeSearchServiceParameters;
 
 public class YouTubeSearchServiceTest extends TestCase {
-    public void testGetWeatherStatus() {
+    public void testgGetVideoList() {
         List<ServiceParameter> parameters           = new ArrayList<ServiceParameter>();     
         YouTubeSearchService   youTubeSearchService = YouTubeServicesFactory.getYouTubeSearchService();
        
