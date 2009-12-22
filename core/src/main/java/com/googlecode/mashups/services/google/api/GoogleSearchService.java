@@ -24,7 +24,7 @@ import com.googlecode.mashups.services.common.ServiceParameter;
 
 
 public interface GoogleSearchService {
-    public final static String GOOGLE_SEARCH_SERVICE_URL = "";
+    public final static String GOOGLE_SEARCH_SERVICE_URL = "http://ajax.googleapis.com/ajax/services/search/web";
     
-	public List<GoogleSearchResultItem> getSearchList(List<ServiceParameter> parameters) throws Exception;
+	public List<GoogleSearchResultItem> getWebSearchResultList(List<ServiceParameter> parameters) throws Exception;
 }

@@ -18,38 +18,38 @@
  */
 package com.googlecode.mashups.services.test;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
 import junit.framework.TestCase;
 
 import com.googlecode.mashups.services.common.ServiceParameter;
-import com.googlecode.mashups.services.factory.YouTubeServicesFactory;
-import com.googlecode.mashups.services.youtube.api.YouTubeSearchResultItem;
-import com.googlecode.mashups.services.youtube.api.YouTubeSearchService;
-import com.googlecode.mashups.services.youtube.api.YouTubeSearchServiceParameters;
+import com.googlecode.mashups.services.factory.GoogleServicesFactory;
+import com.googlecode.mashups.services.google.api.GoogleSearchResultItem;
+import com.googlecode.mashups.services.google.api.GoogleSearchService;
+import com.googlecode.mashups.services.google.api.GoogleSearchServiceParameters;
 
-public class YouTubeSearchServiceTest extends TestCase {
-    public void testgGetVideoList() {
+public class GoogleSearchServiceTest extends TestCase {
+    public void testGetWebSearchResults() throws Exception {
         List<ServiceParameter> parameters           = new ArrayList<ServiceParameter>();     
-        YouTubeSearchService   youTubeSearchService = YouTubeServicesFactory.getYouTubeSearchService();
+        GoogleSearchService    googleSearchService  = GoogleServicesFactory.getGoogleSearchService();
        
-        parameters.add(new ServiceParameter(YouTubeSearchServiceParameters.VERSION, "2"));      
-        parameters.add(new ServiceParameter(YouTubeSearchServiceParameters.MAX_RESULTS, "25"));
-        parameters.add(new ServiceParameter(YouTubeSearchServiceParameters.CATEGORY, "sports"));
-        parameters.add(new ServiceParameter(YouTubeSearchServiceParameters.QUERY, "brazil"));          
+        parameters.add(new ServiceParameter(GoogleSearchServiceParameters.VERSION, "1.0"));      
+        parameters.add(new ServiceParameter(GoogleSearchServiceParameters.RSZ, "large"));
+        parameters.add(new ServiceParameter(GoogleSearchServiceParameters.QUERY, "Egypt Algeria"));        
          
         try {
-            List<YouTubeSearchResultItem> videoResults = youTubeSearchService.getVideoList(parameters);
+            List<GoogleSearchResultItem> webSearchResults = googleSearchService.getWebSearchResultList(parameters);
             
-            for (YouTubeSearchResultItem searchItem : videoResults) {
-                System.out.println("Video: " + searchItem);
+            for (GoogleSearchResultItem searchItem : webSearchResults) {
+                System.out.println("Web news: " + searchItem);
             }
             
             
         } catch (Exception e) {
             e.printStackTrace();
-            fail("Unable to get the video list ...");
-        }
+            fail("Unable to get the web news list ...");
+        }        
     }
 }
