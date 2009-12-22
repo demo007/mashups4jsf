@@ -84,7 +84,6 @@ public class DiggSearchServiceImpl implements DiggSearchService {
         return diggSearchService;
     }
 
-    @SuppressWarnings("unchecked")
     public DiggSearchStoryResults getSearchStory(List<ServiceParameter> parameters) throws Exception {
 
         // Prepare search story parameters

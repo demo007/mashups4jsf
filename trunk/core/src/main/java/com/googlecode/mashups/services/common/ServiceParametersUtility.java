@@ -18,6 +18,7 @@
  */
 package com.googlecode.mashups.services.common;
 
+import java.net.URLEncoder;
 import java.util.List;
 
 public class ServiceParametersUtility {
@@ -30,7 +31,7 @@ public class ServiceParametersUtility {
         int    currentIndex    = 1;
         
         for (ServiceParameter parameter : parameters) {
-            parameterString += parameter.getParameterName() + "=" + parameter.getParameterValue();
+            parameterString += parameter.getParameterName() + "=" + URLEncoder.encode(parameter.getParameterValue());
             
             if (currentIndex < parameters.size()) {
                 parameterString += "&";
