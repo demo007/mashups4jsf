@@ -87,61 +87,6 @@
     <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=FaceBookServicesFactory%5Bjcu%5Ename=FaceBookServicesFactory.java%5Bjpack%5Ename=com.googlecode.mashups.services.factory%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D$uml.Class"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hkgnU94CEd6R37lbebpvNw" x="36772" y="5389"/>
   </children>
-  <children xmi:id="_Dl7zQ94FEd6R37lbebpvNw">
-    <children xmi:id="_Dl7zRt4FEd6R37lbebpvNw" type="ImageCompartment">
-      <layoutConstraint xmi:type="notation:Size" xmi:id="_Dl7zR94FEd6R37lbebpvNw" width="530" height="530"/>
-    </children>
-    <children xmi:id="_Dl7zSN4FEd6R37lbebpvNw" type="Stereotype"/>
-    <children xmi:id="_Dl7zSd4FEd6R37lbebpvNw" type="Kind"/>
-    <children xmi:id="_Dl7zSt4FEd6R37lbebpvNw" type="Name"/>
-    <children xmi:id="_Dl7zS94FEd6R37lbebpvNw" type="Parent"/>
-    <children xmi:id="_Dl7zTN4FEd6R37lbebpvNw" visible="false" type="AttributeCompartment">
-      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_Dl7zTd4FEd6R37lbebpvNw"/>
-    </children>
-    <children xmi:id="_Dl7zTt4FEd6R37lbebpvNw" visible="false" type="OperationCompartment">
-      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_Dl7zT94FEd6R37lbebpvNw"/>
-    </children>
-    <children xmi:id="_Dl7zUN4FEd6R37lbebpvNw" visible="false" type="SignalCompartment">
-      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_Dl7zUd4FEd6R37lbebpvNw"/>
-    </children>
-    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_Dl7zRN4FEd6R37lbebpvNw" showStereotype="Label" useClassifierShape="true"/>
-    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=BloggerSearchService%5Bjcu%5Ename=BloggerSearchService.java%5Bjpack%5Ename=com.googlecode.mashups.services.blogger.api%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D$uml.Interface"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Dl7zRd4FEd6R37lbebpvNw" x="42808" y="10734"/>
-  </children>
-  <children xmi:id="_iy1UIN4FEd6R37lbebpvNw">
-    <children xmi:id="_iy1UI94FEd6R37lbebpvNw" type="ImageCompartment">
-      <layoutConstraint xmi:type="notation:Size" xmi:id="_iy1UJN4FEd6R37lbebpvNw" width="1320" height="1320"/>
-    </children>
-    <children xmi:id="_iy1UJd4FEd6R37lbebpvNw" type="Stereotype"/>
-    <children xmi:id="_iy1UJt4FEd6R37lbebpvNw" type="Name"/>
-    <children xmi:id="_iy1UJ94FEd6R37lbebpvNw" type="Parent"/>
-    <children xmi:id="_iy1UKN4FEd6R37lbebpvNw" type="AttributeCompartment">
-      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_iy1UKd4FEd6R37lbebpvNw"/>
-    </children>
-    <children xmi:id="_iy1UKt4FEd6R37lbebpvNw" type="OperationCompartment">
-      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_iy1UK94FEd6R37lbebpvNw"/>
-    </children>
-    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_iy1UId4FEd6R37lbebpvNw" fillColor="10011046" lineColor="4210752" showStereotype="Label"/>
-    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=BloggerServicesFactory%5Bjcu%5Ename=BloggerServicesFactory.java%5Bjpack%5Ename=com.googlecode.mashups.services.factory%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D$uml.Class"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iy1UIt4FEd6R37lbebpvNw" x="45014" y="5389"/>
-  </children>
-  <children xmi:id="_uiTL8N4FEd6R37lbebpvNw">
-    <children xmi:id="_uiTL894FEd6R37lbebpvNw" type="ImageCompartment">
-      <layoutConstraint xmi:type="notation:Size" xmi:id="_uiTL9N4FEd6R37lbebpvNw" width="1320" height="1320"/>
-    </children>
-    <children xmi:id="_uiTL9d4FEd6R37lbebpvNw" type="Stereotype"/>
-    <children xmi:id="_uiTL9t4FEd6R37lbebpvNw" type="Name"/>
-    <children xmi:id="_uiTL994FEd6R37lbebpvNw" type="Parent"/>
-    <children xmi:id="_uiTL-N4FEd6R37lbebpvNw" visible="false" type="AttributeCompartment">
-      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_uiTL-d4FEd6R37lbebpvNw"/>
-    </children>
-    <children xmi:id="_uiTL-t4FEd6R37lbebpvNw" visible="false" type="OperationCompartment">
-      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_uiTL-94FEd6R37lbebpvNw"/>
-    </children>
-    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_uiTL8d4FEd6R37lbebpvNw" showStereotype="Label"/>
-    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=BloggerSearchServiceImpl%5Bjcu%5Ename=BloggerSearchServiceImpl.java%5Bjpack%5Ename=com.googlecode.mashups.services.blogger.impl%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D$uml.Class"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uiTL8t4FEd6R37lbebpvNw" x="40149" y="8363"/>
-  </children>
   <children xmi:id="_172zcN4FEd6R37lbebpvNw">
     <children xmi:id="_172zc94FEd6R37lbebpvNw" type="ImageCompartment">
       <layoutConstraint xmi:type="notation:Size" xmi:id="_172zdN4FEd6R37lbebpvNw" width="530" height="530"/>
@@ -354,51 +299,63 @@
     <element xsi:nil="true"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_whltst4GEd6R37lbebpvNw" x="1248" y="1248" width="48513" height="1587"/>
   </children>
+  <children xmi:id="_qYtYAO8qEd65IuU3QqE3YQ">
+    <children xmi:id="_qY3JAO8qEd65IuU3QqE3YQ" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_qY3JAe8qEd65IuU3QqE3YQ" width="530" height="530"/>
+    </children>
+    <children xmi:id="_qY3JAu8qEd65IuU3QqE3YQ" type="Stereotype"/>
+    <children xmi:id="_qY3JA-8qEd65IuU3QqE3YQ" type="Kind"/>
+    <children xmi:id="_qY3JBO8qEd65IuU3QqE3YQ" type="Name"/>
+    <children xmi:id="_qY3JBe8qEd65IuU3QqE3YQ" type="Parent"/>
+    <children xmi:id="_qY3JBu8qEd65IuU3QqE3YQ" visible="false" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_qY3JB-8qEd65IuU3QqE3YQ"/>
+    </children>
+    <children xmi:id="_qY3JCO8qEd65IuU3QqE3YQ" visible="false" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_qY3JCe8qEd65IuU3QqE3YQ"/>
+    </children>
+    <children xmi:id="_qY3JCu8qEd65IuU3QqE3YQ" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_qY3JC-8qEd65IuU3QqE3YQ"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_qYtYAe8qEd65IuU3QqE3YQ" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=DiggSearchService%5Bjcu%5Ename=DiggSearchService.java%5Bjpack%5Ename=com.googlecode.mashups.services.digg.api%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qYtYAu8qEd65IuU3QqE3YQ" x="45014" y="10461"/>
+  </children>
+  <children xmi:id="_q73vce8qEd65IuU3QqE3YQ">
+    <children xmi:id="_q73vdO8qEd65IuU3QqE3YQ" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_q73vde8qEd65IuU3QqE3YQ" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_q73vdu8qEd65IuU3QqE3YQ" type="Stereotype"/>
+    <children xmi:id="_q73vd-8qEd65IuU3QqE3YQ" type="Name"/>
+    <children xmi:id="_q73veO8qEd65IuU3QqE3YQ" type="Parent"/>
+    <children xmi:id="_q73vee8qEd65IuU3QqE3YQ" visible="false" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_q73veu8qEd65IuU3QqE3YQ"/>
+    </children>
+    <children xmi:id="_q8BgcO8qEd65IuU3QqE3YQ" visible="false" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_q8Bgce8qEd65IuU3QqE3YQ"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_q73vcu8qEd65IuU3QqE3YQ" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DiggSearchServiceImpl%5Bjcu%5Ename=DiggSearchServiceImpl.java%5Bjpack%5Ename=com.googlecode.mashups.services.digg.impl%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q73vc-8qEd65IuU3QqE3YQ" x="41527" y="8242"/>
+  </children>
+  <children xmi:id="_v9JQ8O8qEd65IuU3QqE3YQ">
+    <children xmi:id="_v9JQ8-8qEd65IuU3QqE3YQ" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_v9JQ9O8qEd65IuU3QqE3YQ" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_v9JQ9e8qEd65IuU3QqE3YQ" type="Stereotype"/>
+    <children xmi:id="_v9JQ9u8qEd65IuU3QqE3YQ" type="Name"/>
+    <children xmi:id="_v9JQ9-8qEd65IuU3QqE3YQ" type="Parent"/>
+    <children xmi:id="_v9JQ-O8qEd65IuU3QqE3YQ" visible="false" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_v9JQ-e8qEd65IuU3QqE3YQ"/>
+    </children>
+    <children xmi:id="_v9JQ-u8qEd65IuU3QqE3YQ" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_v9JQ--8qEd65IuU3QqE3YQ"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_v9JQ8e8qEd65IuU3QqE3YQ" fillColor="10011046" lineColor="4210752" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DiggServicesFactory%5Bjcu%5Ename=DiggServicesFactory.java%5Bjpack%5Ename=com.googlecode.mashups.services.factory%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v9JQ8u8qEd65IuU3QqE3YQ" x="45648" y="5389"/>
+  </children>
   <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_ZAcUYd4CEd6R37lbebpvNw"/>
   <element xsi:nil="true"/>
-  <edges xmi:id="_iy_FIt4FEd6R37lbebpvNw" source="_iy1UIN4FEd6R37lbebpvNw" target="_Dl7zQ94FEd6R37lbebpvNw">
-    <children xmi:id="_iy_FJd4FEd6R37lbebpvNw" type="KindLabel">
-      <children xmi:id="_iy_FJ94FEd6R37lbebpvNw" type="Stereotype"/>
-      <children xmi:id="_iy_FKd4FEd6R37lbebpvNw" type="Kind"/>
-      <children xmi:id="_iy_FKN4FEd6R37lbebpvNw" type="Name"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iy_FJt4FEd6R37lbebpvNw" y="-424"/>
-    </children>
-    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_iy_FI94FEd6R37lbebpvNw" showStereotype="Text"/>
-    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=BloggerServicesFactory%5Bjcu%5Ename=BloggerServicesFactory.java%5Bjpack%5Ename=com.googlecode.mashups.services.factory%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=BloggerSearchService%5Bjcu%5Ename=BloggerSearchService.java%5Bjpack%5Ename=com.googlecode.mashups.services.blogger.api%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D$uml.Usage"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_iy_FJN4FEd6R37lbebpvNw" points="[-10, 857, 2328, -4562]$[1, 2678, 2339, -2741]$[-2339, 4498, -1, -921]"/>
-  </edges>
-  <edges xmi:id="_uic88t4FEd6R37lbebpvNw" source="_iy1UIN4FEd6R37lbebpvNw" target="_uiTL8N4FEd6R37lbebpvNw">
-    <children xmi:id="_uic89d4FEd6R37lbebpvNw" type="KindLabel">
-      <children xmi:id="_uic8994FEd6R37lbebpvNw" type="Stereotype"/>
-      <children xmi:id="_uic8-d4FEd6R37lbebpvNw" type="Kind"/>
-      <children xmi:id="_uic8-N4FEd6R37lbebpvNw" type="Name"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uic89t4FEd6R37lbebpvNw" y="-424"/>
-    </children>
-    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_uic8894FEd6R37lbebpvNw" showStereotype="Text"/>
-    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=BloggerServicesFactory%5Bjcu%5Ename=BloggerServicesFactory.java%5Bjpack%5Ename=com.googlecode.mashups.services.factory%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=BloggerSearchServiceImpl%5Bjcu%5Ename=BloggerSearchServiceImpl.java%5Bjpack%5Ename=com.googlecode.mashups.services.blogger.impl%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D$uml.Usage"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uic89N4FEd6R37lbebpvNw" points="[-10, 857, 4625, -1821]$[-4646, 2127, -11, -551]"/>
-  </edges>
-  <edges xmi:id="_uic8-t4FEd6R37lbebpvNw" source="_uiTL8N4FEd6R37lbebpvNw" target="_Dl7zQ94FEd6R37lbebpvNw">
-    <children xmi:id="_uic8_d4FEd6R37lbebpvNw" type="NameLabel">
-      <children xmi:id="_uic8_94FEd6R37lbebpvNw" type="Stereotype"/>
-      <children xmi:id="_uic9AN4FEd6R37lbebpvNw" type="Name"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uic8_t4FEd6R37lbebpvNw" y="-424"/>
-    </children>
-    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_uic8-94FEd6R37lbebpvNw" showStereotype="Text"/>
-    <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=BloggerSearchServiceImpl%5Bjcu%5Ename=BloggerSearchServiceImpl.java%5Bjpack%5Ename=com.googlecode.mashups.services.blogger.impl%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=BloggerSearchService%5Bjcu%5Ename=BloggerSearchService.java%5Bjpack%5Ename=com.googlecode.mashups.services.blogger.api%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uic8_N4FEd6R37lbebpvNw" points="[-11, 550, -2308, -2191]$[2296, 1820, -1, -921]"/>
-  </edges>
-  <edges xmi:id="_uimG4N4FEd6R37lbebpvNw" source="_uiTL8N4FEd6R37lbebpvNw" target="_Dl7zQ94FEd6R37lbebpvNw">
-    <children xmi:id="_uimG494FEd6R37lbebpvNw" type="KindLabel">
-      <children xmi:id="_uimG5d4FEd6R37lbebpvNw" type="Stereotype"/>
-      <children xmi:id="_uimG594FEd6R37lbebpvNw" type="Kind"/>
-      <children xmi:id="_uimG5t4FEd6R37lbebpvNw" type="Name"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uimG5N4FEd6R37lbebpvNw" y="-424"/>
-    </children>
-    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_uimG4d4FEd6R37lbebpvNw" showStereotype="Text"/>
-    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=BloggerSearchServiceImpl%5Bjcu%5Ename=BloggerSearchServiceImpl.java%5Bjpack%5Ename=com.googlecode.mashups.services.blogger.impl%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=BloggerSearchService%5Bjcu%5Ename=BloggerSearchService.java%5Bjpack%5Ename=com.googlecode.mashups.services.blogger.api%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D$uml.Usage"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uimG4t4FEd6R37lbebpvNw" points="[-11, 550, -2308, -2191]$[2296, 1820, -1, -921]"/>
-  </edges>
   <edges xmi:id="_18Akc94FEd6R37lbebpvNw" source="_hkgnUd4CEd6R37lbebpvNw" target="_172zcN4FEd6R37lbebpvNw">
     <children xmi:id="_18Akdt4FEd6R37lbebpvNw" type="KindLabel">
       <children xmi:id="_18AkeN4FEd6R37lbebpvNw" type="Stereotype"/>
@@ -613,5 +570,48 @@
     <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_UI1vgt4GEd6R37lbebpvNw" showStereotype="Text"/>
     <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=YahooWeatherServiceImpl%5Bjcu%5Ename=YahooWeatherServiceImpl.java%5Bjpack%5Ename=com.googlecode.mashups.services.yahoo.impl%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=YahooWeatherService%5Bjcu%5Ename=YahooWeatherService.java%5Bjpack%5Ename=com.googlecode.mashups.services.yahoo.api%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UI1vg94GEd6R37lbebpvNw" points="[0, 550, -2307, -2191]$[2307, 1820, 0, -921]"/>
+  </edges>
+  <edges xmi:id="_q9guMO8qEd65IuU3QqE3YQ" source="_q73vce8qEd65IuU3QqE3YQ" target="_qYtYAO8qEd65IuU3QqE3YQ">
+    <children xmi:id="_q-tBAO8qEd65IuU3QqE3YQ" type="NameLabel">
+      <children xmi:id="_q-tBAu8qEd65IuU3QqE3YQ" type="Stereotype"/>
+      <children xmi:id="_q-tBA-8qEd65IuU3QqE3YQ" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q-tBAe8qEd65IuU3QqE3YQ" y="-149"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_q9guMe8qEd65IuU3QqE3YQ" showStereotype="Text"/>
+    <element xmi:type="uml:InterfaceRealization" href="mmi:///#jimpl%5Bjsrctype%5Ename=DiggSearchServiceImpl%5Bjcu%5Ename=DiggSearchServiceImpl.java%5Bjpack%5Ename=com.googlecode.mashups.services.digg.impl%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DiggSearchService%5Bjcu%5Ename=DiggSearchService.java%5Bjpack%5Ename=com.googlecode.mashups.services.digg.api%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D$uml.InterfaceRealization"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q9guMu8qEd65IuU3QqE3YQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_q-tBBO8qEd65IuU3QqE3YQ" source="_q73vce8qEd65IuU3QqE3YQ" target="_qYtYAO8qEd65IuU3QqE3YQ">
+    <children xmi:id="_q-tBB-8qEd65IuU3QqE3YQ" type="KindLabel">
+      <children xmi:id="_q-tBCe8qEd65IuU3QqE3YQ" type="Stereotype"/>
+      <children xmi:id="_q-tBC-8qEd65IuU3QqE3YQ" type="Kind"/>
+      <children xmi:id="_q-tBCu8qEd65IuU3QqE3YQ" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q-tBCO8qEd65IuU3QqE3YQ" y="-149"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_q-tBBe8qEd65IuU3QqE3YQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DiggSearchServiceImpl%5Bjcu%5Ename=DiggSearchServiceImpl.java%5Bjpack%5Ename=com.googlecode.mashups.services.digg.impl%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DiggSearchService%5Bjcu%5Ename=DiggSearchService.java%5Bjpack%5Ename=com.googlecode.mashups.services.digg.api%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_q-tBBu8qEd65IuU3QqE3YQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_v9cL4e8qEd65IuU3QqE3YQ" source="_v9JQ8O8qEd65IuU3QqE3YQ" target="_q73vce8qEd65IuU3QqE3YQ">
+    <children xmi:id="_v9cL5O8qEd65IuU3QqE3YQ" type="KindLabel">
+      <children xmi:id="_v9cL5u8qEd65IuU3QqE3YQ" type="Stereotype"/>
+      <children xmi:id="_v9cL6O8qEd65IuU3QqE3YQ" type="Kind"/>
+      <children xmi:id="_v9cL5-8qEd65IuU3QqE3YQ" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v9cL5e8qEd65IuU3QqE3YQ" y="-149"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_v9cL4u8qEd65IuU3QqE3YQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DiggServicesFactory%5Bjcu%5Ename=DiggServicesFactory.java%5Bjpack%5Ename=com.googlecode.mashups.services.factory%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DiggSearchServiceImpl%5Bjcu%5Ename=DiggSearchServiceImpl.java%5Bjpack%5Ename=com.googlecode.mashups.services.digg.impl%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_v9cL4-8qEd65IuU3QqE3YQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+  </edges>
+  <edges xmi:id="_v9cL6e8qEd65IuU3QqE3YQ" source="_v9JQ8O8qEd65IuU3QqE3YQ" target="_qYtYAO8qEd65IuU3QqE3YQ">
+    <children xmi:id="_v9cL7O8qEd65IuU3QqE3YQ" type="KindLabel">
+      <children xmi:id="_v9cL7u8qEd65IuU3QqE3YQ" type="Stereotype"/>
+      <children xmi:id="_v9cL8O8qEd65IuU3QqE3YQ" type="Kind"/>
+      <children xmi:id="_v9cL7-8qEd65IuU3QqE3YQ" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v9cL7e8qEd65IuU3QqE3YQ" y="-149"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_v9cL6u8qEd65IuU3QqE3YQ" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=DiggServicesFactory%5Bjcu%5Ename=DiggServicesFactory.java%5Bjpack%5Ename=com.googlecode.mashups.services.factory%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DiggSearchService%5Bjcu%5Ename=DiggSearchService.java%5Bjpack%5Ename=com.googlecode.mashups.services.digg.api%5Bjsrcroot%5Esrcfolder=src/main/java%5Bproject%5Eid=mashups4jsf-core%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_v9cL6-8qEd65IuU3QqE3YQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
   </edges>
 </notation:Diagram>
