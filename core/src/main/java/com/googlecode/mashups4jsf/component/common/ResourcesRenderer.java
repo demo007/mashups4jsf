@@ -39,8 +39,9 @@ public class ResourcesRenderer extends Renderer {
     @Override
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
         if (component.isRendered()) {
-            ResponseWriter         writer              = context.getResponseWriter();
-
+	    ResponseWriter writer    = context.getResponseWriter();
+	    Resources      resources = (Resources) component;
+    
             // encode include the the SWF object version 2.2.
             writer.write("\n\r");
             writer.startElement(ComponentConstants.SCRIPT_ELEMENT, component);
@@ -49,6 +50,16 @@ public class ResourcesRenderer extends Renderer {
             writer.write("\n\r");            
             writer.endElement(ComponentConstants.SCRIPT_ELEMENT);
             writer.write("\n\r");            
+            
+            if (resources.getGoogleMapKey() != null) {
+                writer.write("\n\r");
+                writer.startElement(ComponentConstants.SCRIPT_ELEMENT, component);
+		writer.writeAttribute("src",
+		        	      "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key="
+		                     + resources.getGoogleMapKey(), null);
+                writer.endElement(ComponentConstants.SCRIPT_ELEMENT);
+                writer.write("\n\r");                   
+            }
         }
     }
 
