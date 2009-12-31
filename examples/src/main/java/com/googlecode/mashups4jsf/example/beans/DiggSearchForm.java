@@ -78,7 +78,7 @@ public class DiggSearchForm {
 
         try {
             results = DiggServicesFactory.getDiggSearchService()
-                    .getSearchStory(searchParameters);
+                    . getStoriesList(searchParameters);
             
         } catch (Exception e) {
             e.printStackTrace();
