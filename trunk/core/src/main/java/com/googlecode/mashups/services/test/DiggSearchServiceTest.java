@@ -42,7 +42,7 @@ public class DiggSearchServiceTest extends TestCase {
         //parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_SORT,""));
         
         try {
-            DiggSearchStoryResults storyResults = diggService.getSearchStory(parameters);
+            DiggSearchStoryResults storyResults = diggService.getStoriesList(parameters);
             
             for (DiggSearchStoryResultItem searchItem : storyResults.getSearchResultList()) {
                 System.out.println("Story : " + searchItem);

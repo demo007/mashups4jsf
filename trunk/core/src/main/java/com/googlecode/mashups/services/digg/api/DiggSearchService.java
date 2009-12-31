@@ -27,6 +27,5 @@ public interface DiggSearchService {
     public static final String DIGG_SEARCH_STORY_METHOD = "search.stories";
     public static final String DIGG_SEARCH_STORY_TYPE   = "xml";
 
-    public DiggSearchStoryResults getSearchStory(
-            List<ServiceParameter> parameters) throws Exception;
+    public DiggSearchStoryResults getStoriesList(List<ServiceParameter> parameters) throws Exception;
 }

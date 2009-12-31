@@ -19,6 +19,19 @@
 package com.googlecode.mashups.services.yahoo.api;
 
 public interface YahooWeatherServiceParameters {
+    /**
+     * <p>
+     * The location code.
+     * </p>
+     */
     final static String ZIP_CODE         = "p"; 
+    
+    /**
+     * <p>
+     *  Units for temperature (case sensitive):
+     *  f: Fahrenheit
+     *  c: Celsius
+     *  <p>
+     */
     final static String TEMPERATURE_TYPE = "u";    
 }
