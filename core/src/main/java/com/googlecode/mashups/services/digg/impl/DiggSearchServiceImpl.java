@@ -84,7 +84,7 @@ public class DiggSearchServiceImpl implements DiggSearchService {
         return diggSearchService;
     }
 
-    public DiggSearchStoryResults getSearchStory(List<ServiceParameter> parameters) throws Exception {
+    public DiggSearchStoryResults getStoriesList(List<ServiceParameter> parameters) throws Exception {
 
         // Prepare search story parameters
         parameters = prepareSearchStoryQueryParameters(parameters);
