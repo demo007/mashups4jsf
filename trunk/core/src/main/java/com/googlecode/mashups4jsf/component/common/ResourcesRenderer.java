@@ -41,6 +41,18 @@ public class ResourcesRenderer extends Renderer {
         if (component.isRendered()) {
 	    ResponseWriter writer    = context.getResponseWriter();
 	    Resources      resources = (Resources) component;
+	    
+            // encode the google maps include.
+            if (resources.getGoogleMapKey() != null) {
+                writer.write("\n\r");
+                writer.startElement(ComponentConstants.SCRIPT_ELEMENT, component);
+		writer.writeAttribute("src",
+		        	      "http://maps.google.com/maps?file=api&v=2&key="
+		                     + resources.getGoogleMapKey(), null);
+		writer.writeAttribute("type", "text/javascript", null);	
+                writer.endElement(ComponentConstants.SCRIPT_ELEMENT);
+                writer.write("\n\r");                   
+            }	    
     
             // encode include the the SWF object version 2.2.
             writer.write("\n\r");
@@ -50,16 +62,6 @@ public class ResourcesRenderer extends Renderer {
             writer.write("\n\r");            
             writer.endElement(ComponentConstants.SCRIPT_ELEMENT);
             writer.write("\n\r");            
-            
-            if (resources.getGoogleMapKey() != null) {
-                writer.write("\n\r");
-                writer.startElement(ComponentConstants.SCRIPT_ELEMENT, component);
-		writer.writeAttribute("src",
-		        	      "http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key="
-		                     + resources.getGoogleMapKey(), null);
-                writer.endElement(ComponentConstants.SCRIPT_ELEMENT);
-                writer.write("\n\r");                   
-            }
         }
     }
 
