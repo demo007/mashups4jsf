@@ -15,18 +15,42 @@
     
     <h:form id="searchForm">
     
-        <h:panelGrid columns="3">
-            <h:outputText styleClass="standard_bold" value="Enter keywords for searching digg: "/>
-            <h:inputText id="txtSearchQuery" styleClass="standard"  value="#{diggSearchForm.searchQuery}" required="true"/>
-            <h:commandButton value="Get Stories" styleClass="standard" action="#{diggSearchForm.getStoryList}">            
-                 <f:ajax execute="txtSearchQuery" render="searchResults"/>            
-            </h:commandButton>
+        <h:panelGrid columns="2">          
+            <h:panelGrid columns="2">
+	            <h:outputText styleClass="standard_bold" value="Enter keywords for searching digg: "/>            
+            	<h:inputText id="txtSearchQuery" styleClass="standard"  value="#{diggSearchForm.searchQuery}" required="true"/>                        
+            
+            	<h:outputText styleClass="standard_bold" value="Optional result Count: "/>
+	            <h:selectOneMenu styleClass="standard" value="#{diggSearchForm.count}">
+		            <f:selectItems value="#{diggSearchForm.countItems}" />	    		                   					
+	            </h:selectOneMenu>
+	            
+	             <h:outputText styleClass="standard_bold" value="Optional Offset start option: "/>
+	            <h:selectOneMenu styleClass="standard" value="#{diggSearchForm.offset}">
+		            <f:selectItems value="#{diggSearchForm.offsetItems}" />	    		                   					
+	            </h:selectOneMenu>
+	            
+	            <h:outputText styleClass="standard_bold" value="Optional sorting option: "/>
+	            <h:selectOneMenu styleClass="standard" value="#{diggSearchForm.sort}">
+		            <f:selectItems value="#{diggSearchForm.sortItems}" />	    		                   					
+	            </h:selectOneMenu>
+	            
+	            <h:outputText styleClass="standard_bold" value="Optional Domain filter. Write a domain name: "/>
+	            <h:inputText id="txtDomainQuery" styleClass="standard"  value="#{diggSearchForm.domain}" />
+	           	           
+            </h:panelGrid>
+            <h:panelGrid>
+	            <h:commandButton value="Get Stories" styleClass="standard" action="#{diggSearchForm.getStoryList}">            	            
+	                 <f:ajax execute="@form" render="searchResults"/>            
+	            </h:commandButton>
+            </h:panelGrid>
+            
         </h:panelGrid>
         
         <h:panelGroup id="searchResults">
             <ui:repeat value="#{diggSearchForm.results.searchResultList}" var="resultItem">
                 <h:panelGrid columns="2">                                    
-                    <h:outputText styleClass="standard_bold" value="## ---------------------New Story Information ------------------------"/> <h:outputText styleClass="" value=""/>
+                    <h:outputText styleClass="standard_bold" value="## ---------- New Story Information ----------"/> <h:outputText styleClass="" value=""/>
                     <h:outputText styleClass="standard_bold" value="Title: "/>    <h:outputText styleClass="standard" value="#{resultItem.title}"/>                                                            
                     <h:outputText styleClass="standard_bold" value="Story Link : "/>   <h:outputLink styleClass="standard" value="#{resultItem.storyLink}"><h:outputText value="#{resultItem.storyLink}"/></h:outputLink>                    
                     <h:outputText styleClass="standard_bold" value="Submit Date: "/> <h:outputText styleClass="standard" value="#{resultItem.storySubmitDate}"/>
@@ -38,7 +62,7 @@
                     <h:outputText styleClass="standard_bold" value="Story Desctription: "/>    <h:outputText styleClass="standard" value="#{resultItem.description}"/>                    
                     <h:outputText styleClass="standard_bold" value="## User Information ##"/> <h:outputText styleClass="" value=""/>
                     <h:outputText styleClass="standard_bold" value="Name: "/>          <h:outputText styleClass="standard" value="#{resultItem.userName}"/>
-                    <h:outputText styleClass="standard_bold" value="Icon: "/>          <h:outputText styleClass="standard" value="#{resultItem.userIcon}"/>
+                    <h:outputText styleClass="standard_bold" value="Icon (relative to http://digg.com):  "/> <h:outputText styleClass="standard" value="#{resultItem.userIcon}"/>
                     <h:outputText styleClass="standard_bold" value="Profile views: "/>          <h:outputText styleClass="standard" value="#{resultItem.userProfileviews}"/>
                     <h:outputText styleClass="standard_bold" value="Registered: "/>          <h:outputText styleClass="standard" value="#{resultItem.userRegistered}"/>
                     <h:outputText styleClass="standard_bold" value="## Topic Information ##"/> <h:outputText styleClass="" value=""/>

@@ -67,20 +67,6 @@ public class DiggSearchStoryResults {
     }
    
     /**
-     * @return the searchQuery
-     */
-   /* public String getSearchQuery() {
-        return searchQuery;
-    }*/
-
-    /**
-     * @param searchQuery the searchQuery to set
-     */
-   /* public void setSearchQuery(String searchQuery) {
-        this.searchQuery = searchQuery;
-    }*/
-
-    /**
      * @return the count
      */
     public String getCount() {
