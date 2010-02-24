@@ -13,7 +13,6 @@
   <modules>
     <module>maven</module>
     <module>core</module>
-    <module>examples</module>
   </modules>
 
 </project>
