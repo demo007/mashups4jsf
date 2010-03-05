@@ -80,4 +80,9 @@ public class YouTubeSearchForm {
         
         return null;
     }
+    
+
+    public String doNothing() {
+        return null;
+    }    
 }
