@@ -1,0 +1,1 @@
+Check this: http://www.jarvana.com/jarvana/view/rome/rome/0.9/rome-0.9-javadoc.jar!/com/sun/syndication/feed/synd/SyndEntry.html
