@@ -3,3 +3,4 @@
  * The [resources] component.
  * The [yahooWeather] component.
  * The [youTubePlayer] component.
+ * The [youTubeVideoList] component.
