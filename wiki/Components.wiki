@@ -4,3 +4,5 @@
  * The [yahooWeather] component.
  * The [youTubePlayer] component.
  * The [youTubeVideoList] component.
+ * The [atomFeedReader] component.
+ * The [rssFeedReader] component.
