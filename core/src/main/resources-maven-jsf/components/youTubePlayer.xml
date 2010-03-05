@@ -28,7 +28,7 @@
 	<tag>youTubePlayer</tag>
 	<tagClass>com.googlecode.mashups4jsf.component.youtube.YouTubePlayerTag</tagClass>
 	<componentClass>com.googlecode.mashups4jsf.component.youtube.YouTubePlayer</componentClass>
-	<componentType>com.googlecode.mashups4jsf.YouTubePlayer</componentType>
+	<componentType>com.googlecode.mashups4jsf.youtube.YouTubePlayer</componentType>
 	<componentFamily>com.googlecode.mashups4jsf</componentFamily>
 	<rendererType>com.googlecode.mashups4jsf.component.youtube.YouTubePlayerRenderer</rendererType>
 	<rendererClass>com.googlecode.mashups4jsf.component.youtube.YouTubePlayerRenderer</rendererClass>
