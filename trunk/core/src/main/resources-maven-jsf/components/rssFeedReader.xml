@@ -29,7 +29,7 @@
 	<tag>rssFeedReader</tag>
 	<tagClass>com.googlecode.mashups4jsf.component.common.RssFeedReaderTag</tagClass>
 	<componentClass>com.googlecode.mashups4jsf.component.common.RssFeedReader</componentClass>
-	<componentType>com.googlecode.mashups4jsf.common</componentType>
+	<componentType>com.googlecode.mashups4jsf.common.RssFeedReader</componentType>
 	<componentFamily>com.googlecode.mashups4jsf</componentFamily>
 	<rendererType>com.googlecode.mashups4jsf.component.common.RssFeedReaderRenderer</rendererType>
 	<rendererClass>com.googlecode.mashups4jsf.component.common.RssFeedReaderRenderer</rendererClass>
