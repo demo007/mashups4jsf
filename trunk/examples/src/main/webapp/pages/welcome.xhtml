@@ -10,10 +10,11 @@
 <ui:define name="ajaxIncludes"></ui:define>
 
 <ui:define name="mashup">
-    <h1>Mashups4JSF components</h1>
     
     <h:form id="mashups4JSFForm">
-    
+     		
+     		<h1>Mashups4JSF components</h1>    
+        
                 <h:outputText value="YahooWeather Component" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="yahooWeatherComponent.xhtml">
@@ -40,35 +41,21 @@
                     <h:outputLink value="youTubeVideoList.xhtml">
                         <f:verbatim>A component that displays the YouTube search results directly in the JSF page (Interactive Example)</f:verbatim>
                     </h:outputLink>
-                </h:panelGrid>                
+                </h:panelGrid>      
                 
-                <h:outputText value="YouTube Search Service" />
+               <h:outputText value="Google Search List Component (Simple Example)" />
                 <h:panelGrid style="padding-left:25px">
-                    <h:outputLink value="youTubeSearchService.xhtml">
-                        <f:verbatim>A service that is implemented by Mashups4JSF that wraps the youTube search REST API</f:verbatim>
+                    <h:outputLink value="simpleGoogleSearchList.xhtml">
+                        <f:verbatim>A component that displays the Google search results directly in the JSF page (Simple Example)</f:verbatim>
                     </h:outputLink>
                 </h:panelGrid>
                 
-                <h:outputText value="YouTube Services" />
+                <h:outputText value="Google Search List Component (Interactive Example)" />
                 <h:panelGrid style="padding-left:25px">
-                    <h:outputLink value="youTubeServices.xhtml">
-                        <f:verbatim>An examples that uses the YouTube Search service with the youTube player component together</f:verbatim>
+                    <h:outputLink value="googleSearchList.xhtml">
+                        <f:verbatim>A component that displays the Google search results directly in the JSF page (Interactive Example)</f:verbatim>
                     </h:outputLink>
-                </h:panelGrid>
-                
-                <h:outputText value="Digg Services" />
-                <h:panelGrid style="padding-left:25px">
-                    <h:outputLink value="diggSearchService.xhtml">
-                        <f:verbatim>An example that uses the Digg search service to search for stories</f:verbatim>
-                    </h:outputLink>
-                </h:panelGrid>
-                
-                <h:outputText value="Google Search Services" />
-                <h:panelGrid style="padding-left:25px">
-                    <h:outputLink value="googleSearchService.xhtml">
-                        <f:verbatim>An example that uses the Google search service to search for anything on Google web</f:verbatim>
-                    </h:outputLink>
-                </h:panelGrid>     
+                </h:panelGrid>  
                 
                 <h:outputText value="Generic RSS Feed Reader Component" />
                 <h:panelGrid style="padding-left:25px">
@@ -96,7 +83,38 @@
                     <h:outputLink value="theater2.xhtml">
                         <f:verbatim>An example that display the place location and weather from a table selection</f:verbatim>
                     </h:outputLink>
-                </h:panelGrid>                   
+                </h:panelGrid>                    
+                
+                <br /><br />
+                
+                <h1>Mashups4JSF Services</h1>
+                <h:outputText value="YouTube Search Service" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="youTubeSearchService.xhtml">
+                        <f:verbatim>A service that is implemented by Mashups4JSF that wraps the youTube search REST API</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="YouTube Services Demo" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="youTubeServices.xhtml">
+                        <f:verbatim>An examples that uses the YouTube Search service with the youTube player component together</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="Digg Services" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="diggSearchService.xhtml">
+                        <f:verbatim>An example that uses the Digg search service to search for stories</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="Google Search Services" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="googleSearchService.xhtml">
+                        <f:verbatim>An example that uses the Google search service to search for anything on Google web</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                    
         
     </h:form>
 </ui:define>    
