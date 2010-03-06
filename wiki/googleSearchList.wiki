@@ -7,4 +7,4 @@ This component gives you the ability to search in the Google web with your favor
 || startResultIndex || false || The Google search start result index. || 0 ||
 || resultSetSize || false || The Google search result set size. It can have one of two values "large" or "small". || large ||
 || hostLanguage || false || The host language of the application making the request. || en ||
-|| key || false || The valid key associated with your site which is validated against the passed referer header. You can ignore it. || 10 ||
+|| key || false || The valid key associated with your site which is validated against the passed referer header. You can ignore it. || NA ||
