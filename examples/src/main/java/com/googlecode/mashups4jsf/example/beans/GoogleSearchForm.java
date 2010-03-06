@@ -81,4 +81,8 @@ public class GoogleSearchForm {
         
         return null;
     }
+    
+    public String doNothing() {
+	return null;
+    }
 }
