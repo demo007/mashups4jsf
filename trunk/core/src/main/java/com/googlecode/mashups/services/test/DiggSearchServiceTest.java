@@ -29,16 +29,17 @@ import junit.framework.TestCase;
 
 public class DiggSearchServiceTest extends TestCase {
     public void testGetSearchStory(){
-        List<ServiceParameter> parameters           = new ArrayList<ServiceParameter>();
-        DiggSearchService   diggService  = DiggServicesFactory.getDiggSearchService();
+        List<ServiceParameter> parameters  = new ArrayList<ServiceParameter>();
+        DiggSearchService      diggService = DiggServicesFactory.getDiggSearchService();
         
         //Mandatory
         parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_SEARCH_QUERY,"JSF"));
-        parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_TYPE,"xml"));
+        //parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_TYPE,"xml"));
+        
         //Optional Parameters
-        parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_COUNT,"5"));
-        parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_OFFSET,"0"));
-        parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_DOMAIN,"digg.com"));
+        parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_COUNT, "5"));
+        parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_OFFSET, "0"));
+        parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_DOMAIN, "digg.com"));
         //parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_SORT,""));
         
         try {

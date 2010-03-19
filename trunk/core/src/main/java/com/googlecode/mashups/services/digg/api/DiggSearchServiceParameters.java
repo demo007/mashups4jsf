@@ -19,6 +19,7 @@
 package com.googlecode.mashups.services.digg.api;
 
 public interface DiggSearchServiceParameters {
+    
     // common arguments
     final static String SEARCH_ARGS_METHOD       = "method"; // e.g.
                                                              // search.stories

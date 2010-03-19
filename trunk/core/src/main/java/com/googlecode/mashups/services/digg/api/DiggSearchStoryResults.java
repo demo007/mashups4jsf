@@ -40,14 +40,19 @@ public class DiggSearchStoryResults {
   
     /** story count returned. */ 
     private String count;
+   
     /** returned starting offset. */
     private String offset;    
+    
     /** total number of stories results for the search query. */
     private String total;
+    
     /**Result timestamp*/
     private String timestamp;
+    
     /** version of the API result*/
     private String version;
+    
     /** list of stories */
     private List<DiggSearchStoryResultItem> searchResultList;
    
