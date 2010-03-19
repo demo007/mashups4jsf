@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups4jsf.component.google;
+package com.googlecode.mashups4jsf.component.digg;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,57 +28,55 @@ import javax.faces.context.ResponseWriter;
 import javax.faces.render.Renderer;
 
 import com.googlecode.mashups.services.common.ServiceParameter;
-import com.googlecode.mashups.services.factory.GoogleServicesFactory;
-import com.googlecode.mashups.services.factory.YouTubeServicesFactory;
-import com.googlecode.mashups.services.google.api.GoogleSearchResultItem;
-import com.googlecode.mashups.services.google.api.GoogleSearchService;
-import com.googlecode.mashups.services.google.api.GoogleSearchServiceParameters;
-import com.googlecode.mashups.services.youtube.api.YouTubeSearchResultItem;
-import com.googlecode.mashups.services.youtube.api.YouTubeSearchService;
-import com.googlecode.mashups.services.youtube.api.YouTubeSearchServiceParameters;
+import com.googlecode.mashups.services.digg.api.DiggSearchService;
+import com.googlecode.mashups.services.digg.api.DiggSearchServiceParameters;
+import com.googlecode.mashups.services.digg.api.DiggSearchStoryResultItem;
+import com.googlecode.mashups.services.factory.DiggServicesFactory;
 import com.googlecode.mashups4jsf.common.util.ComponentConstants;
 
 /**
  * @author Hazem Saleh
- * @date March. 06, 2010
- * The (GoogleSearchListRenderer) renders Google search result list.
+ * @date March. 19, 2010
+ * The (DiggSearchListRenderer) renders a Digg search result list.
  */
-public class GoogleSearchListRenderer extends Renderer {
+public class DiggSearchListRenderer extends Renderer {
     private static final String A_ONE_ITEM_FACET_MUST_BE_DEFINED = "A one item facet must be defined";
-    private static final String GOOGLE_RESULT_ITEM = "resultItem";
+    private static final String DIGG_STORIES_RESULT_ITEM = "resultItem";
 
     @Override
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
         if (component.isRendered()) {            
             try {
-                ResponseWriter   writer           = context.getResponseWriter();               
-                GoogleSearchList googleSearchList = (GoogleSearchList) component;
+                ResponseWriter  writer         = context.getResponseWriter();               
+                DiggSearchList diggSearchList = (DiggSearchList) component;
                 
                 // start encoding the component markup.
-                writer.startElement  (ComponentConstants.DIV_ELEMENT, googleSearchList);
-                writer.writeAttribute(ComponentConstants.ID_ATTRIBUTE, googleSearchList.getClientId(context),
+                writer.startElement  (ComponentConstants.DIV_ELEMENT, diggSearchList);
+                writer.writeAttribute(ComponentConstants.ID_ATTRIBUTE, diggSearchList.getClientId(context),
                                       ComponentConstants.ID_ATTRIBUTE);            
                 
                 // get the component attributes.
-                List<ServiceParameter> parameters          = new ArrayList<ServiceParameter>();     
-                GoogleSearchService    googleSearchService = GoogleServicesFactory.getGoogleSearchService();
+                List<ServiceParameter> parameters        = new ArrayList<ServiceParameter>();     
+                DiggSearchService      diggSearchService = DiggServicesFactory.getDiggSearchService();
+                 
+                parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_SEARCH_QUERY, diggSearchList.getSearchQuery()));
+                parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_OFFSET, diggSearchList.getStartResultIndex().toString()));
+                parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_COUNT, diggSearchList.getResultSetSize().toString()));                
                
-                parameters.add(new ServiceParameter(GoogleSearchServiceParameters.VERSION, "1.0"));      
-                parameters.add(new ServiceParameter(GoogleSearchServiceParameters.QUERY, googleSearchList.getSearchQuery()));
                 
-                parameters.add(new ServiceParameter(GoogleSearchServiceParameters.START, googleSearchList.getStartResultIndex().toString()));
-                parameters.add(new ServiceParameter(GoogleSearchServiceParameters.RSZ, googleSearchList.getResultSetSize()));
-                parameters.add(new ServiceParameter(GoogleSearchServiceParameters.HL, googleSearchList.getHostLanguage()));                
-                
-                if (googleSearchList.getKey() != null) {
-                    parameters.add(new ServiceParameter(GoogleSearchServiceParameters.KEY, googleSearchList.getKey()));
+                if (diggSearchList.getDomain() != null) {
+                    parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_DOMAIN, diggSearchList.getDomain()));
                 }
                 
-                // perform the actual video search on youTube.
-                List<GoogleSearchResultItem> googleSearchResults = googleSearchService.getWebSearchResultList(parameters);
+                if (diggSearchList.getSortBy() != null) {
+                    parameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_SORT, diggSearchList.getSortBy()));                    
+                }
+                
+                // perform the actual stories search on digg.
+                List<DiggSearchStoryResultItem> diggSearchResults = diggSearchService.getStoriesList(parameters).getSearchResultList();
     
                 // encode results .
-                UIComponent itemFacet = googleSearchList.getFacet(GOOGLE_RESULT_ITEM);
+                UIComponent itemFacet = diggSearchList.getFacet(DIGG_STORIES_RESULT_ITEM);
                 
                 if (itemFacet == null) {
                     throw new IOException(A_ONE_ITEM_FACET_MUST_BE_DEFINED);
@@ -86,9 +84,9 @@ public class GoogleSearchListRenderer extends Renderer {
                 
                 Integer index = 0;
                 
-                for (GoogleSearchResultItem googleSearchResultItem : googleSearchResults) {
-                    context.getApplication().createValueBinding("#{" + googleSearchList.getResultItemVar() + "}").setValue(context, googleSearchResultItem);
-                    context.getApplication().createValueBinding("#{" + googleSearchList.getResultItemIndex() + "}").setValue(context, index++);        
+                for (DiggSearchStoryResultItem diggSearchStoryResultItem : diggSearchResults) {
+                    context.getApplication().createValueBinding("#{" + diggSearchList.getResultItemVar() + "}").setValue(context, diggSearchStoryResultItem);
+                    context.getApplication().createValueBinding("#{" + diggSearchList.getResultItemIndex() + "}").setValue(context, index++);        
                     encodeRecursive(context, itemFacet);               
                 }
     
