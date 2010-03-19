@@ -37,16 +37,20 @@ public class DiggSearchForm {
     private static final String    DEFAULT_COUNT_VALUE = "5";
 
     private DiggSearchStoryResults results;
+   
     /* Search parameters */
     private String                 searchQuery;
     private String                 count               = DEFAULT_COUNT_VALUE;
     private String                 offset              = "0";
     private String                 domain              = "";
     private String                 sort                = "";
+   
     /** List of optional count values */
     private ArrayList<SelectItem>  countItems          = null;
+    
     /** List of optional sort values */
     private ArrayList<SelectItem>  sortItems           = null;
+    
     /** List of optional offset start values */
     private ArrayList<SelectItem>  offsetItems         = null;
 
@@ -170,6 +174,11 @@ public class DiggSearchForm {
      */
     public void setResults(DiggSearchStoryResults results) {
 	this.results = results;
+    }
+    
+    
+    public String doNothing() {
+	return null;
     }
 
     /** Used for calling the search service action . */

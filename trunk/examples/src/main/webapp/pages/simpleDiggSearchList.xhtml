@@ -7,28 +7,28 @@
 
 <ui:composition template="../templates/layout.xhtml">
 
-<ui:define name="title">Welcome to Google Services</ui:define>
+<ui:define name="title">Welcome to the Digg Services</ui:define>
 <ui:define name="ajaxIncludes"></ui:define>
 
 <ui:define name="mashup">
-    <h1>Google Search List Component</h1>
+    <h1>Digg Search List Component</h1>
     
-    <h:form id="googleSearchForm">
-         <mashup:googleSearchList searchQuery="JavaServer Faces" 
-     		    	       		  resultItemVar="searchItem" 
-     			                  resultItemIndex="index">
+    <h:form id="diggSearchForm">
+         <mashup:diggSearchList searchQuery="JavaServer Faces" 
+     		    	       		resultItemVar="searchItem" 
+     			                resultItemIndex="index">
  
 	          <f:facet name="resultItem">
 	              <h:panelGrid columns="1"> 
-	                  <h:outputLink styleClass="standard_bold" value="#{searchItem.url}">
+	                  <h:outputLink styleClass="standard_bold" value="#{searchItem.storyLink}">
 	                      <h:outputText styleClass="standard" value="#{searchItem.title}" escape="false"/>
 	                  </h:outputLink>  
-	                  <h:outputText styleClass="standard" value="#{searchItem.content}" escape="false"/>
+	                  <h:outputText styleClass="standard" value="#{searchItem.description}" escape="false"/>
 					  <h:outputText id="seperator" value=""/>
 	              </h:panelGrid>        
 	          </f:facet>
 
-         </mashup:googleSearchList>        
+         </mashup:diggSearchList>        
     </h:form>
 </ui:define>
 
