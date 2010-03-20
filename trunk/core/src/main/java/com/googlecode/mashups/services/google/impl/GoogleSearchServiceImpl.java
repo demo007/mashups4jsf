@@ -52,7 +52,7 @@ public class GoogleSearchServiceImpl implements GoogleSearchService {
         return googleSearchService;
     }
      
-	public List<GoogleSearchResultItem> getWebSearchResultList(List<ServiceParameter> parameters) throws Exception {
+    public List<GoogleSearchResultItem> getWebSearchResultList(List<ServiceParameter> parameters) throws Exception {
         parameters = prepareQueryParameters(parameters);
         
         URL                           feedUrl      = new URL(GOOGLE_SEARCH_SERVICE_URL
@@ -104,8 +104,8 @@ public class GoogleSearchServiceImpl implements GoogleSearchService {
         }        
         
         return searchResults;
-	}    
-	
+    }    
+    
     /*
      * @param parameters
      * @return
@@ -122,7 +122,7 @@ public class GoogleSearchServiceImpl implements GoogleSearchService {
         parameters.add(new ServiceParameter(GoogleSearchServiceParameters.VERSION, "1.0"));
         
         return parameters;
-    }  	
+    }      
     
     private GoogleSearchServiceImpl() {
     }
