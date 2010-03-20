@@ -18,7 +18,6 @@
  */
 package com.googlecode.mashups.services.test;
 
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
