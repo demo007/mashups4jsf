@@ -71,12 +71,19 @@
                     </h:outputLink>
                 </h:panelGrid>  
                 
-                <h:outputText value="Generic RSS Feed Reader Component" />
+                <h:outputText value="Generic RSS Feed Reader Component (From an external Rss Feed Producer)" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="rssFeedReader.xhtml">
                         <f:verbatim>A component that can read any RSS2.0 feed in JSF</f:verbatim>
                     </h:outputLink>
                 </h:panelGrid> 
+                
+                <h:outputText value="Generic RSS Feed Reader Component (From an internal Rss Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="rssFeedReader2.xhtml">
+                        <f:verbatim>A component that can read any RSS2.0 produced from the Mashups4JSF feed producer service</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                 
                 
                 <h:outputText value="Generic ATOM Feed Reader Component" />
                 <h:panelGrid style="padding-left:25px">
@@ -135,7 +142,14 @@
                     <h:outputLink value="googleSearchService.xhtml">
                         <f:verbatim>An example that uses the Google search service to search for anything on Google web</f:verbatim>
                     </h:outputLink>
-                </h:panelGrid>                    
+                </h:panelGrid>     
+                
+                <h:outputText value="Generic Services (Rss Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/NewsRssServlet">
+                        <f:verbatim>A servlet that uses the Mashups4JSF Feed producer service to produce RSS2.0 feeds</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                     
         
     </h:form>
 </ui:define>    
