@@ -1,0 +1,1 @@
+@FeedTitle represents the feed title.
