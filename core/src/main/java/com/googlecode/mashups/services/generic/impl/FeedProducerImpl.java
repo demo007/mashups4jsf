@@ -23,18 +23,19 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.googlecode.mashups.services.generic.api.ChannelDescription;
-import com.googlecode.mashups.services.generic.api.ChannelItems;
-import com.googlecode.mashups.services.generic.api.ChannelLink;
-import com.googlecode.mashups.services.generic.api.ChannelTitle;
+import com.googlecode.mashups.services.generic.api.FeedDescription;
+import com.googlecode.mashups.services.generic.api.FeedItems;
+import com.googlecode.mashups.services.generic.api.FeedLink;
+import com.googlecode.mashups.services.generic.api.FeedTitle;
 import com.googlecode.mashups.services.generic.api.ItemAuthor;
 import com.googlecode.mashups.services.generic.api.ItemCategory;
 import com.googlecode.mashups.services.generic.api.ItemDescription;
 import com.googlecode.mashups.services.generic.api.ItemLink;
 import com.googlecode.mashups.services.generic.api.ItemTitle;
-import com.googlecode.mashups.services.generic.api.RssChannel;
+import com.googlecode.mashups.services.generic.api.Feed;
 import com.googlecode.mashups.services.generic.api.FeedProducer;
-import com.googlecode.mashups.services.generic.api.RssItem;
+import com.googlecode.mashups.services.generic.api.FeedItem;
+import com.googlecode.mashups.services.generic.api.Feed.FeedType;
 import com.sun.syndication.feed.synd.SyndCategory;
 import com.sun.syndication.feed.synd.SyndCategoryImpl;
 import com.sun.syndication.feed.synd.SyndContent;
@@ -51,46 +52,50 @@ import com.sun.syndication.io.SyndFeedOutput;
  */
 public class FeedProducerImpl implements FeedProducer {
     public static FeedProducer getInstance() {
-        return rssFeedProducer;
+        return feedProducer;
     }
     
     @SuppressWarnings("unchecked")
-    public void produceRssFeed(Object annotatedObject, Writer writer) throws Exception {
-        Class  feedClass   = annotatedObject.getClass();
-        String title       = "";
-        String description = "";
-        String link        = "";
-        List   rssItems    = new ArrayList();
+    public void produceFeed(Object annotatedObject, Writer writer) throws Exception {
+        Class  feedClass      = annotatedObject.getClass();
+        String title          = "";
+        String description    = "";
+        String link           = "";
+        List   feedItems      = new ArrayList();
+        Feed   feedAnnotation = (Feed) feedClass.getAnnotation(Feed.class);
 
-        if (feedClass.getAnnotation(RssChannel.class) != null) {
-
+        if (feedAnnotation != null) {
             for (Method method : feedClass.getMethods()) {
-
-                if (method.getAnnotation(ChannelTitle.class) != null) {
+                if (method.getAnnotation(FeedTitle.class) != null) {
                     title = (String) method.invoke(annotatedObject);
-                } else if (method.getAnnotation(ChannelDescription.class) != null) {
+                } else if (method.getAnnotation(FeedDescription.class) != null) {
                     description = (String) method.invoke(annotatedObject);
-                } else if (method.getAnnotation(ChannelLink.class) != null) {
+                } else if (method.getAnnotation(FeedLink.class) != null) {
                     link = (String) method.invoke(annotatedObject);
-                } else if (method.getAnnotation(ChannelItems.class) != null) {
-                    rssItems = (List) method.invoke(annotatedObject);
+                } else if (method.getAnnotation(FeedItems.class) != null) {
+                    feedItems = (List) method.invoke(annotatedObject);
                 }
             }
         } else {
-            throw new Exception("Object must have the @RssChannel for producing an RSS Feed ...");
+            throw new Exception("Object must have the @Feed for producing an RSS Feed ...");
         }
         
         SyndFeed feed = new SyndFeedImpl();
         
-        feed.setFeedType(RSS_2_0);
+        if (feedAnnotation.type().equals(FeedType.Rss)) {
+            feed.setFeedType(RSS_2_0);
+        } else {
+            feed.setFeedType(ATOM_1_0);
+        }
+        
         feed.setTitle(title);
         feed.setDescription(description);
         feed.setLink(link);
         
         List<SyndEntry> entries = new ArrayList<SyndEntry>();
 
-        for (Object rssItem : rssItems) {
-            SyndEntry syndEntry = createRssChannelItem(rssItem);
+        for (Object feedItem : feedItems) {
+            SyndEntry syndEntry = createFeedItem(feedItem);
             
             entries.add(syndEntry);
         }
@@ -103,18 +108,18 @@ public class FeedProducerImpl implements FeedProducer {
     }
     
     @SuppressWarnings("unchecked")    
-    private SyndEntry createRssChannelItem(Object annotatedObject) throws Exception {
-        SyndEntry syndEntry    = new SyndEntryImpl();
-        Class     rssItemClass = annotatedObject.getClass();
+    private SyndEntry createFeedItem(Object annotatedObject) throws Exception {
+        SyndEntry syndEntry     = new SyndEntryImpl();
+        Class     feedItemClass = annotatedObject.getClass();
         
-        if (rssItemClass.getAnnotation(RssItem.class) != null) {
+        if (feedItemClass.getAnnotation(FeedItem.class) != null) {
             String title        = "";
             String description  = "";            
             String link         = "";
             String category     = "";         
             String author       = "";                     
             
-            for (Method method : rssItemClass.getMethods()) {
+            for (Method method : feedItemClass.getMethods()) {
                 
                 if (method.getAnnotation(ItemTitle.class) != null) {
                     title = (String) method.invoke(annotatedObject);
@@ -158,6 +163,7 @@ public class FeedProducerImpl implements FeedProducer {
     private FeedProducerImpl() {
     }
     
+    private static final String ATOM_1_0 = "atom_1.0";    
     private static final String RSS_2_0 = "rss_2.0";
-    private static FeedProducer rssFeedProducer = new FeedProducerImpl();    
+    private static FeedProducer feedProducer = new FeedProducerImpl();    
 }

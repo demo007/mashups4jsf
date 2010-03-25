@@ -5,13 +5,13 @@ import com.googlecode.mashups.services.generic.api.ItemCategory;
 import com.googlecode.mashups.services.generic.api.ItemDescription;
 import com.googlecode.mashups.services.generic.api.ItemLink;
 import com.googlecode.mashups.services.generic.api.ItemTitle;
-import com.googlecode.mashups.services.generic.api.RssItem;
+import com.googlecode.mashups.services.generic.api.FeedItem;
 
 /**
  * @author hazems
  *
  */
-@RssItem
+@FeedItem
 public class NewsItem {
     String title;
     String desc;
