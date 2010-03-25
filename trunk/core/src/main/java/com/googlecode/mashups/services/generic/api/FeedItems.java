@@ -29,5 +29,5 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ChannelItems {
+public @interface FeedItems {
 }

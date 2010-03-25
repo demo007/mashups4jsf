@@ -34,8 +34,8 @@ import com.googlecode.mashups.services.generic.api.Feed.FeedType;
  *
  */
 
-@Feed(type=FeedType.Rss)
-public class News {
+@Feed(type=FeedType.Atom)
+public class News2 {
     static List <NewsItem> news = new ArrayList<NewsItem>();
     
     static {

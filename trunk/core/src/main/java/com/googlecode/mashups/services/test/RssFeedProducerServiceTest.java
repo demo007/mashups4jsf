@@ -16,18 +16,34 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.generic.api;
+package com.googlecode.mashups.services.test;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.io.FileWriter;
+import java.io.Writer;
+
+import junit.framework.TestCase;
+
+import com.googlecode.mashups.services.factory.GenericServicesFactory;
 
 /**
  * @author hazems
  *
  */
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface RssChannel {
+public class RssFeedProducerServiceTest extends TestCase {
+
+    public void testGetRssFeed() throws Exception {
+	try {
+	    News news = new News();
+	    
+	    Writer writer = new FileWriter("c:\\feed.xml");
+	    
+	    GenericServicesFactory.getFeedProducerService().produceFeed(news, writer);
+	    
+	    writer.close();
+
+	} catch (Exception e) {
+	    e.printStackTrace();
+	    fail("Unable to get the Rss Feed producer ...");
+	}
+    }
 }
