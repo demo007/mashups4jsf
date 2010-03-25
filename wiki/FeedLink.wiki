@@ -1,0 +1,1 @@
+@FeedLink represents the feed link.
