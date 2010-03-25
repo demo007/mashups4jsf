@@ -1,0 +1,1 @@
+@ItemCategory represents the item category.
