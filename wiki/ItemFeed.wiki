@@ -1,0 +1,1 @@
+@ItemFeed represents the item feed.
