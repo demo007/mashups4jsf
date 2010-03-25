@@ -71,26 +71,33 @@
                     </h:outputLink>
                 </h:panelGrid>  
                 
-                <h:outputText value="Generic RSS Feed Reader Component (From an external Rss Feed Producer)" />
+                <h:outputText value="Generic RSS Feed Reader Component (From an external RSS Feed Producer)" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="rssFeedReader.xhtml">
                         <f:verbatim>A component that can read any RSS2.0 feed in JSF</f:verbatim>
                     </h:outputLink>
                 </h:panelGrid> 
                 
-                <h:outputText value="Generic RSS Feed Reader Component (From an internal Rss Feed Producer)" />
+                <h:outputText value="Generic RSS Feed Reader Component (From an internal RSS Feed Producer)" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="rssFeedReader2.xhtml">
-                        <f:verbatim>A component that can read any RSS2.0 produced from the Mashups4JSF feed producer service</f:verbatim>
+                        <f:verbatim>A component that can read any RSS2.0 feed in JSF</f:verbatim>
                     </h:outputLink>
                 </h:panelGrid>                 
                 
-                <h:outputText value="Generic ATOM Feed Reader Component" />
+                <h:outputText value="Generic ATOM Feed Reader Component (From an external ATOM Feed Producer)" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="atomFeedReader.xhtml">
                         <f:verbatim>A component that can read any ATOM1.0 feed in JSF</f:verbatim>
                     </h:outputLink>
                 </h:panelGrid>   
+                
+                <h:outputText value="Generic ATOM Feed Reader Component (From an internal ATOM Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="atomFeedReader2.xhtml">
+                        <f:verbatim>A component that can read any ATOM1.0 feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                 
                 
                 <h:outputText value="Complete GMaps4JSF Examples" />
                 <h:panelGrid style="padding-left:25px">
@@ -144,12 +151,19 @@
                     </h:outputLink>
                 </h:panelGrid>     
                 
-                <h:outputText value="Generic Services (Rss Feed Producer)" />
+                <h:outputText value="Generic Services (RSS Feed Producer)" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="#{facesContext.externalContext.requestContextPath}/NewsRssServlet">
                         <f:verbatim>A servlet that uses the Mashups4JSF Feed producer service to produce RSS2.0 feeds</f:verbatim>
                     </h:outputLink>
-                </h:panelGrid>                     
+                </h:panelGrid>       
+                
+                <h:outputText value="Generic Services (ATOM Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/NewsAtomServlet">
+                        <f:verbatim>A servlet that uses the Mashups4JSF Feed producer service to produce ATOM1.0 feeds</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>   
         
     </h:form>
 </ui:define>    
