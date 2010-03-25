@@ -116,8 +116,7 @@ GenericServicesFactory.getFeedProducerService().produceFeed(new News(), response
 
 As we see here, we provided an instance of our *News* class, and a writer to a response so that the Mashups4JSF can generate the Rss or Atom feed in.
 
-Here are the demos:
-
+==Here are the demos:==
 [http://www.mashups4jsf.com/mashups4jsf-examples/NewsRssServlet http://www.mashups4jsf.com/mashups4jsf-examples/NewsRssServlet]
 
 [http://www.mashups4jsf.com/mashups4jsf-examples/NewsAtomServlet http://www.mashups4jsf.com/mashups4jsf-examples/NewsAtomServlet]
@@ -125,5 +124,8 @@ Here are the demos:
 [http://www.mashups4jsf.com/mashups4jsf-examples/pages/rssFeedReader2.xhtml http://www.mashups4jsf.com/mashups4jsf-examples/pages/rssFeedReader2.xhtml]
 
 [http://www.mashups4jsf.com/mashups4jsf-examples/pages/atomFeedReader2.xhtml http://www.mashups4jsf.com/mashups4jsf-examples/pages/atomFeedReader2.xhtml]
+
+
+
 
 I wish that this feature could be useful for the library users.
