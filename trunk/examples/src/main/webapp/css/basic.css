@@ -710,3 +710,7 @@ background-color: #EAF4F4;
 .evenRow{
     background-color: #CCCCFF;
 }
+
+.alignTop {
+	vertical-align: top;
+}
