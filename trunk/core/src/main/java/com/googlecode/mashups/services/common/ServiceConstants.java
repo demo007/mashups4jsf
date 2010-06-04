@@ -25,12 +25,27 @@ package com.googlecode.mashups.services.common;
 public interface ServiceConstants {
     public static final String RSS_FORMAT  = "rss";
     public static final String ATOM_FORMAT = "atom";
+    
+    // Common attributes
+    public static final String LINK            = "link";  
+    public static final String TITLE           = "title";  
+    public static final String AUTHOR          = "author";     
+    public static final String TYPE	       = "type";
+    public static final String IMAGE	       = "image";
+    public static final String HREF	       = "href";  
    
+    // Atom attributes
+    public static final String ATOM_FEED          = "feed"; 
+    public static final String ATOM_NAMESPACE_URI = "http://www.w3.org/2005/Atom";
+    public static final String ATOM_ENTRY         = "entry";      
+    public static final String ATOM_PUB_DATE      = "published";  
+    public static final String ATOM_UPDATE_DATE   = "updated";
+    public static final String ATOM_AUTHOR_NAME   = "name";
+    public static final String ATOM_URI           = "uri";
+    public static final String ATOM_CONTENT       = "content";     
+    
     // RSS attributes
-    public static final String RSS_CHANNEL  = "channel";
-    public static final String RSS_ITEM     = "item";  
-    public static final String RSS_PUB_DATE = "pubDate";
-    public static final String RSS_AUTHOR   = "author";
-    public static final String RSS_LINK     = "link";
-    public static final String RSS_TITLE    = "title";    
+    public static final String RSS_CHANNEL     = "channel";
+    public static final String RSS_ITEM        = "item";  
+    public static final String RSS_PUB_DATE    = "pubDate";
 }

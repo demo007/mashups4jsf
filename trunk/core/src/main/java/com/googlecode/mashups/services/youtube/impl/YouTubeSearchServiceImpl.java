@@ -63,9 +63,9 @@ public class YouTubeSearchServiceImpl implements YouTubeSearchService {
                                                     . getChildren(ServiceConstants.RSS_ITEM);
         
         for (Element element : children) {
-            String title   = element.getChild(ServiceConstants.RSS_TITLE).getText();
-            String link    = element.getChild(ServiceConstants.RSS_LINK).getText();
-            String author  = element.getChild(ServiceConstants.RSS_AUTHOR).getText();
+            String title   = element.getChild(ServiceConstants.TITLE).getText();
+            String link    = element.getChild(ServiceConstants.LINK).getText();
+            String author  = element.getChild(ServiceConstants.AUTHOR).getText();
             String pubDate = element.getChild(ServiceConstants.RSS_PUB_DATE).getText();  
             
             // get the video id

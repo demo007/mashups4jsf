@@ -24,7 +24,7 @@ import com.googlecode.mashups.services.common.ServiceParameter;
 
 
 public interface TwitterSearchService {
-    public final static String TWITTER_SEARCH_SERVICE_URL = "";
+    public final static String TWITTER_SEARCH_SERVICE_URL = "http://search.twitter.com/search.atom";
     
-	public List<TwitterSearchResultItem> getUpdatesList(List<ServiceParameter> parameters) throws Exception;
+    public List<TwitterSearchResultItem> getSearchList(List<ServiceParameter> parameters) throws Exception;
 }
