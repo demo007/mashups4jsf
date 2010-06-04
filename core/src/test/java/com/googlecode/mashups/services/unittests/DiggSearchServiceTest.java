@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.test;
+package com.googlecode.mashups.services.unittests;
 
 import java.util.ArrayList;
 import java.util.List;

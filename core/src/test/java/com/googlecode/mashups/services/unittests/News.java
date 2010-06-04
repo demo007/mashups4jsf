@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.test;
+package com.googlecode.mashups.services.unittests;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +34,8 @@ import com.googlecode.mashups.services.generic.api.Feed.FeedType;
  *
  */
 
-@Feed(type=FeedType.Atom)
-public class News2 {
+@Feed(type=FeedType.Rss)
+public class News {
     static List <NewsItem> news = new ArrayList<NewsItem>();
     
     static {

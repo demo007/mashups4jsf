@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.test;
+package com.googlecode.mashups.services.unittests;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,29 +24,31 @@ import java.util.List;
 import junit.framework.TestCase;
 
 import com.googlecode.mashups.services.common.ServiceParameter;
-import com.googlecode.mashups.services.factory.TwitterServicesFactory;
-import com.googlecode.mashups.services.twitter.api.TwitterSearchResultItem;
-import com.googlecode.mashups.services.twitter.api.TwitterSearchService;
-import com.googlecode.mashups.services.twitter.api.TwitterSearchServiceParameters;
+import com.googlecode.mashups.services.factory.GoogleServicesFactory;
+import com.googlecode.mashups.services.google.api.GoogleSearchResultItem;
+import com.googlecode.mashups.services.google.api.GoogleSearchService;
+import com.googlecode.mashups.services.google.api.GoogleSearchServiceParameters;
 
-public class TwitterServiceTest extends TestCase {
-    public void testGetTwitterSearchResults() throws Exception {
+public class GoogleSearchServiceTest extends TestCase {
+    public void testGetWebSearchResults() throws Exception {
         List<ServiceParameter> parameters           = new ArrayList<ServiceParameter>();     
-        TwitterSearchService   twitterSearchService = TwitterServicesFactory.getTwitterSearchService();
+        GoogleSearchService    googleSearchService  = GoogleServicesFactory.getGoogleSearchService();
        
-        parameters.add(new ServiceParameter(TwitterSearchServiceParameters.QUERY, "JavaOne"));        
+        parameters.add(new ServiceParameter(GoogleSearchServiceParameters.VERSION, "1.0"));      
+        parameters.add(new ServiceParameter(GoogleSearchServiceParameters.RSZ, "large"));
+        parameters.add(new ServiceParameter(GoogleSearchServiceParameters.QUERY, "Egypt Algeria"));        
          
         try {
-            List<TwitterSearchResultItem> twitterSearchResults = twitterSearchService.getSearchList(parameters);
+            List<GoogleSearchResultItem> webSearchResults = googleSearchService.getWebSearchResultList(parameters);
             
-            for (TwitterSearchResultItem searchItem : twitterSearchResults) {
-                System.out.println("Twitter status: " + searchItem);
+            for (GoogleSearchResultItem searchItem : webSearchResults) {
+                System.out.println("Web news: " + searchItem);
             }
             
             
         } catch (Exception e) {
             e.printStackTrace();
-            fail("Unable to get the twitter search list ...");
+            fail("Unable to get the web news list ...");
         }        
     }
 }
