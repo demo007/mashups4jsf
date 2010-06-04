@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:mashup="http://code.google.com/p/mashups4jsf/">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to Twitter Services</ui:define>
+
+<ui:define name="mashup">
+    <h1>Twitter Search List Component</h1>
+    
+    <h:form id="twitterSearchForm">
+    
+        <h:panelGrid columns="3">
+            <h:outputText styleClass="standard_bold" value="Enter the word to search in Twitter tweets (Get Top Ten): "/>
+            <h:inputText id="txtSearchQuery" styleClass="standard"  value="#{twitterSearchForm.searchQuery}" required="true"/>
+            <h:commandButton value="Search in Twitter!!!" styleClass="standard" action="#{twitterSearchForm.doNothing}">            
+                 <f:ajax execute="txtSearchQuery" render="searchResults"/>            
+            </h:commandButton>
+        </h:panelGrid>
+        
+        <h:panelGroup id="searchResults">
+              <mashup:twitterSearchList searchQuery="#{twitterSearchForm.searchQuery}" 
+                                        resultItemVar="searchItem" 
+                                        resultItemIndex="index" 
+                                        rendered="#{twitterSearchForm.searchQuery ne null}">
+      
+                  <f:facet name="resultItem">
+                      <h:panelGrid columns="2"> 
+                            <h:outputText styleClass="standard_bold" value="Tweet: "/>            <h:outputText styleClass="standard" value="#{searchItem.title}" escape="false"/>
+                            <h:outputText styleClass="standard_bold" value="Author Name: "/>      <h:outputText styleClass="standard" value="#{searchItem.authorName}"/> 
+                            <h:outputText styleClass="standard_bold" value="Publication Date: "/> <h:outputText styleClass="standard" value="#{searchItem.publishDate}"/>
+                            <h:outputText styleClass="standard_bold" value="Author Image: "/>  
+                            <h:outputLink styleClass="standard_bold" value="#{searchItem.authorTwitterURL}">  
+                                <h:graphicImage alt="picture of #{searchItem.title}" url="#{searchItem.authorImageURL}"/>
+                            </h:outputLink> 
+                      </h:panelGrid>        
+                  </f:facet>
+              </mashup:twitterSearchList>        
+        </h:panelGroup>
+    </h:form>
+</ui:define>
+
+</ui:composition>
+</html>  
