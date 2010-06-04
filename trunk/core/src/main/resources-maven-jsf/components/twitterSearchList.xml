@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+//-->
+
+<!DOCTYPE component SYSTEM "../misc/component.dtd" [
+<!ENTITY standard_uicomponent_attributes        SYSTEM "../entities/standard_uicomponent_attributes.xml">
+<!ENTITY output_component_attributes            SYSTEM "../entities/output_component_attributes.xml">
+]>
+<component>
+    <tag>twitterSearchList</tag>
+    <tagClass>com.googlecode.mashups4jsf.component.twitter.TwitterSearchListTag</tagClass>
+    <componentClass>com.googlecode.mashups4jsf.component.twitter.TwitterSearchList</componentClass>
+    <componentType>com.googlecode.mashups4jsf.twitter.TwitterSearchList</componentType>
+    <componentFamily>com.googlecode.mashups4jsf</componentFamily>
+    <rendererType>com.googlecode.mashups4jsf.component.twitter.TwitterSearchListRenderer</rendererType>
+    <rendererClass>com.googlecode.mashups4jsf.component.twitter.TwitterSearchListRenderer</rendererClass>
+    <parent>javax.faces.component.UIOutput</parent>
+    <attributes>
+        &standard_uicomponent_attributes;
+        <attribute>
+            <name>searchQuery</name>
+            <required>true</required>
+            <type>java.lang.String</type>            
+            <description>The twitter tweets search query</description>
+        </attribute>        
+        <attribute>
+            <name>resultItemVar</name>
+            <required>true</required>
+            <type>java.lang.String</type>            
+            <description>The variable using which you will be able to access the twitter tweets result item. Note that the twitter result item is of type (com.googlecode.mashups.services.twitter.api.TwitterSearchResultItem)</description>
+        </attribute>
+        <attribute>
+            <name>resultItemIndex</name>
+            <required>true</required>
+            <type>java.lang.String</type>            
+            <description>The Result item index</description>
+        </attribute>            
+        
+        <attribute>
+            <name>pageNumber</name>
+            <required>false</required>
+            <type>java.lang.Integer</type>    
+            <defaultValue>1</defaultValue>    
+            <description>The twitter tweets page number</description>
+        </attribute>
+        <attribute>
+            <name>resultSetSize</name>
+            <required>false</required>
+            <type>java.lang.Integer</type>    
+            <defaultValue>10</defaultValue>    
+            <description>The twitter tweets search result set size</description>
+        </attribute>
+        <attribute>
+            <name>showUser</name>
+            <required>false</required>
+            <type>java.lang.String</type>    
+            <defaultValue>true</defaultValue>    
+            <description>This attribute determines whether to display the user that published the tweet.</description>
+        </attribute>
+        <attribute>
+            <name>resultType</name>
+            <required>false</required>
+            <type>java.lang.String</type>    
+            <description>The twitter search result type. It can have one of three values ("mixed", "recent", "popular").</description>
+        </attribute>        
+        <attribute>
+            <name>sinceDate</name>
+            <required>false</required>
+            <type>java.lang.String</type>    
+            <description>Returns tweets with since the given date. Date should be formatted as YYYY-MM-DD.</description>
+        </attribute>
+        <attribute>
+            <name>beforeDate</name>
+            <required>false</required>
+            <type>java.lang.String</type>    
+            <description>Returns tweets with generated before the given date.  Date should be formatted as YYYY-MM-DD.</description>
+        </attribute>        
+        <attribute>
+            <name>sinceID</name>
+            <required>false</required>
+            <type>java.lang.String</type>    
+            <description>Returns tweets with status ids greater than the given id.</description>
+        </attribute>    
+        <attribute>
+            <name>maxID</name>
+            <required>false</required>
+            <type>java.lang.String</type>    
+            <description>Returns tweets with status ids less than the given id.</description>
+        </attribute>        
+        <attribute>
+            <name>geocode</name>
+            <required>false</required>
+            <type>java.lang.String</type>    
+            <description>Returns tweets by users located within a given radius of the given latitude/longitude. The location is preferentially taking from the Geotagging API, but will fall back to their Twitter profile. The parameter value is specified by "latitide,longitude,radius", where radius units must be specified as either "mi" (miles) or "km" (kilometers). Note that you cannot use the near operator via the API to geocode arbitrary locations; however you can use this geocode parameter to search near geocodes directly. Example: '40.757929%2C-73.985506%2C25km'.</description>
+        </attribute>    
+        <attribute>
+            <name>locale</name>
+            <required>false</required>
+            <type>java.lang.String</type>    
+            <description>Specify the language of the query you are sending (only ja is currently effective).</description>
+        </attribute>  
+        <attribute>
+            <name>language</name>
+            <required>false</required>
+            <type>java.lang.String</type>    
+            <description>Restricts tweets to the given language, given by an ISO 639-1 code.</description>
+        </attribute>         
+    </attributes>
+</component>

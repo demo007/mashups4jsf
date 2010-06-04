@@ -1,4 +1,4 @@
-package com.googlecode.mashups.services.test;
+package com.googlecode.mashups.services.unittests;
 
 import com.googlecode.mashups.services.generic.api.ItemAuthor;
 import com.googlecode.mashups.services.generic.api.ItemCategory;

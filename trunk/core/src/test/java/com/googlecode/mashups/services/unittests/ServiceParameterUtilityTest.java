@@ -16,34 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.googlecode.mashups.services.test;
+package com.googlecode.mashups.services.unittests;
 
-import java.io.FileWriter;
-import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.googlecode.mashups.services.common.ServiceParameter;
+import com.googlecode.mashups.services.common.ServiceParametersUtility;
 
 import junit.framework.TestCase;
-
-import com.googlecode.mashups.services.factory.GenericServicesFactory;
 
 /**
  * @author hazems
  *
  */
-public class AtomFeedProducerServiceTest extends TestCase {
-
-    public void testGetRssFeed() throws Exception {
-	try {
-	    News2 news = new News2();
-	    
-	    Writer writer = new FileWriter("c:\\feed2.xml");
-	    
-	    GenericServicesFactory.getFeedProducerService().produceFeed(news, writer);
-	    
-	    writer.close();
-
-	} catch (Exception e) {
-	    e.printStackTrace();
-	    fail("Unable to get the Rss Feed producer ...");
-	}
+public class ServiceParameterUtilityTest extends TestCase {
+    public void testToParametersString() {
+        List<ServiceParameter> parameters = new ArrayList<ServiceParameter>();
+        
+        parameters.add(new ServiceParameter("c", "123"));
+        parameters.add(new ServiceParameter("a", "234"));
+        
+        System.out.println("The final string is: " + ServiceParametersUtility.toParametersString(parameters));
     }
 }
