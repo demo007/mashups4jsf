@@ -1,0 +1,93 @@
+Title: Abstract Mashups for Enterprise Java
+
+Tasks:
+
+   hazems download template from speaker resource center and check into
+   google code area.
+
+   edburns check in this outline
+
+I. Build the case for mashups edburns
+
+  A. Define mashability
+
+  B. How does mashability influence the success of a venture
+
+    1. For the public
+
+    2. For the enterprise
+
+  C. Case studies
+
+    1. twitter
+
+    2. PENDING: find good example of mashup that is used inside the
+    enterprise.
+
+      Ed potential contact people
+
+        Alan Braverman
+
+        Tuna mailing list
+
+        Hanspeter Duennenberger from Credit Suisse
+
+      Hazem potential contact people
+
+        Ronald Barcia IBM
+
+II. Build the case for a unified model, built on industry standards hazems
+
+  A. Is there any kind of unified model?  No.
+
+    There is no unified model for mashup services. Some services are
+    using REST while others are using SOAP. Without a unified model,
+    clients will have to write a great deal of code to interact with the
+    mashup services.
+
+    1. twitter mashup
+
+    2. amazon web services
+
+  B. Let's imagine
+
+    How about building this demo
+
+    Having a master dataTable and a detailed Google Map, a yahoo weather
+    indicator, a youTube listing and a twitter listing. When we click on
+    the master dataTable row, the location information is shown in the
+    detailed Google Map, the weather information in the yahoo weather
+    indicator, the tweets done by people in that location, and finally
+    the videos uploaded by people in that location.
+
+   Have some slides that show the complexity you would have to mitigate
+   to build such a solution.
+
+  B. What could we do if we had a unified programming model?
+
+    Then we build this demo live with Mashups4JSF.
+
+III. Conclusion
+
+  A. Mashups are important
+
+  B. Having a mashup meta-model gives developers a lot of power.
+
+  C. Key ingredients for a mashup meta-model
+
+    * Mashup integration happens on the server
+
+    * There is a declarative syntax for describing the mashup.
+
+      - This syntax includes a suitably powerful component abstraction model
+
+    * There is a powerful programming language that works closely with
+      the declarative syntax.
+
+    * Hide the lower level APIs offered by the mashup service providers
+
+    * Having good separation between services eases maintenance
+
+    
+
+    
