@@ -38,16 +38,17 @@ I. Build the case for mashups edburns
 
 II. Build the case for a unified model, built on industry standards hazems
 
-  A. Is there any kind of unified model?  No.
+  A. Is there a unified model followed by the famous mashup service providers?  No.
 
-    There is no unified model for mashup services. Some services are
-    using REST while others are using SOAP. Without a unified model,
-    clients will have to write a great deal of code to interact with the
+    There is no unified model for the famous mashup providers. Some services are
+    using REST while others are using SOAP. And different protocols are used like ATOM, 
+	RSS, and JSON. 
+	Without a unified model, clients will have to write a great deal of code to interact with the
     mashup services.
 
-    1. twitter mashup
+    1. twitter mashup.
 
-    2. amazon web services
+    2. amazon web services.
 
   B. Let's imagine
 
@@ -63,7 +64,7 @@ II. Build the case for a unified model, built on industry standards hazems
    Have some slides that show the complexity you would have to mitigate
    to build such a solution.
 
-  B. What could we do if we had a unified programming model?
+  C. What could we do if we had a unified programming model for the famous mashup services?
 
     Then we build this demo live with Mashups4JSF.
 
