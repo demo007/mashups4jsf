@@ -1,0 +1,34 @@
+Title: Abstract Mashups for Enterprise Java
+
+Abstract (750 characters)
+
+What do twitter, del.icio.us, YouTube and Google maps all have in
+common? 1. they are all crazy popular 2. they all use an architecture
+that decouples their front and back ends using a RESTful API. This
+session argues that such architectures are a key enabler for the
+popularity of these and other similar sites. A unified programming model
+that seamlessly integrates disparate endpoints would therefore be very
+useful. Audience: programmers who understand the power of mashups but
+want an easier way to use them in their work.
+
+* Popular services get that way because they are mashable. 
+
+* Having one programming model for many different services is useful. 
+
+* Here is an example of one such programming model: Mashups4JSF.
+
+
+How will you cover your subject (500 chars)
+
+A. Logically construct and support arguments for the following points
+
+1. The role mashability plays in the success of online services
+
+2. The difficulties that arise from using disparate mashup providers in
+one application
+
+3. Having an unified programming model for disparate mashup providers is
+very useful
+
+B. Demonstrate a solution to the problem by using Mashups4JSF to build a
+live demo
