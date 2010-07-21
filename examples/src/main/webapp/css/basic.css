@@ -699,6 +699,21 @@ background-color: #EAF4F4;
     width: 155px;
 }
 
+.mashupColumn1{
+    width: 400px;
+    vertical-align: top;
+}
+
+.mashupColumn2{
+    width: 600px;
+    vertical-align: top;    
+}
+
+.mashupColumn3{
+    width: 600px;
+    vertical-align: top;    
+}
+
 .tableStyle{
     border: 1px solid #666666;
 }

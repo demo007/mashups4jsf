@@ -28,12 +28,20 @@ public class Place {
     String shortAddressName;
     String longAddressName;
     String postalCode;
+    String keyword;
 
     public Place(String shortAddressName, String longAddressName, String postalCode) {
         this.shortAddressName = shortAddressName;
         this.longAddressName = longAddressName;
         this.postalCode = postalCode;
     }
+    
+    public Place(String shortAddressName, String longAddressName, String postalCode, String keyword) {
+        this.shortAddressName = shortAddressName;
+        this.longAddressName = longAddressName;
+        this.postalCode = postalCode;
+        this.keyword = keyword;
+    }    
     
 
     /**
@@ -76,6 +84,20 @@ public class Place {
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    /**
+     * @return the keyword
+     */
+    public String getKeyword() {
+        return keyword;
+    }
+
+    /**
+     * @param keyword the keyword to set
+     */
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 
     public String setSelectedPlace() {
