@@ -64,8 +64,8 @@ II. Build the case for a unified model, built on industry standards hazems
    to build such a solution.
 
   C. What could we do if we had a unified programming model for the famous mashup services?
-
-    Then we build this demo live with Mashups4JSF.
+     One of the possible ways is Mashups4JSF then we will define what is Mashups4JSF and illustrates 
+	 its architecture. Finally we build this demo live with Mashups4JSF.
 
 III. Conclusion
 
