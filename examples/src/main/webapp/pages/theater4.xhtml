@@ -70,7 +70,7 @@
                     </m:map>
 					
 					<br/>
-					<h3><h:outputText value="Place Location on Map:" rendered="#{selectedPlace ne null}"/></h3>
+					<h3><h:outputText value="Place Weather:" rendered="#{selectedPlace ne null}"/></h3>
                     <mashup:yahooWeather locationCode="#{selectedPlace.postalCode}"
                                          rendered="#{selectedPlace ne null}" 
                                          temperatureType="c"/>					
