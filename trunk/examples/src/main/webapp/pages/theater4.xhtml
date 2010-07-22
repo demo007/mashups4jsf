@@ -77,7 +77,7 @@
                 </h:panelGroup>
 				
                 <h:panelGroup id="placeTweets">
-					<h3><h:outputText value="Tweets that mentions the place:" rendered="#{selectedPlace ne null}"/></h3>
+					<h3><h:outputText value="Tweets that mention the place:" rendered="#{selectedPlace ne null}"/></h3>
 			        <mashup:twitterSearchList searchQuery="#{selectedPlace.keyword}" 
 			                                  resultItemVar="searchItem" 
 											  resultSetSize="5"
@@ -100,7 +100,7 @@
                 </h:panelGroup>  
 
                 <h:panelGroup id="placeVideos">
-					<h3><h:outputText value="Videos that mentions the place:" rendered="#{selectedPlace ne null}"/></h3>
+					<h3><h:outputText value="Videos that mention the place:" rendered="#{selectedPlace ne null}"/></h3>
 				    <mashup:youTubeVideoList searchQuery="#{selectedPlace.keyword}" 
 				    						 resultItemVar="searchItem" 
 											 maxResults="5"					    						 
