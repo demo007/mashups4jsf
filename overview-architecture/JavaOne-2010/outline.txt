@@ -26,15 +26,15 @@ I. Build the case for mashups edburns
 
       Ed potential contact people
 
-        Alan Braverman
+        Alan Braverman DONE
 
-        Tuna mailing list
+        Hanspeter Duennenberger from Credit Suisse DONE
 
-        Hanspeter Duennenberger from Credit Suisse
+        Garmin contacts DONE
 
       Hazem potential contact people
 
-        Roland Barcia IBM
+        Roland Barcia IBM DONE
 
 II. Build the case for a unified model, built on industry standards hazems
 
