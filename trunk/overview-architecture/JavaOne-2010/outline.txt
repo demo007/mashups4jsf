@@ -36,7 +36,7 @@ I. Build the case for mashups edburns
 
         Roland Barcia IBM DONE
 
-II. Build the case for a unified model, built on industry standards hazems
+II. Build the case for a unified model, built on industry standards hazems (All DONE)
 
   A. Is there a unified model followed by the mashup service providers?  No.
 
@@ -45,9 +45,6 @@ II. Build the case for a unified model, built on industry standards hazems
 	protocols are used like ATOM, RSS, and JSON.
 	Without a unified model, clients will have to write a great deal of code to interact with the
     mashup services.
-
-    1. SOAP Service Example.
-	2. REST Service Example.
 
   B. Let's imagine
 
@@ -61,13 +58,14 @@ II. Build the case for a unified model, built on industry standards hazems
     the videos uploaded by people in that location.
 
    Have some slides that show the complexity you would have to mitigate
-   to build such a solution.
+   to build such a solution (code examples to access both twitter, youTube
+   and Google Maps as well).
 
   C. What could we do if we had a unified programming model for the famous mashup services?
      One of the possible ways is Mashups4JSF then we will define what is Mashups4JSF and illustrates 
-	 its architecture. Finally we build this demo live with Mashups4JSF.
+	 its architecture. Finally we build this demo live with Mashups4JSF Using NetBeans.
 
-III. Conclusion
+III. Conclusion  (All DONE)
 
   A. Mashups are important
 
