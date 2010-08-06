@@ -18,13 +18,18 @@
  */
 package com.googlecode.mashups.services.generic.api;
 
-import java.io.Writer;
+import org.json.JSONArray;
+
+import com.sun.syndication.feed.synd.SyndFeed;
+
 
 /**
- * <code>FeedProducer</code> is responsible for producing Mashup feeds (ATOM or RSS).
+ * <code>FeedReader</code> is responsible for reading Mashup feeds (ATOM, RSS or JSON).
  * @author hazems
  *
  */
-public interface FeedProducer {
-    public void produceFeed(Object annotatedObject, Writer writer) throws Exception;
+public interface FeedReader {
+    public SyndFeed  readRSSFeed (String feedURL)                       throws Exception;
+    public SyndFeed  readATOMFeed(String feedURL)                       throws Exception;
+    public JSONArray readJSONFeed(String feedURL, String jsonArrayName) throws Exception;
 }
