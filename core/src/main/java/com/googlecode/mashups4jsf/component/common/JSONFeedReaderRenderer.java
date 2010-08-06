@@ -19,70 +19,80 @@
 package com.googlecode.mashups4jsf.component.common;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.render.Renderer;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import com.googlecode.mashups.services.factory.GenericServicesFactory;
-import com.sun.syndication.feed.synd.SyndEntry;
-import com.sun.syndication.feed.synd.SyndFeed;
 
 /**
  * @author Hazem Saleh
- * @date Feb. 20, 2010
- * The <code>AtomFeedReaderRenderer</code> is a generic ATOM feed reader.
+ * @date August. 06, 2010
+ * The <code>JSONFeedReaderRenderer</code> is a generic JSON feed reader.
  */
-public class AtomFeedReaderRenderer extends Renderer {
-    private static final String A_ONE_ENTRY_FACET_MUST_BE_DEFINED = "A one entry facet must be defined";
-    private static final String FEED = "feed";    
-    private static final String ENTRY = "entry";
+public class JSONFeedReaderRenderer extends Renderer {
+    private static final String A_ONE_ITEM_FACET_MUST_BE_DEFINED = "A one item facet must be defined";
+    private static final String ITEM = "item";
     private static final String MAXIMUM_COUNT_SHOULD_BE_GREATER_THAN_ZERO = "Maximum count should be greater than zero!!!";
 
-    @SuppressWarnings("unchecked")
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
         try {
-            AtomFeedReader atomFeedReader = (AtomFeedReader) component;
+            JSONFeedReader jsonFeedReader = (JSONFeedReader) component;
             
-            if (atomFeedReader.getMaximumCount() <= 0) {
+            if (jsonFeedReader.getMaximumCount() <= 0) {
                 throw new IOException(MAXIMUM_COUNT_SHOULD_BE_GREATER_THAN_ZERO);
-            }            
-            
-            SyndFeed feed = GenericServicesFactory.getFeedReaderService().readATOMFeed(atomFeedReader.getFeedURL());
-            
-            context.getApplication().createValueBinding("#{" + atomFeedReader.getFeedVar() + "}").setValue(context, feed);
-            
-            UIComponent feedFacet = atomFeedReader.getFacet(FEED);
-            
-            if (feedFacet != null) {
-                encodeRecursive(context, feedFacet);
             }
-
-            UIComponent entryFacet = atomFeedReader.getFacet(ENTRY);
             
-            if (entryFacet == null) {
-                throw new IOException(A_ONE_ENTRY_FACET_MUST_BE_DEFINED);
+            JSONArray resultArray = GenericServicesFactory.getFeedReaderService().readJSONFeed(jsonFeedReader.getFeedURL(), 
+                                                                                               jsonFeedReader.getFeedArrayName());
+            
+            UIComponent itemFacet = jsonFeedReader.getFacet(ITEM);
+            
+            if (itemFacet == null) {
+                throw new IOException(A_ONE_ITEM_FACET_MUST_BE_DEFINED);
             }
             
             Integer index = 0;
             
-            for (SyndEntry entry : (List<SyndEntry>) feed.getEntries()) {
-                context.getApplication().createValueBinding("#{" + atomFeedReader.getEntryVar() + "}").setValue(context, entry);
-                context.getApplication().createValueBinding("#{" + atomFeedReader.getEntryIndex() + "}").setValue(context, index++);        
-                encodeRecursive(context, entryFacet);
+            for (int i = 0; i < resultArray.length(); ++i) {
                 
-                if (index >= atomFeedReader.getMaximumCount()) {
+                JSONObject          jsonObject = (JSONObject) resultArray.get(i);
+                Map<String, Object> jsonMap    = convertJSONObjectToMap(jsonObject);
+                
+                context.getApplication().createValueBinding("#{" + jsonFeedReader.getItemVar() + "}").setValue(context, jsonMap);
+                context.getApplication().createValueBinding("#{" + jsonFeedReader.getItemIndex() + "}").setValue(context, index++);        
+                encodeRecursive(context, itemFacet);
+                
+                if (index >= jsonFeedReader.getMaximumCount()) {
                     break;
                 }                
             }
 
         } catch (Exception exception) {
-            exception.printStackTrace();
             throw new IOException("The following exception occurs: " + exception.getMessage());
         }
     }
     
+    private Map<String, Object> convertJSONObjectToMap(JSONObject jsonObject) throws Exception {
+        Map<String, Object> jsonMap = new HashMap<String, Object>();
+        
+        String[] names = JSONObject.getNames(jsonObject);
+        
+        for (String attributeName : names) {
+            //System.out.println("Putting Map Item content: " + attributeName);
+            jsonMap.put(attributeName, jsonObject.get(attributeName));
+        }
+        
+        return jsonMap;
+    }
+
     @SuppressWarnings("unchecked")
     private void encodeRecursive(FacesContext context, UIComponent component) throws IOException {
         component.encodeBegin(context);

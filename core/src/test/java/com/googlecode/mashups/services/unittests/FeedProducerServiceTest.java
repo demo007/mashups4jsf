@@ -29,21 +29,20 @@ import com.googlecode.mashups.services.factory.GenericServicesFactory;
  * @author hazems
  *
  */
-public class AtomFeedProducerServiceTest extends TestCase {
+public class FeedProducerServiceTest extends TestCase {
 
-    public void testGetRssFeed() throws Exception {
-	try {
-	    News2 news = new News2();
-	    
-	    Writer writer = new FileWriter("c:\\feed2.xml");
-	    
-	    GenericServicesFactory.getFeedProducerService().produceFeed(news, writer);
-	    
-	    writer.close();
+    public void testProduceRssFeed() throws Exception {
+        try {
+            News2 news = new News2();
 
-	} catch (Exception e) {
-	    e.printStackTrace();
-	    fail("Unable to get the Rss Feed producer ...");
-	}
+            Writer writer = new FileWriter("c:\\feed2.xml");
+
+            GenericServicesFactory.getFeedProducerService().produceFeed(news, writer);
+
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail("Unable to get the Rss Feed producer ...");
+        }
     }
 }

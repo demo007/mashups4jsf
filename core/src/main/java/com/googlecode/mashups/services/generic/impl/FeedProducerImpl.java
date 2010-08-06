@@ -47,6 +47,8 @@ import com.sun.syndication.feed.synd.SyndFeedImpl;
 import com.sun.syndication.io.SyndFeedOutput;
 
 /**
+ * <code>FeedProducerImpl</code> is the implementation of the <code>FeedProducer</code> which 
+ * is responsible for producing Mashup feeds (ATOM or RSS).
  * @author hazems
  *
  */

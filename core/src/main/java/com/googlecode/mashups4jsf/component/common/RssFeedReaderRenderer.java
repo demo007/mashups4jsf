@@ -19,17 +19,15 @@
 package com.googlecode.mashups4jsf.component.common;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.List;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.render.Renderer;
 
+import com.googlecode.mashups.services.factory.GenericServicesFactory;
 import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.feed.synd.SyndFeed;
-import com.sun.syndication.io.SyndFeedInput;
 
 /**
  * @author Hazem Saleh
@@ -42,16 +40,16 @@ public class RssFeedReaderRenderer extends Renderer {
     private static final String CHANNEL = "channel";
     private static final String MAXIMUM_COUNT_SHOULD_BE_GREATER_THAN_ZERO = "Maximum count should be greater than zero!!!";
 
+    @SuppressWarnings("unchecked")
     public void encodeBegin(FacesContext context, UIComponent component) throws IOException {
         try {
-            RssFeedReader  rssFeedReader = (RssFeedReader) component;
-            URL            feedUrl       = new URL(rssFeedReader.getFeedURL());
-            SyndFeedInput  input         = new SyndFeedInput();
-            SyndFeed       feed          = input.build(new InputStreamReader(feedUrl.openStream()));
+            RssFeedReader rssFeedReader = (RssFeedReader) component;
             
             if (rssFeedReader.getMaximumCount() <= 0) {
                 throw new IOException(MAXIMUM_COUNT_SHOULD_BE_GREATER_THAN_ZERO);
             }
+                        
+            SyndFeed feed = GenericServicesFactory.getFeedReaderService().readRSSFeed(rssFeedReader.getFeedURL());
             
             context.getApplication().createValueBinding("#{" + rssFeedReader.getChannelVar() + "}").setValue(context, feed);
 
@@ -84,6 +82,7 @@ public class RssFeedReaderRenderer extends Renderer {
         }
     }
     
+    @SuppressWarnings("unchecked")
     private void encodeRecursive(FacesContext context, UIComponent component) throws IOException {
         component.encodeBegin(context);
         
