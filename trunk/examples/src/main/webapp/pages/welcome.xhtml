@@ -13,8 +13,7 @@
     
     <h:form id="mashups4JSFForm">
      		
-     		<h1>Mashups4JSF components</h1>    
-        
+     			<h1>Mashups4JSF components</h1>    
                 <h:outputText value="YahooWeather Component" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="yahooWeatherComponent.xhtml">
@@ -83,8 +82,17 @@
                     <h:outputLink value="twitterSearchList.xhtml">
                         <f:verbatim>A component that displays the Twitter search results directly in the JSF page (Interactive Example)</f:verbatim>
                     </h:outputLink>
-                </h:panelGrid>                  
+                </h:panelGrid>          
+                                        
+                <h:outputText value="Complete GMaps4JSF Examples" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="http://www.mashups4jsf.com/gmaps4jsf-examples">
+                        <f:verbatim>The complete GMaps4JSF Examples</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>    
                 
+                <br />
+                <h1>RSS Feed Reader</h1>                
                 <h:outputText value="Generic RSS Feed Reader Component (From an external RSS Feed Producer)" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="rssFeedReader.xhtml">
@@ -98,7 +106,9 @@
                         <f:verbatim>A component that can read any RSS2.0 feed in JSF</f:verbatim>
                     </h:outputLink>
                 </h:panelGrid>                 
-                
+
+                <br />
+                <h1>ATOM Feed Reader</h1>                  
                 <h:outputText value="Generic ATOM Feed Reader Component (From an external ATOM Feed Producer)" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="atomFeedReader.xhtml">
@@ -111,15 +121,33 @@
                     <h:outputLink value="atomFeedReader2.xhtml">
                         <f:verbatim>A component that can read any ATOM1.0 feed in JSF</f:verbatim>
                     </h:outputLink>
-                </h:panelGrid>                 
+                </h:panelGrid>              
                 
-                <h:outputText value="Complete GMaps4JSF Examples" />
+                <br />
+                <h1>JSON Feed Reader</h1>                  
+                <h:outputText value="Generic JSON Feed Reader Component (Get the 'JavaOne' results from Google Search)" />
                 <h:panelGrid style="padding-left:25px">
-                    <h:outputLink value="http://www.mashups4jsf.com/gmaps4jsf-examples">
-                        <f:verbatim>The complete GMaps4JSF Examples</f:verbatim>
+                    <h:outputLink value="jsonFeedReaderGoogle.xhtml">
+                        <f:verbatim>A component that can read any JSON feed in JSF</f:verbatim>
                     </h:outputLink>
-                </h:panelGrid>                  
-        
+                </h:panelGrid>  
+                
+                <h:outputText value="Generic JSON Feed Reader Component (Get the 'JavaOne' results from Yahoo Image Search)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="jsonFeedReaderYahooImage.xhtml">
+                        <f:verbatim>A component that can read any JSON feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                
+                
+                <h:outputText value="Generic JSON Feed Reader Component (Get the Popular 'JavaOne' tags in Delicious)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="jsonFeedReaderDelicious.xhtml">
+                        <f:verbatim>A component that can read any JSON feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>  
+                
+                <br />
+                <h1>Mashup Remix</h1>
                 <h:outputText value="Getting the Weather from the Map Marker Drag" />
                 <h:panelGrid style="padding-left:25px">
                     <h:outputLink value="theater1.xhtml">
