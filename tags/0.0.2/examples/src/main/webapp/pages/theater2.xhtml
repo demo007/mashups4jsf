@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:m="http://code.google.com/p/gmaps4jsf/"
+      xmlns:mashup="http://code.google.com/p/mashups4jsf/">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to the Theater (Part 2)</ui:define>
+<ui:define name="ajaxIncludes"></ui:define>
+
+<ui:define name="mashup">
+    <h1>Mashup world integrated</h1>
+    
+        <h:form id="form1">
+
+            <h:dataTable id="myTable" var="place" 
+                         value="#{theater2.places}"
+                         headerClass="tableHeader"
+                         columnClasses="tableColumn1, tableColumn2, tableColumn3, tableColumn4"
+                         rowClasses="oddRow, evenRow"
+                         styleClass="tableStyle">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Short Name" />
+                    </f:facet>
+
+                    <h:outputText value="#{place.shortAddressName}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Long Name" />
+                    </f:facet>
+
+                    <h:outputText value="#{place.longAddressName}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Postal Code" />
+                    </f:facet>
+
+                    <h:outputText value="#{place.postalCode}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="View" />
+                    </f:facet>
+
+                    <h:commandLink value="View Place Information" action="#{place.setSelectedPlace}">
+                        <f:ajax render=":form1:placeMap :form1:placeWeather"/>
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+
+            <br />
+            <h:panelGrid id="grid" columns="2" cellpadding="10px">
+                <h:panelGroup id="placeMap">
+                    <m:map width="400px" height="300px"
+                           renderOnWindowLoad="false"
+                           rendered="#{selectedPlace ne null}"
+                           address="#{selectedPlace.longAddressName}" zoom="9">
+                        <m:marker/>
+                        <m:htmlInformationWindow htmlText="#{selectedPlace.longAddressName}"/>
+                    </m:map>
+                </h:panelGroup>
+
+                <h:panelGroup id="placeWeather">
+                    <mashup:yahooWeather locationCode="#{selectedPlace.postalCode}"
+                                         rendered="#{selectedPlace ne null}" 
+                                         temperatureType="c"/>
+                </h:panelGroup>
+            </h:panelGrid>
+
+        </h:form>
+</ui:define>
+
+</ui:composition>
+</html>  

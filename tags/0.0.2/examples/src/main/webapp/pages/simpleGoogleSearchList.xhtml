@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:mashup="http://code.google.com/p/mashups4jsf/">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to Google Services</ui:define>
+<ui:define name="ajaxIncludes"></ui:define>
+
+<ui:define name="mashup">
+    <h1>Google Search List Component</h1>
+    
+    <h:form id="googleSearchForm">
+         <mashup:googleSearchList searchQuery="JavaServer Faces" 
+     		    	       		  resultItemVar="searchItem" 
+     			                  resultItemIndex="index">
+ 
+	          <f:facet name="resultItem">
+	              <h:panelGrid columns="1"> 
+	                  <h:outputLink styleClass="standard_bold" value="#{searchItem.url}">
+	                      <h:outputText styleClass="standard" value="#{searchItem.title}" escape="false"/>
+	                  </h:outputLink>  
+	                  <h:outputText styleClass="standard" value="#{searchItem.content}" escape="false"/>
+					  <h:outputText id="seperator" value=""/>
+	              </h:panelGrid>        
+	          </f:facet>
+
+         </mashup:googleSearchList>        
+    </h:form>
+</ui:define>
+
+</ui:composition>
+</html>  

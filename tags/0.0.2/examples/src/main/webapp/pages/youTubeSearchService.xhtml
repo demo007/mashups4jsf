@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:mashup="http://code.google.com/p/mashups4jsf/">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to YouTube Services</ui:define>
+
+<ui:define name="mashup">
+    <h1>YouTube Search service</h1>
+    
+    <h:form id="videoForm">
+    
+        <h:panelGrid columns="3">
+            <h:outputText styleClass="standard_bold" value="Enter keywords for search the video: "/>
+            <h:inputText id="txtSearchQuery" styleClass="standard"  value="#{youTubeSearchForm.searchQuery}" required="true"/>
+            <h:commandButton value="Get Videos!!!" styleClass="standard" action="#{youTubeSearchForm.getVideoList}">            
+                 <f:ajax execute="txtSearchQuery" render="searchResults"/>            
+            </h:commandButton>
+        </h:panelGrid>
+        
+        <h:panelGroup id="searchResults">
+            <ui:repeat value="#{youTubeSearchForm.results}" var="searchItem">
+                <h:panelGrid columns="2">
+                    <h:outputText styleClass="standard_bold" value="Title: "/>           <h:outputText styleClass="standard" value="#{searchItem.title}"/>
+                    <h:outputText styleClass="standard_bold" value="Author: "/>          <h:outputText styleClass="standard" value="#{searchItem.author}"/> 
+                    <h:outputText styleClass="standard_bold" value="Publication Date: "/><h:outputText styleClass="standard" value="#{searchItem.pubDate}"/>
+                    <h:outputText styleClass="standard_bold" value="Video Preview: "/>
+                    <h:outputLink styleClass="standard_bold" value="#{searchItem.link}"><h:graphicImage alt="preview of #{searchItem.title}" url="#{searchItem.previewURL}"/></h:outputLink>        
+                </h:panelGrid>        
+                <br/>        
+            </ui:repeat>
+        </h:panelGroup>
+    </h:form>
+</ui:define>
+
+</ui:composition>
+</html>  

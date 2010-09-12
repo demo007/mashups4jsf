@@ -1,0 +1,67 @@
+<!-- visible and contrainsToViewPort default values are variables, so define them  in subclasses-->
+<attribute>
+	<name>monitorResize</name>
+	<required>false</required>
+	<type>boolean</type>
+	<defaultValue>true</defaultValue>
+	<description>
+		Boolean value that configures whether or not to create a hidden
+		off-screen element that can be used to monitor for text size
+		changes in the DOM
+	</description>
+</attribute>
+<attribute>
+	<name>x</name>
+	<required>false</required>
+	<type>int</type>
+	<defaultValue>-1</defaultValue>
+	<description>Sets the element's "left" style property</description>
+</attribute>
+<attribute>
+	<name>y</name>
+	<required>false</required>
+	<type>int</type>
+	<defaultValue>-1</defaultValue>
+	<description>Sets the element's "top" style property</description>
+</attribute>
+<attribute>
+	<name>fixedCenter</name>
+	<required>false</required>
+	<type>boolean</type>
+	<defaultValue>false</defaultValue>
+	<description>
+		Boolean value that specifies whether the component should be
+		automatically centered in the viewport on window scroll and
+		resize
+	</description>
+</attribute>
+<attribute>
+	<name>width</name>
+	<required>false</required>
+	<type>java.lang.String</type>
+	<description>Width of the element in pixels</description>
+</attribute>
+<attribute>
+	<name>height</name>
+	<required>false</required>
+	<type>java.lang.String</type>
+	<description>Height of the element in pixels</description>
+</attribute>
+<attribute>
+	<name>zIndex</name>
+	<required>false</required>
+	<type>int</type>
+	<defaultValue>-1</defaultValue>
+	<description>zIndex property of the element</description>
+</attribute>
+<attribute>
+	<name>iframe</name>
+	<required>false</required>
+	<type>boolean</type>
+	<defaultValue>false</defaultValue>
+	<description>
+		Boolean value to place an iframe to prevent other elements with
+		a higher z-index from poking through. (true by default for IE 6
+		and below)
+	</description>
+</attribute>

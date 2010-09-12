@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to Mashups4JSF</ui:define>
+<ui:define name="ajaxIncludes"></ui:define>
+
+<ui:define name="mashup">
+    
+    <h:form id="mashups4JSFForm">
+     		
+     			<h1>Mashups4JSF components</h1>    
+                <h:outputText value="YahooWeather Component" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="yahooWeatherComponent.xhtml">
+                        <f:verbatim>A component that visualizes the yahoo weather service</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="YouTube Video Player Component" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="youTubePlayerComponent.xhtml">
+                        <f:verbatim>A component that displays the YouTube videos</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="YouTube Video List Component (Simple Example)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="simpleYouTubeVideoList.xhtml">
+                        <f:verbatim>A component that displays the YouTube search results directly in the JSF page (Simple Example)</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="YouTube Video List Component (Interactive Example)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="youTubeVideoList.xhtml">
+                        <f:verbatim>A component that displays the YouTube search results directly in the JSF page (Interactive Example)</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>      
+                
+               <h:outputText value="Digg Search List Component (Simple Example)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="simpleDiggSearchList.xhtml">
+                        <f:verbatim>A component that displays the Digg search results directly in the JSF page (Simple Example)</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="Digg Search List Component (Interactive Example)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="diggSearchList.xhtml">
+                        <f:verbatim>A component that displays the Digg search results directly in the JSF page (Interactive Example)</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                 
+                
+               <h:outputText value="Google Search List Component (Simple Example)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="simpleGoogleSearchList.xhtml">
+                        <f:verbatim>A component that displays the Google search results directly in the JSF page (Simple Example)</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="Google Search List Component (Interactive Example)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="googleSearchList.xhtml">
+                        <f:verbatim>A component that displays the Google search results directly in the JSF page (Interactive Example)</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+               <h:outputText value="Twitter Search List Component (Simple Example)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="simpleTwitterSearchList.xhtml">
+                        <f:verbatim>A component that displays the Twitter search results directly in the JSF page (Simple Example)</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                
+                
+                <h:outputText value="Twitter Search List Component (Interactive Example)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="twitterSearchList.xhtml">
+                        <f:verbatim>A component that displays the Twitter search results directly in the JSF page (Interactive Example)</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>          
+                                        
+                <h:outputText value="Complete GMaps4JSF Examples" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="http://www.mashups4jsf.com/gmaps4jsf-examples">
+                        <f:verbatim>The complete GMaps4JSF Examples</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>    
+                
+                <br />
+                <h1>RSS Feed Reader</h1>                
+                <h:outputText value="Generic RSS Feed Reader Component (From an external RSS Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="rssFeedReader.xhtml">
+                        <f:verbatim>A component that can read any RSS2.0 feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid> 
+                
+                <h:outputText value="Generic RSS Feed Reader Component (From an internal RSS Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="rssFeedReader2.xhtml">
+                        <f:verbatim>A component that can read any RSS2.0 feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                 
+
+                <br />
+                <h1>ATOM Feed Reader</h1>                  
+                <h:outputText value="Generic ATOM Feed Reader Component (From an external ATOM Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="atomFeedReader.xhtml">
+                        <f:verbatim>A component that can read any ATOM1.0 feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>   
+                
+                <h:outputText value="Generic ATOM Feed Reader Component (From an internal ATOM Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="atomFeedReader2.xhtml">
+                        <f:verbatim>A component that can read any ATOM1.0 feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>              
+                
+                <br />
+                <h1>JSON Feed Reader</h1>                  
+                <h:outputText value="Generic JSON Feed Reader Component (Get the 'JavaOne' results from Google Search)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="jsonFeedReaderGoogle.xhtml">
+                        <f:verbatim>A component that can read any JSON feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>  
+                
+                <h:outputText value="Generic JSON Feed Reader Component (Get the 'JavaOne' results from Yahoo Image Search)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="jsonFeedReaderYahooImage.xhtml">
+                        <f:verbatim>A component that can read any JSON feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                
+                
+                <h:outputText value="Generic JSON Feed Reader Component (Get the Popular 'JavaOne' tags in Delicious)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="jsonFeedReaderDelicious.xhtml">
+                        <f:verbatim>A component that can read any JSON feed in JSF</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>  
+                
+                <br />
+                <h1>Mashup Remix</h1>
+                <h:outputText value="Getting the Weather from the Map Marker Drag" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="theater1.xhtml">
+                        <f:verbatim>An example that uses the map (GMaps4JSF) marker dragging to get the weather information</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>            
+                
+                <h:outputText value="Getting the Weather Information and Map Location from table selection" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="theater2.xhtml">
+                        <f:verbatim>An example that display the place location and weather from a table selection</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                
+                
+                <h:outputText value="Search in youTube Videos, and Google in the same time" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="theater3.xhtml">
+                        <f:verbatim>An example that uses Mashups4JSF listing components for searching in youTube Videos, and Google in the same time</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>    
+                
+                <h:outputText value="Get the place weather, videos, tweets and location in the map in one shot ..." />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="theater4.xhtml">
+                        <f:verbatim>An example that uses Mashups4JSF component for getting the place weather, videos, tweets and location in the map in one shot</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                   
+                
+                <br /><br />
+                
+                <h1>Mashups4JSF Services</h1>
+                <h:outputText value="YouTube Search Service" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="youTubeSearchService.xhtml">
+                        <f:verbatim>A service that is implemented by Mashups4JSF that wraps the youTube search REST API</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="YouTube Services Demo" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="youTubeServices.xhtml">
+                        <f:verbatim>An examples that uses the YouTube Search service with the youTube player component together</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="Digg Services" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="diggSearchService.xhtml">
+                        <f:verbatim>An example that uses the Digg search service to search for stories</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="Google Search Services" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="googleSearchService.xhtml">
+                        <f:verbatim>An example that uses the Google search service to search for anything on Google web</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>     
+                
+                <h:outputText value="Twitter Services" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="twitterSearchService.xhtml">
+                        <f:verbatim>An example that uses the Twitter search service to search for tweets</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>                
+                
+                <h:outputText value="Generic Services (RSS Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/NewsRssServlet">
+                        <f:verbatim>A servlet that uses the Mashups4JSF Feed producer service to produce RSS2.0 feeds</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>       
+                
+                <h:outputText value="Generic Services (ATOM Feed Producer)" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/NewsAtomServlet">
+                        <f:verbatim>A servlet that uses the Mashups4JSF Feed producer service to produce ATOM1.0 feeds</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>   
+        
+    </h:form>
+</ui:define>    
+<ui:define name="footer">
+</ui:define>    
+
+</ui:composition>
+</html>  

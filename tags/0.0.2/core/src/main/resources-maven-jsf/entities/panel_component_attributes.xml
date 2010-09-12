@@ -1,0 +1,61 @@
+&standard_uicomponent_attributes;
+&container_component_attributes;
+<attribute>
+	<name>visible</name>
+	<required>false</required>
+	<type>boolean</type>
+	<defaultValue>true</defaultValue>
+	<description>
+		Sets the element's "display" style property to either
+		"block"(true) or "none" (false)
+	</description>
+</attribute>
+<attribute>
+	<name>constrainToViewport</name>
+	<required>false</required>
+	<type>boolean</type>
+	<defaultValue>false</defaultValue>
+	<description>
+		Boolean value to keep the tooltip panel inside the confines of
+		the size of viewport
+	</description>
+</attribute>
+<attribute>
+	<name>close</name>
+	<required>false</required>
+	<type>boolean</type>
+	<defaultValue>true</defaultValue>
+	<description>Displays a "close" icon in the header</description>
+</attribute>
+<attribute>
+	<name>draggable</name>
+	<required>false</required>
+	<type>boolean</type>
+	<defaultValue>true</defaultValue>
+	<description>
+		Boolean value whether to allow the user to drag the Panel using
+		its header
+	</description>
+</attribute>
+<attribute>
+	<name>underlay</name>
+	<required>false</required>
+	<type>java.lang.String</type>
+	<defaultValue>shadow</defaultValue>
+	<description>
+		Specifies the type of underlay to display under the Panel.
+		Possible values: none|shadow|matte
+	</description>
+</attribute>
+<attribute>
+	<name>modal</name>
+	<required>false</required>
+	<type>boolean</type>
+	<defaultValue>false</defaultValue>
+	<description>
+		Boolean value that specifies whether the document should be
+		shielded with a partially transparent mask to require the user
+		to close the Panel before being able to activate any elements in
+		the document.
+	</description>
+</attribute>
