@@ -6,7 +6,7 @@
 	<groupId>com.googlecode.mashups4jsf</groupId>
 	<artifactId>mashups4jsf-examples</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>Mashups4JSF Examples Project</name>
 	<url>http://maven.apache.org</url>
 
@@ -74,7 +74,7 @@
 		<dependency>
 			<groupId>com.googlecode.mashups4jsf</groupId>
 			<artifactId>mashups4jsf-core</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
+			<version>0.0.2</version>
 			<scope>compile</scope>
 		</dependency>
 		
