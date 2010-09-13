@@ -6,7 +6,7 @@
   <groupId>com.googlecode.mashups4jsf</groupId>
   <artifactId>mashups4jsf-project</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.2</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>Mashups4JSF Modules</name>
   <url>http://code.google.com/p/mashups4jsf/</url>
 
