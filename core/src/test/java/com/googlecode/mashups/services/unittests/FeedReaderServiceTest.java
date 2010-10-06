@@ -34,7 +34,7 @@ public class FeedReaderServiceTest extends TestCase {
     public void testGetJSONFeedFromGoogle() throws Exception {
         try {
             String feedURL = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=javaone";
-            JSONArray resultArray = GenericServicesFactory.getFeedReaderService().readJSONFeed(feedURL, "results");
+            JSONArray resultArray = (JSONArray) GenericServicesFactory.getFeedReaderService().readJSONFeed(feedURL, "results");
             
             System.out.println("Trying to search for JavaOne in Google ...");
             
@@ -53,7 +53,7 @@ public class FeedReaderServiceTest extends TestCase {
     public void testGetJSONFeedFromYahooImageSearch() throws Exception {
         try {
             String feedURL = "http://search.yahooapis.com/ImageSearchService/V1/imageSearch?appid=YahooDemo&query=javaone&output=json";
-            JSONArray resultArray = GenericServicesFactory.getFeedReaderService().readJSONFeed(feedURL, "Result");
+            JSONArray resultArray = (JSONArray) GenericServicesFactory.getFeedReaderService().readJSONFeed(feedURL, "Result");
             
             System.out.println("Trying to search for JavaOne in Yahoo Images ...");
             
@@ -72,7 +72,7 @@ public class FeedReaderServiceTest extends TestCase {
     public void testGetJSONFeedFromDelicious() throws Exception {
         try {
             String feedURL = "http://feeds.delicious.com/v2/json/popular/javaone";
-            JSONArray resultArray = GenericServicesFactory.getFeedReaderService().readJSONFeed(feedURL, "none");
+            JSONArray resultArray = (JSONArray) GenericServicesFactory.getFeedReaderService().readJSONFeed(feedURL, "none");
             
             System.out.println("Trying to search for popular 'JavaOne' tags in Delicious ...");
             

@@ -44,8 +44,7 @@ public class FeedReaderImpl implements FeedReader {
 
     private FeedReaderImpl() {
     }
-
-    @SuppressWarnings("unchecked")
+    
     public SyndFeed readATOMFeed(String feedURL) throws Exception {
         URL            feedUrl = new URL(feedURL);
         SyndFeedInput  input   = new SyndFeedInput();
@@ -54,8 +53,7 @@ public class FeedReaderImpl implements FeedReader {
         return feed;
     }
 
-    @SuppressWarnings("unchecked")
-    public JSONArray readJSONFeed(String feedURL, String jsonArrayName) throws Exception {
+    public Object readJSONFeed(String feedURL, String jsonArrayName) throws Exception {
         URL               feedUrl      = new URL(feedURL);        
         InputStreamReader streamReader = new InputStreamReader(feedUrl.openStream());        
         StringBuilder     content      = new StringBuilder();
@@ -66,10 +64,9 @@ public class FeedReaderImpl implements FeedReader {
             content.append(line);
         }
                 
-        return getJSONArray(jsonArrayName, content);
+        return getJSONData(jsonArrayName, content);
     }
 
-    @SuppressWarnings("unchecked")
     public SyndFeed readRSSFeed(String feedURL) throws Exception {
         URL            feedUrl = new URL(feedURL);
         SyndFeedInput  input   = new SyndFeedInput();
@@ -78,8 +75,15 @@ public class FeedReaderImpl implements FeedReader {
         return feed;
     }
     
-    private static JSONArray getJSONArray(String arrayName, StringBuilder content) throws Exception {
+    private static Object getJSONData(String arrayName, StringBuilder content) throws Exception {
         if (arrayName.equalsIgnoreCase(NONE)) {
+            
+            // This means it is not an array, it is a simple dummy object ...
+            if (content.indexOf("[") == -1 && content.indexOf("{") == 0) {
+        	//System.out.println("content: " + content);
+        	return new JSONObject(content.toString());
+            }
+            
             return new JSONArray(content.toString());
         }
         

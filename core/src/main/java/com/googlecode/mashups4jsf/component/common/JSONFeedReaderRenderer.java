@@ -50,8 +50,19 @@ public class JSONFeedReaderRenderer extends Renderer {
                 throw new IOException(MAXIMUM_COUNT_SHOULD_BE_GREATER_THAN_ZERO);
             }
             
-            JSONArray resultArray = GenericServicesFactory.getFeedReaderService().readJSONFeed(jsonFeedReader.getFeedURL(), 
-                                                                                               jsonFeedReader.getFeedArrayName());
+            Object    jsonData    = GenericServicesFactory.getFeedReaderService().readJSONFeed(jsonFeedReader.getFeedURL(), jsonFeedReader.getFeedArrayName());            
+            JSONArray resultArray = null;
+            
+            if (jsonData instanceof JSONArray) {
+        	resultArray = (JSONArray) jsonData;
+            } else if (jsonData instanceof JSONObject) {
+        	JSONObject jsonObject = (JSONObject) jsonData;
+        	
+        	resultArray = new JSONArray();
+        	resultArray.put(jsonObject);
+            } else {
+        	throw new IOException("Unrecognized JSON Data!!!");
+            }
             
             UIComponent itemFacet = jsonFeedReader.getFacet(ITEM);
             
@@ -62,11 +73,17 @@ public class JSONFeedReaderRenderer extends Renderer {
             Integer index = 0;
             
             for (int i = 0; i < resultArray.length(); ++i) {
-                
-                JSONObject          jsonObject = (JSONObject) resultArray.get(i);
-                Map<String, Object> jsonMap    = convertJSONObjectToMap(jsonObject);
-                
-                context.getApplication().createValueBinding("#{" + jsonFeedReader.getItemVar() + "}").setValue(context, jsonMap);
+        	Object resultItem = resultArray.get(i);
+        	
+        	if (resultItem instanceof JSONObject) {
+                    JSONObject          jsonObject = (JSONObject) resultItem;
+                    Map<String, Object> jsonMap    = convertJSONObjectToMap(jsonObject);
+                    
+                    context.getApplication().createValueBinding("#{" + jsonFeedReader.getItemVar() + "}").setValue(context, jsonMap);
+        	} else {
+                    context.getApplication().createValueBinding("#{" + jsonFeedReader.getItemVar() + "}").setValue(context, resultItem);
+        	}
+        	
                 context.getApplication().createValueBinding("#{" + jsonFeedReader.getItemIndex() + "}").setValue(context, index++);        
                 encodeRecursive(context, itemFacet);
                 
@@ -76,6 +93,7 @@ public class JSONFeedReaderRenderer extends Renderer {
             }
 
         } catch (Exception exception) {
+            exception.printStackTrace();
             throw new IOException("The following exception occurs: " + exception.getMessage());
         }
     }
@@ -86,8 +104,13 @@ public class JSONFeedReaderRenderer extends Renderer {
         String[] names = JSONObject.getNames(jsonObject);
         
         for (String attributeName : names) {
-            //System.out.println("Putting Map Item content: " + attributeName);
-            jsonMap.put(attributeName, jsonObject.get(attributeName));
+            Object attributeValue = jsonObject.get(attributeName);
+            
+            if (attributeValue instanceof JSONObject) {
+        	jsonMap.put(attributeName, convertJSONObjectToMap((JSONObject) attributeValue));
+            } else {
+        	jsonMap.put(attributeName, attributeValue);
+            }
         }
         
         return jsonMap;
