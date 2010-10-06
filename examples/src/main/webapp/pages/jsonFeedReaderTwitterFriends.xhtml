@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:mashup="http://code.google.com/p/mashups4jsf/">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to the JSON Feed Reader Component</ui:define>
+
+<ui:define name="mashup">
+    <h1>The JSON Feed Reader Component</h1>
+    <h3>Get the first 50 twitter followers for your twitter id</h3>
+    
+    <h:form id="jsonFeedReader">
+    
+        <h:panelGrid columns="3">
+            <h:outputText styleClass="standard_bold" value="Enter your twitter id (like 'edburns' or 'hazems'): "/>
+            <h:inputText id="txtSearchQuery" styleClass="standard"  value="#{twitterSearchForm.searchQuery}" required="true"/>
+            <h:commandButton value="Get your followers" styleClass="standard" action="#{twitterSearchForm.doNothing}">            
+                 <f:ajax execute="txtSearchQuery" render="searchResults"/>            
+            </h:commandButton>
+        </h:panelGrid>
+            
+        <h:panelGroup id="searchResults">        
+	        <mashup:jsonFeedReader feedURL="http://api.twitter.com/1/statuses/followers.json?screen_name=#{twitterSearchForm.searchQuery}"
+	                               maximumCount="50"
+	                               feedArrayName="none"
+	                               itemVar="searchItem"
+	                               itemIndex="index" 
+	                               rendered="#{twitterSearchForm.searchQuery ne null}">
+	
+	            <f:facet name="item">									  
+					<h:panelGrid columns="2"> 
+	
+						<h:outputText value="&lt;b&gt;#{index + 1}. &lt;/b&gt;"  escape="false"/>
+						<h:outputText value=""/>									
+	
+						<h:outputText styleClass="standard" value="&lt;b&gt;Name:&lt;/b&gt;" escape="false"/>												
+						<h:outputText styleClass="standard" value="&lt;b&gt;#{searchItem.name}&lt;/b&gt;" escape="false"/>
+	
+						<h:outputText styleClass="standard" value="&lt;b&gt;Picture:&lt;/b&gt;" escape="false"/>
+						<h:graphicImage width="48" height="48" alt="picture of #{searchItem.name}" url="#{searchItem.profile_image_url}"/>													
+	
+						<h:outputText styleClass="standard" value="&lt;b&gt;Location:&lt;/b&gt;" escape="false"/>												
+						<h:outputText styleClass="standard" value="&lt;b&gt;#{searchItem.location}&lt;/b&gt;" escape="false"/>
+												
+						<h:outputText styleClass="standard" value="&lt;b&gt;Status:&lt;/b&gt;" escape="false"/>												
+						<h:outputText styleClass="standard" value="&lt;b&gt;#{searchItem.status.text}&lt;/b&gt;" escape="false"/>				
+						
+						<h:outputText value=""/><h:outputText value=""/>
+	
+					</h:panelGrid> 
+	            </f:facet>
+	        </mashup:jsonFeedReader>
+        </h:panelGroup>
+    </h:form>
+</ui:define>
+
+</ui:composition>
+</html>
