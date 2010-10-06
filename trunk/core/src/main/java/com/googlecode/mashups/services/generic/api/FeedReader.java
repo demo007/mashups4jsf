@@ -18,8 +18,6 @@
  */
 package com.googlecode.mashups.services.generic.api;
 
-import org.json.JSONArray;
-
 import com.sun.syndication.feed.synd.SyndFeed;
 
 
@@ -31,5 +29,5 @@ import com.sun.syndication.feed.synd.SyndFeed;
 public interface FeedReader {
     public SyndFeed  readRSSFeed (String feedURL)                       throws Exception;
     public SyndFeed  readATOMFeed(String feedURL)                       throws Exception;
-    public JSONArray readJSONFeed(String feedURL, String jsonArrayName) throws Exception;
+    public Object    readJSONFeed(String feedURL, String jsonArrayName) throws Exception;
 }
