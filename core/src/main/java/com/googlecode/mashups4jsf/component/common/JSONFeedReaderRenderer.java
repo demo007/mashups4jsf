@@ -103,6 +103,10 @@ public class JSONFeedReaderRenderer extends Renderer {
         
         String[] names = JSONObject.getNames(jsonObject);
         
+        if (names == null) {
+            return null;
+        }
+        
         for (String attributeName : names) {
             Object attributeValue = jsonObject.get(attributeName);
             
