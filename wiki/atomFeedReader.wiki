@@ -1,3 +1,5 @@
+<wiki:gadget url="http://mashups4jsf.googlecode.com/svn/wiki/ads/adsense.xml" border="0" width="780" height="100" />
+
 This component gives you the ability to get any ATOM Feed in your JSF page.
 
 || Component Attribute   || Required || Description || Default value ||
