@@ -14,6 +14,7 @@
     <module>maven</module>
     <module>core</module>
 	<module>examples</module>
+	<module>icefaces-integration-example</module>
   </modules>
 
 </project>
