@@ -39,15 +39,15 @@ public class News {
     
     static {
 	
-	// Generate random data (It can be got from the database).
-	for (int i = 0; i < 10; ++i) {
-	    news.add(new NewsItem("News Title" + i, "News Desc" + i, "http://www.google.com/search?q=" + i, "News Category" + i, "News Author" + i));
-	}
+		// Generate random data (It can be got from the database).
+		for (int i = 0; i < 10; ++i) {
+		    news.add(new NewsItem("News Title" + i, "News Desc" + i, "http://www.google.com/search?q=" + i, "News Category" + i, "News Author" + i));
+		}
     }
     
     @FeedItems
     public List getNews() {
-	return news;
+    	return news;
     }
     
     @FeedTitle

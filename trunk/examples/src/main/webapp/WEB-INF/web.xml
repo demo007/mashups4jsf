@@ -53,12 +53,21 @@
 	    	<servlet-name>SourceCodeServlet</servlet-name>
 		    <servlet-class>com.googlecode.mashups4jsf.util.SourceCodeServlet</servlet-class>
 	</servlet>
-
+	
+	<servlet>
+	    	<servlet-name>mashupFeedServlet</servlet-name>
+		    <servlet-class>com.googlecode.mashups.servlets.MashupFeedServlet</servlet-class> 
+	</servlet>
 
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>mashupFeedServlet</servlet-name>
+        <url-pattern>/mashupFeedServlet</url-pattern>
+    </servlet-mapping>  
     
     <servlet-mapping>
         <servlet-name>NewsRssServlet</servlet-name>
