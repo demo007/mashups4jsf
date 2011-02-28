@@ -35,27 +35,26 @@ import com.googlecode.mashups4jsf.example.beans.News2;
 public class NewsAtomServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	// output the result of the annotated news object
-	News2 news = new News2();
-
-	// Set content type
-	response.setContentType("application/atom+xml");
-	
-	try {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {    
 	    
-	    // Use the Mashups4JSF Generic Service Feed Producer to produce the News Atom feed.
-	    GenericServicesFactory.getFeedProducerService().produceFeed(news, response.getWriter());
+    	// output the result of the annotated news object
+	    News2 news = new News2();
+	
+	    // Set content type
+	    response.setContentType("application/atom+xml");
+    
+    	try {
+	       
+    		// Use the Mashups4JSF Generic Service Feed Producer to produce the News Atom feed.
+	        GenericServicesFactory.getFeedProducerService().produceFeed(news, response.getWriter());
         } catch (Exception e) {
-	    System.out.println("The following error occured:" + e.getMessage());
-	    e.printStackTrace();
+	        System.out.println("The following error occured: " + e.getMessage());
+	        e.printStackTrace();
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	doGet(request, response);
-    }
-    
+    	doGet(request, response);
+    }   
 }

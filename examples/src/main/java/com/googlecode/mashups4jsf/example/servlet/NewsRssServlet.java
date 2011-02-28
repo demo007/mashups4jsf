@@ -19,7 +19,6 @@
 package com.googlecode.mashups4jsf.example.servlet;
 
 import java.io.IOException;
-import java.io.OutputStream;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,26 +36,26 @@ public class NewsRssServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	// output the result of the annotated news object
-	News news = new News();
+    
+    	// output the result of the annotated news object
+    	News news = new News();
 
-	// Set content type
-	response.setContentType("application/rss+xml");
-	
-	try {
-	    
-	    // Use the Mashups4JSF Generic Service Feed Producer to produce the News Rss feed.
-	    GenericServicesFactory.getFeedProducerService().produceFeed(news, response.getWriter());
+    	// Set content type
+    	response.setContentType("application/rss+xml");
+    
+    	try {
+        
+    		// Use the Mashups4JSF Generic Service Feed Producer to produce the News Rss feed.
+    		GenericServicesFactory.getFeedProducerService().produceFeed(news, response.getWriter());
         } catch (Exception e) {
-	    System.out.println("The following error occured:" + e.getMessage());
-	    e.printStackTrace();
+        	System.out.println("The following error occured:" + e.getMessage());
+        	e.printStackTrace();
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	doGet(request, response);
+    	doGet(request, response);
     }
     
 }
