@@ -223,14 +223,14 @@
                 
                 <h:outputText value="Generic Services (RSS Feed Producer)" />
                 <h:panelGrid style="padding-left:25px">
-                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/mashupFeedServlet?FEED_CLASS=com.googlecode.mashups4jsf.example.beans.News">
+                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/mashupFeedServlet?feedClass=com.googlecode.mashups4jsf.example.beans.News&amp;output=rss">
                         <f:verbatim>A servlet that uses the Mashups4JSF Feed producer service to produce RSS2.0 feeds</f:verbatim>
                     </h:outputLink>
                 </h:panelGrid>       
                 
                 <h:outputText value="Generic Services (ATOM Feed Producer)" />
                 <h:panelGrid style="padding-left:25px">
-                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/mashupFeedServlet?FEED_CLASS=com.googlecode.mashups4jsf.example.beans.News2">
+                    <h:outputLink value="#{facesContext.externalContext.requestContextPath}/mashupFeedServlet?feedClass=com.googlecode.mashups4jsf.example.beans.News&amp;output=atom">
                         <f:verbatim>A servlet that uses the Mashups4JSF Feed producer service to produce ATOM1.0 feeds</f:verbatim>
                     </h:outputLink>
                 </h:panelGrid>   
