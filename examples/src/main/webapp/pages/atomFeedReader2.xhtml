@@ -16,7 +16,7 @@
     <h3>ATOM feeds from the Mashups4JSF internal ATOM Feed Producer</h3>
     
     <h:form id="rssFeedReader">
-        <mashup:atomFeedReader feedURL="http://#{facesContext.externalContext.request.remoteHost}:#{facesContext.externalContext.request.localPort}#{facesContext.externalContext.request.contextPath}/NewsAtomServlet"
+        <mashup:atomFeedReader feedURL="http://#{facesContext.externalContext.request.remoteHost}:#{facesContext.externalContext.request.localPort}#{facesContext.externalContext.request.contextPath}/mashupFeedServlet?feedClass=com.googlecode.mashups4jsf.example.beans.News&amp;output=atom"
                                maximumCount="10"
                                feedVar="feed"
                                entryVar="entry"

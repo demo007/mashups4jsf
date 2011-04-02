@@ -16,7 +16,7 @@
     <h3>RSS feeds from the Mashups4JSF internal RSS Feed Producer</h3>
     
     <h:form id="rssFeedReader">
-        <mashup:rssFeedReader feedURL="http://#{facesContext.externalContext.request.remoteHost}:#{facesContext.externalContext.request.localPort}#{facesContext.externalContext.request.contextPath}/NewsRssServlet"
+        <mashup:rssFeedReader feedURL="http://#{facesContext.externalContext.request.remoteHost}:#{facesContext.externalContext.request.localPort}#{facesContext.externalContext.request.contextPath}/mashupFeedServlet?feedClass=com.googlecode.mashups4jsf.example.beans.News&amp;output=rss"
                               maximumCount="10"
                               channelVar="channel"
                               itemVar="item"
