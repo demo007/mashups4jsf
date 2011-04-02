@@ -24,6 +24,7 @@ import java.io.Writer;
 import junit.framework.TestCase;
 
 import com.googlecode.mashups.services.factory.GenericServicesFactory;
+import com.googlecode.mashups.services.generic.api.FeedType;
 
 /**
  * @author hazems
@@ -35,9 +36,9 @@ public class RssFeedProducerServiceTest extends TestCase {
 	try {
 	    News news = new News();
 	    
-	    Writer writer = new FileWriter("c:\\feed.xml");
+	    Writer writer = new FileWriter("RSS_Feed.xml");
 	    
-	    GenericServicesFactory.getFeedProducerService().produceFeed(news, writer);
+	    GenericServicesFactory.getFeedProducerService().produceFeed(FeedType.RSS, news, writer);
 	    
 	    writer.close();
 

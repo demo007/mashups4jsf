@@ -1,8 +1,8 @@
 package com.googlecode.mashups4jsf.common.util;
 
 public class Mashups4JSFConstants {
-	public static final String FEED_CLASS  = "FEED_CLASS";
-	public static final String OUTPUT_TYPE = "OUTPUT";
+	public static final String FEED_CLASS  = "feedClass";
+	public static final String OUTPUT_TYPE = "output";
 	
 	public static final String RSS_OUTPUT_TYPE  = "application/rss+xml";
 	public static final String ATOM_OUTPUT_TYPE = "application/atom+xml";		

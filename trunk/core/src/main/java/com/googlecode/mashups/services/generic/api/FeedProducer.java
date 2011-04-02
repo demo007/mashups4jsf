@@ -26,5 +26,5 @@ import java.io.Writer;
  *
  */
 public interface FeedProducer {
-    public void produceFeed(Object annotatedObject, Writer writer) throws Exception;
+    public void produceFeed(FeedType feedType, Object annotatedObject, Writer writer) throws Exception;
 }
