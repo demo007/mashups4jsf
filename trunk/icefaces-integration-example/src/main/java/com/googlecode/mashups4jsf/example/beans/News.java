@@ -20,12 +20,12 @@ package com.googlecode.mashups4jsf.example.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.googlecode.mashups.services.generic.api.Feed;
 import com.googlecode.mashups.services.generic.api.FeedDescription;
 import com.googlecode.mashups.services.generic.api.FeedItems;
 import com.googlecode.mashups.services.generic.api.FeedLink;
 import com.googlecode.mashups.services.generic.api.FeedTitle;
-import com.googlecode.mashups.services.generic.api.Feed.FeedType;
 
 
 /**
@@ -33,7 +33,7 @@ import com.googlecode.mashups.services.generic.api.Feed.FeedType;
  *
  */
 
-@Feed(type=FeedType.Rss)
+@Feed
 public class News {
     static List <NewsItem> news = new ArrayList<NewsItem>();
     
