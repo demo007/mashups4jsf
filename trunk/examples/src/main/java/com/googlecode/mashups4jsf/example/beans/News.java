@@ -25,7 +25,6 @@ import com.googlecode.mashups.services.generic.api.FeedDescription;
 import com.googlecode.mashups.services.generic.api.FeedItems;
 import com.googlecode.mashups.services.generic.api.FeedLink;
 import com.googlecode.mashups.services.generic.api.FeedTitle;
-import com.googlecode.mashups.services.generic.api.Feed.FeedType;
 
 
 /**
@@ -33,7 +32,7 @@ import com.googlecode.mashups.services.generic.api.Feed.FeedType;
  *
  */
 
-@Feed(type=FeedType.Rss)
+@Feed
 public class News {
     static List <NewsItem> news = new ArrayList<NewsItem>();
     
@@ -52,16 +51,16 @@ public class News {
     
     @FeedTitle
     public String getTitle() {
-	return "News Title";
+    	return "News Title";
     }
     
     @FeedDescription
     public String getDescription() {
-	return "News Description";
+    	return "News Description";
     }
     
     @FeedLink
     public String getLink() {
-	return "http://www.google.com";
+    	return "http://www.google.com";
     }
 }
