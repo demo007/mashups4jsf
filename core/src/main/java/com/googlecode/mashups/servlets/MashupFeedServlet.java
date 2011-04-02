@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.googlecode.mashups.services.factory.GenericServicesFactory;
 import com.googlecode.mashups.services.generic.api.Feed;
-import com.googlecode.mashups.services.generic.api.Feed.FeedType;
+import com.googlecode.mashups.services.generic.api.FeedType;
+import com.googlecode.mashups4jsf.common.util.ExceptionMessages;
 import com.googlecode.mashups4jsf.common.util.Mashups4JSFConstants;
 
 /**
@@ -33,20 +34,18 @@ public class MashupFeedServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         // Read the servlet parameters.
-        String feedClassParameter = getServletConfig().getInitParameter(Mashups4JSFConstants.FEED_CLASS);
-        
-        if (feedClassParameter == null) {
-        	feedClassParameter = request.getParameter(Mashups4JSFConstants.FEED_CLASS);
-        }
+        String feedClassParameter = request.getParameter(Mashups4JSFConstants.FEED_CLASS);
         
         if (feedClassParameter == null) {
             throw new ServletException(Mashups4JSFConstants.FEED_ERROR_MESSAGE_MISSING_FEED_CLASS);
         }
         
         // Generate the feed.
-        Object feedClassInstance = null;
-        Class  feedClass         = null;
-        String outputType        = "";
+        String   outputType        = request.getParameter(Mashups4JSFConstants.OUTPUT_TYPE);
+        String   responseType      = "";
+        Object   feedClassInstance = null;
+        Class    feedClass         = null;
+        FeedType feedType          = null;
         
         try {
         	feedClass = Class.forName(feedClassParameter);
@@ -54,28 +53,28 @@ public class MashupFeedServlet extends HttpServlet {
             
             Feed feedAnnotation = (Feed) feedClass.getAnnotation(Feed.class);
             
-            if (feedAnnotation.type().equals(FeedType.Rss)) {
-                outputType = Mashups4JSFConstants.RSS_OUTPUT_TYPE;
+            if (outputType.equalsIgnoreCase(Mashups4JSFConstants.RSS_VALUE)) {
+                feedType = FeedType.RSS;
+                responseType = Mashups4JSFConstants.RSS_OUTPUT_TYPE;
             } else {
-                outputType = Mashups4JSFConstants.ATOM_OUTPUT_TYPE;
+                feedType = FeedType.ATOM;
+                responseType = Mashups4JSFConstants.ATOM_OUTPUT_TYPE;                
             }
         } catch (Exception exception) {
         	exception.printStackTrace();
             throw new ServletException(Mashups4JSFConstants.FEED_ERROR_MESSAGE_CANNOT_INSTANCE_CLASS);            
         }
         
-        System.out.println("OutputType = " + outputType);
-        
         // Set the content type.
-        response.setContentType(outputType);
+        response.setContentType(responseType);
         
         try {
             
             // Use the Mashups4JSF Generic Service Feed Producer to produce the feed.
-            GenericServicesFactory.getFeedProducerService().produceFeed(feedClassInstance, response.getWriter());
+            GenericServicesFactory.getFeedProducerService().produceFeed(feedType, feedClassInstance, response.getWriter());
         } catch (Exception e) {
             e.printStackTrace();        	
-            System.err.println("The following error occured while producing the feed: " + e.getMessage());
+            System.err.println(ExceptionMessages.FEED_PRODUCING_ERROR + e.getMessage());
         }        
     }
 

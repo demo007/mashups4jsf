@@ -27,6 +27,7 @@ import com.googlecode.mashups.services.generic.api.FeedDescription;
 import com.googlecode.mashups.services.generic.api.FeedItems;
 import com.googlecode.mashups.services.generic.api.FeedLink;
 import com.googlecode.mashups.services.generic.api.FeedTitle;
+import com.googlecode.mashups.services.generic.api.FeedType;
 import com.googlecode.mashups.services.generic.api.ItemAuthor;
 import com.googlecode.mashups.services.generic.api.ItemCategory;
 import com.googlecode.mashups.services.generic.api.ItemDescription;
@@ -35,7 +36,6 @@ import com.googlecode.mashups.services.generic.api.ItemTitle;
 import com.googlecode.mashups.services.generic.api.Feed;
 import com.googlecode.mashups.services.generic.api.FeedProducer;
 import com.googlecode.mashups.services.generic.api.FeedItem;
-import com.googlecode.mashups.services.generic.api.Feed.FeedType;
 import com.sun.syndication.feed.synd.SyndCategory;
 import com.sun.syndication.feed.synd.SyndCategoryImpl;
 import com.sun.syndication.feed.synd.SyndContent;
@@ -58,7 +58,7 @@ public class FeedProducerImpl implements FeedProducer {
     }
     
     @SuppressWarnings("unchecked")
-    public void produceFeed(Object annotatedObject, Writer writer) throws Exception {
+    public void produceFeed(FeedType feedType, Object annotatedObject, Writer writer) throws Exception {
         Class  feedClass      = annotatedObject.getClass();
         String title          = "";
         String description    = "";
@@ -84,7 +84,7 @@ public class FeedProducerImpl implements FeedProducer {
         
         SyndFeed feed = new SyndFeedImpl();
         
-        if (feedAnnotation.type().equals(FeedType.Rss)) {
+        if (feedType.equals(FeedType.RSS)) {
             feed.setFeedType(RSS_2_0);
         } else {
             feed.setFeedType(ATOM_1_0);

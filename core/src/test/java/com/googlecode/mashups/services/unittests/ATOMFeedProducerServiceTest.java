@@ -24,20 +24,21 @@ import java.io.Writer;
 import junit.framework.TestCase;
 
 import com.googlecode.mashups.services.factory.GenericServicesFactory;
+import com.googlecode.mashups.services.generic.api.FeedType;
 
 /**
  * @author hazems
  *
  */
-public class FeedProducerServiceTest extends TestCase {
+public class ATOMFeedProducerServiceTest extends TestCase {
 
-    public void testProduceRssFeed() throws Exception {
+    public void testProduceATOMFeed() throws Exception {
         try {
-            News2 news = new News2();
+            News news = new News();
 
-            Writer writer = new FileWriter("c:\\feed2.xml");
+            Writer writer = new FileWriter("ATOM_feed.xml");
 
-            GenericServicesFactory.getFeedProducerService().produceFeed(news, writer);
+            GenericServicesFactory.getFeedProducerService().produceFeed(FeedType.ATOM, news, writer);
 
             writer.close();
         } catch (Exception e) {
