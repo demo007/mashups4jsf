@@ -20,7 +20,8 @@ import com.googlecode.mashups4jsf.common.util.Mashups4JSFConstants;
  * </p>
  * <p>
  * The <code>MashupFeedServlet</code> servlet has the following parameters:<br/>
- * 1. FEED_CLASS: The application class annotated with @Feed. 
+ * 1. feedClass: The application class annotated with @Feed.
+ * 2. output: The output of the feed (rss or atom). 
  * It can be passed as a servlet GET parameter or as a servlet init parameter. <br/>
  * </p>
  * @author hazems
