@@ -55,42 +55,42 @@ public class DiggSearchForm {
     private ArrayList<SelectItem>  offsetItems         = null;
 
     public ArrayList<SelectItem> getCountItems() {
-	countItems = new ArrayList<SelectItem>();
-	countItems.add(new SelectItem("", "(optional)"));
-	countItems.add(new SelectItem("1", "1"));
-	countItems.add(new SelectItem("5", "5"));
-	countItems.add(new SelectItem("10", "10"));
-	countItems.add(new SelectItem("15", "15"));
-	return countItems;
+		countItems = new ArrayList<SelectItem>();
+		countItems.add(new SelectItem("", "(optional)"));
+		countItems.add(new SelectItem("1", "1"));
+		countItems.add(new SelectItem("5", "5"));
+		countItems.add(new SelectItem("10", "10"));
+		countItems.add(new SelectItem("15", "15"));
+		return countItems;
     }
 
     public ArrayList<SelectItem> getOffsetItems() {
-	offsetItems = new ArrayList<SelectItem>();
-	offsetItems.add(new SelectItem("", "(optional)"));
-	offsetItems.add(new SelectItem("0", "0"));
-	offsetItems.add(new SelectItem("5", "5"));
-	offsetItems.add(new SelectItem("10", "10"));
-	offsetItems.add(new SelectItem("15", "15"));
-	return offsetItems;
+		offsetItems = new ArrayList<SelectItem>();
+		offsetItems.add(new SelectItem("", "(optional)"));
+		offsetItems.add(new SelectItem("0", "0"));
+		offsetItems.add(new SelectItem("5", "5"));
+		offsetItems.add(new SelectItem("10", "10"));
+		offsetItems.add(new SelectItem("15", "15"));
+		return offsetItems;
     }
 
     public ArrayList<SelectItem> getSortItems() {
-	sortItems = new ArrayList<SelectItem>();
-	sortItems.add(new SelectItem("", "(optional)"));
-	sortItems.add(new SelectItem("submit_date-desc", "Submit Date Desc"));
-	sortItems.add(new SelectItem("submit_date-asc", "Submit Date Asc"));
-	sortItems.add(new SelectItem("promote_date-desc", "Promote Date Desc"));
-	sortItems.add(new SelectItem("promote_date-asc", "Promote Date-Asc"));
-	sortItems.add(new SelectItem("digg_count-desc", "Digg Count Desc"));
-	sortItems.add(new SelectItem("digg_count-asc", "Digg Count Asc"));
-	return sortItems;
+		sortItems = new ArrayList<SelectItem>();
+		sortItems.add(new SelectItem("", "(optional)"));
+		sortItems.add(new SelectItem("submit_date-desc", "Submit Date Desc"));
+		sortItems.add(new SelectItem("submit_date-asc", "Submit Date Asc"));
+		sortItems.add(new SelectItem("promote_date-desc", "Promote Date Desc"));
+		sortItems.add(new SelectItem("promote_date-asc", "Promote Date-Asc"));
+		sortItems.add(new SelectItem("digg_count-desc", "Digg Count Desc"));
+		sortItems.add(new SelectItem("digg_count-asc", "Digg Count Asc"));
+		return sortItems;
     }
 
     /**
      * @return the searchQuery
      */
     public String getSearchQuery() {
-	return searchQuery;
+    	return searchQuery;
     }
 
     /**
@@ -98,7 +98,7 @@ public class DiggSearchForm {
      *            the searchQuery to set
      */
     public void setSearchQuery(String searchQuery) {
-	this.searchQuery = searchQuery;
+		this.searchQuery = searchQuery;
     }
 
     /***
@@ -106,7 +106,7 @@ public class DiggSearchForm {
      * @return the count value
      */
     public String getCount() {
-	return count;
+    	return count;
     }
 
     /***
@@ -115,7 +115,7 @@ public class DiggSearchForm {
      *            the count value to set
      */
     public void setCount(String count) {
-	this.count = count;
+    	this.count = count;
     }
 
     /**
@@ -165,7 +165,7 @@ public class DiggSearchForm {
      * @return the results
      */
     public DiggSearchStoryResults getResults() {
-	return results;
+		return results;
     }
 
     /**
@@ -173,70 +173,68 @@ public class DiggSearchForm {
      *            the results to set
      */
     public void setResults(DiggSearchStoryResults results) {
-	this.results = results;
+		this.results = results;
     }
     
     
     public String doNothing() {
-	return null;
+		return null;
     }
 
     /** Used for calling the search service action . */
     public String getStoryList() {
-	List<ServiceParameter> searchParameters = new ArrayList<ServiceParameter>();
+    	List<ServiceParameter> searchParameters = new ArrayList<ServiceParameter>();
 
-	//System.out.println("-- Count:" + count);
-
-	searchParameters.add(new ServiceParameter(
-	        DiggSearchServiceParameters.SEARCH_ARGS_SEARCH_QUERY,
-	        searchQuery));
-	//Count parameter
-        count = validateCount(getCount(), DEFAULT_COUNT_VALUE);
-        if (count == null || count.equals("")) {
-            count = DEFAULT_COUNT_VALUE;
-        }
-	searchParameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_COUNT, count));
+		searchParameters.add(new ServiceParameter(
+		        DiggSearchServiceParameters.SEARCH_ARGS_SEARCH_QUERY,
+		        searchQuery));
+		//Count parameter
+	        count = validateCount(getCount(), DEFAULT_COUNT_VALUE);
+	        if (count == null || count.equals("")) {
+	            count = DEFAULT_COUNT_VALUE;
+	        }
+		searchParameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_COUNT, count));
+		
+		//Offset parameter
+		if (offset != null && !offset.equals("")) {
+		    searchParameters.add(new ServiceParameter(
+			    DiggSearchServiceParameters.SEARCH_ARGS_OFFSET, offset));
+		}
+		//Sort parameter
+		if (sort != null && !sort.equals("")) {
+		    searchParameters.add(new ServiceParameter(
+			    DiggSearchServiceParameters.SEARCH_ARGS_SORT, sort));
+		}
+		//Domain parameter
+		if (domain != null && !domain.trim().equals("")) {
+		    searchParameters.add(new ServiceParameter(
+			    DiggSearchServiceParameters.SEARCH_ARGS_DOMAIN, domain));
+		}
 	
-	//Offset parameter
-	if (offset != null && !offset.equals("")) {
-	    searchParameters.add(new ServiceParameter(
-		    DiggSearchServiceParameters.SEARCH_ARGS_OFFSET, offset));
-	}
-	//Sort parameter
-	if (sort != null && !sort.equals("")) {
-	    searchParameters.add(new ServiceParameter(
-		    DiggSearchServiceParameters.SEARCH_ARGS_SORT, sort));
-	}
-	//Domain parameter
-	if (domain != null && !domain.trim().equals("")) {
-	    searchParameters.add(new ServiceParameter(
-		    DiggSearchServiceParameters.SEARCH_ARGS_DOMAIN, domain));
-	}
-
-	// Call the search service with the provided parameters
-	try {
-	    results = DiggServicesFactory.getDiggSearchService().getStoriesList(searchParameters);
-
-	} catch (Exception e) {
-	    e.printStackTrace();
-	}
-
-	return null;
+		// Call the search service with the provided parameters
+		try {
+		    results = DiggServicesFactory.getDiggSearchService().getStoriesList(searchParameters);
+	
+		} catch (Exception e) {
+		    e.printStackTrace();
+		}
+	
+		return null;
     }
 
     /** Validate count parameter. */
     private String validateCount(String value, String defaultVal) {
-	try {
-	    if (value == null || value.trim().equals("")) {
-		count = defaultVal;
-
-	    } else {
-		count = String.valueOf(Integer.parseInt(value));
-
-	    }
-	} catch (NumberFormatException e) {
-	    count = defaultVal;
-	}
-	return count;
+		try {
+		    if (value == null || value.trim().equals("")) {
+			count = defaultVal;
+	
+		    } else {
+			count = String.valueOf(Integer.parseInt(value));
+	
+		    }
+		} catch (NumberFormatException e) {
+		    count = defaultVal;
+		}
+		return count;
     }
 }
