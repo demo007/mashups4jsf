@@ -150,32 +150,46 @@ public class DiggSearchServiceImpl implements DiggSearchService {
             resultItem.setStorySubmitDate(element.getAttributeValue(STORY_SUBMITDATE_ATTRIBUTE));
 
             // Description
-            resultItem.setDescription(element.getChild(DIGG_DESCRIPTION_ELEMENT).getText());
+            cur = element.getChild(DIGG_DESCRIPTION_ELEMENT);
+            if(cur != null){
+            	resultItem.setDescription(cur.getText());
+            }
 
             // Title
-            resultItem.setTitle(element.getChild(DIGG_TITLE_ELEMENT).getText());
+            cur = element.getChild(DIGG_TITLE_ELEMENT);
+            if(cur != null){
+            	resultItem.setTitle(cur.getText());
+            }
 
             // User Info
             cur = element.getChild(DIGG_USER_ELEMENT);
-            resultItem.setUserIcon(cur.getAttributeValue(USER_ICON_ATTRIBUTE));
-            resultItem.setUserName(cur.getAttributeValue(USER_NAME_ATTRIBUTE));
-            resultItem.setUserProfileviews(cur.getAttributeValue(USER_PROFILEVIEWS_ATTRIBUTE));
-            resultItem.setUserRegistered(cur.getAttributeValue(USER_REGISTERED_ATTRIBUTE));
+            if(cur!=null){
+            	resultItem.setUserIcon(cur.getAttributeValue(USER_ICON_ATTRIBUTE));
+            	resultItem.setUserName(cur.getAttributeValue(USER_NAME_ATTRIBUTE));
+            	resultItem.setUserProfileviews(cur.getAttributeValue(USER_PROFILEVIEWS_ATTRIBUTE));
+            	resultItem.setUserRegistered(cur.getAttributeValue(USER_REGISTERED_ATTRIBUTE));
+            }
 
             // Topic
             cur = element.getChild(DIGG_TOPIC_ELEMENT);
-            resultItem.setTopicName(cur.getAttributeValue(TOPIC_NAME_ATTRIBUTE));
-            resultItem.setTopicShortName(cur.getAttributeValue(TOPIC_SHORTNAME_ATTRIBUTE));
+            if(cur!=null){
+            	resultItem.setTopicName(cur.getAttributeValue(TOPIC_NAME_ATTRIBUTE));
+            	resultItem.setTopicShortName(cur.getAttributeValue(TOPIC_SHORTNAME_ATTRIBUTE));
+            }
 
             // Container
             cur = element.getChild(DIGG_CONTAINER_ELEMENT);
-            resultItem.setContainerName(cur.getAttributeValue(CONTAINER_NAME_ATTRIBUTE));
-            resultItem.setContainerShortName(cur.getAttributeValue(CONTAINER_SHORTNAME_ATTRIBUTE));
+            if(cur!=null){
+            	resultItem.setContainerName(cur.getAttributeValue(CONTAINER_NAME_ATTRIBUTE));
+            	resultItem.setContainerShortName(cur.getAttributeValue(CONTAINER_SHORTNAME_ATTRIBUTE));
+            }
 
             // Short_url
             cur = element.getChild(DIGG_SHORTURL_ELEMENT);
-            resultItem.setShorturl(cur.getAttributeValue(SHORTURL_URL_ATTRIBUTE));
-            resultItem.setShorturlViewCount(cur.getAttributeValue(SHORTURL_VIEW_COUNT_ATTRIBUTE));
+            if(cur!=null){
+            	resultItem.setShorturl(cur.getAttributeValue(SHORTURL_URL_ATTRIBUTE));
+            	resultItem.setShorturlViewCount(cur.getAttributeValue(SHORTURL_VIEW_COUNT_ATTRIBUTE));
+            }
 
             // Add the populated item to the resultList
             searchResultList.add(resultItem);
