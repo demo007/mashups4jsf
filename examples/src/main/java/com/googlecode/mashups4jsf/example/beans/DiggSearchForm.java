@@ -44,12 +44,20 @@ public class DiggSearchForm {
     private String                 offset              = "0";
     private String                 domain              = "";
     private String                 sort                = "";
+	private String                 topic               = "";	
+    private String                 media               = "";
+    private String                 minDate             = "";
+    private String                 maxDate             = "";
+    
    
     /** List of optional count values */
     private ArrayList<SelectItem>  countItems          = null;
     
     /** List of optional sort values */
     private ArrayList<SelectItem>  sortItems           = null;
+    
+    /** List of optional media values */
+    private ArrayList<SelectItem>  mediaItems           = null;
     
     /** List of optional offset start values */
     private ArrayList<SelectItem>  offsetItems         = null;
@@ -86,6 +94,14 @@ public class DiggSearchForm {
 		return sortItems;
     }
 
+    public ArrayList<SelectItem> getMediaItems() {
+		mediaItems = new ArrayList<SelectItem>();
+		mediaItems.add(new SelectItem("", "All"));
+		mediaItems.add(new SelectItem("news", "News"));
+		mediaItems.add(new SelectItem("videos", "Videos"));
+		mediaItems.add(new SelectItem("images", "Images"));
+		return mediaItems;
+    }
     /**
      * @return the searchQuery
      */
@@ -160,6 +176,61 @@ public class DiggSearchForm {
         this.sort = sort;
     }
 
+    /**
+	 * @return the topic
+	 */
+	public String getTopic() {
+		return topic;
+	}
+
+	/**
+	 * @param topic the topic to set
+	 */
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+
+	/**
+	 * @return the media
+	 */
+	public String getMedia() {
+		return media;
+	}
+
+	/**
+	 * @param media the media to set
+	 */
+	public void setMedia(String media) {
+		this.media = media;
+	}
+
+	/**
+	 * @return the minDate
+	 */
+	public String getMinDate() {
+		return minDate;
+	}
+
+	/**
+	 * @param minDate the minDate to set
+	 */
+	public void setMinDate(String minDate) {
+		this.minDate = minDate;
+	}
+
+	/**
+	 * @return the maxDate
+	 */
+	public String getMaxDate() {
+		return maxDate;
+	}
+
+	/**
+	 * @param maxDate the maxDate to set
+	 */
+	public void setMaxDate(String maxDate) {
+		this.maxDate = maxDate;
+	}
 
     /**
      * @return the results
@@ -196,7 +267,6 @@ public class DiggSearchForm {
         		DiggSearchServiceParameters.SEARCH_ARGS_COUNT, count));
         }
 		
-		
 		//Offset parameter
 		if (offset != null && !offset.equals("")) {
 		    searchParameters.add(new ServiceParameter(
@@ -211,6 +281,26 @@ public class DiggSearchForm {
 		if (domain != null && !domain.trim().equals("")) {
 		    searchParameters.add(new ServiceParameter(
 			    DiggSearchServiceParameters.SEARCH_ARGS_DOMAIN, domain));
+		}
+		//Media parameter
+		if (media != null && !media.trim().equals("")) {
+		    searchParameters.add(new ServiceParameter(
+			    DiggSearchServiceParameters.SEARCH_ARGS_SEARCH_MEDIA, media));
+		}		
+		//Topic parameter
+		if (topic != null && !topic.trim().equals("")) {
+		    searchParameters.add(new ServiceParameter(
+			    DiggSearchServiceParameters.SEARCH_ARGS_SEARCH_TOPIC, topic));
+		}
+		// Min Date timestamp parameter
+		if (minDate != null && !minDate.trim().equals("")) {
+		    searchParameters.add(new ServiceParameter(
+			    DiggSearchServiceParameters.SEARCH_ARGS_SEARCH_MIN_DATE, minDate));
+		}
+		// Max Date timestamp parameter
+		if (maxDate != null && !maxDate.trim().equals("")) {
+		    searchParameters.add(new ServiceParameter(
+			    DiggSearchServiceParameters.SEARCH_ARGS_SEARCH_MAX_DATE, maxDate));
 		}
 	
 		// Call the search service with the provided parameters

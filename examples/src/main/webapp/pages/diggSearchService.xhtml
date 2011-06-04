@@ -16,6 +16,7 @@
 		
 		.standard_bold { width: 300px;  min-width : 300px; max-width: 300px; }
 		.bold_red { width: 100%; text-align: left; color: red; }
+		.bold_green { text-align: left; color: #00A624; }
 		.bold_section { width: 100%; text-align: left; color: blue; }
 		.standard { text-align:left; white-space: break-word;}		
 		
@@ -24,41 +25,67 @@
     
     <h:form id="searchForm">
     		
-        <h:panelGrid columns="2" >    
-        	   
+        <h:panelGrid columns="2" >            	   
             <h:panelGrid columns="2">
 	            <h:outputText styleClass="standard_bold" value="Enter keywords for searching digg: "/>            
             	<h:inputText id="txtSearchQuery" styleClass="standard"  value="#{diggSearchForm.searchQuery}" required="true"/>                        
             
-            	<h:outputText styleClass="standard_bold" value="Optional result Count: "/>
+            	<h:outputText styleClass="standard_bold" value="Result Count (Optional): "/>
 	            <h:selectOneMenu styleClass="standard" value="#{diggSearchForm.count}">
 		            <f:selectItems value="#{diggSearchForm.countItems}" />	    		                   					
 	            </h:selectOneMenu>
 	            
-	             <h:outputText styleClass="standard_bold" value="Optional Offset start option: "/>
+	            <h:outputText styleClass="standard_bold" value="Offset start option (Optional): "/>
 	            <h:selectOneMenu styleClass="standard" value="#{diggSearchForm.offset}">
 		            <f:selectItems value="#{diggSearchForm.offsetItems}" />	    		                   					
 	            </h:selectOneMenu>
 	            
-	            <h:outputText styleClass="standard_bold" value="Optional sorting option: "/>
+	            <h:outputText styleClass="standard_bold" value="Sorting option (Optional): "/>
 	            <h:selectOneMenu styleClass="standard" value="#{diggSearchForm.sort}">
 		            <f:selectItems value="#{diggSearchForm.sortItems}" />	    		                   					
 	            </h:selectOneMenu>
 	            
-	            <h:outputText styleClass="standard_bold" value="Optional Domain filter. Write a domain name: "/>
+	            <h:outputText styleClass="standard_bold" value="Domain filter. Write a domain name (Optional): "/>
 	            <h:inputText id="txtDomainQuery" styleClass="standard"  value="#{diggSearchForm.domain}" />
-	           	           
+	           	
+	           	<h:outputText styleClass="standard_bold" value="Media type (Optional): "/>
+	            <h:selectOneMenu styleClass="standard" value="#{diggSearchForm.media}">
+		            <f:selectItems value="#{diggSearchForm.mediaItems}" />	    		                   					
+	            </h:selectOneMenu>
+	            
+	            <h:outputText styleClass="standard_bold" value="Topic name (Optional). Type digg topic short_name : "/>
+	            <h:inputText id="txtTopic" styleClass="standard"  value="#{diggSearchForm.topic}" />
+	           	
+	           	<h:outputText styleClass="standard_bold" value="Min submit Date timestamp (Optional): "/>
+	            <h:inputText id="txtMinDate" styleClass="standard"  value="#{diggSearchForm.minDate}" />
+	             
+	            <h:outputText styleClass="standard_bold" value="Max submit Date timestamp (Optional): "/>
+	            <h:inputText id="txtMaxDate" styleClass="standard"  value="#{diggSearchForm.maxDate}" />	            
+	           	
             </h:panelGrid>
+            
             <h:panelGrid>
 	            <h:commandButton value="Get Stories" styleClass="standard" action="#{diggSearchForm.getStoryList}">            	            
 	                 <f:ajax execute="@form" render="searchResults"/>            
 	            </h:commandButton>
             </h:panelGrid>
             
+            <f:facet name="footer">
+  					<h:outputText styleClass="standard_bold bold_red" value="** New optional filtering parameters are supported by version 2.0 such as : topic(short_name), media(all,news,video,images), min_date (timestamp), max_date(timestamp)"/>
+    		</f:facet>
+            
         </h:panelGrid>
         
         <h:panelGroup id="searchResults">
-        	
+        	<h:panelGrid columns="2" styleClass="sectionGrid" columnClasses="standard_bold,standard bold_green" >
+        		<h:outputText styleClass="standard_bold bold_green"  value="Results returned : "></h:outputText> 
+        				<h:outputText styleClass="standard" value="#{diggSearchForm.results.count}"></h:outputText>
+        		<h:outputText styleClass="standard_bold bold_green"  value="Total available Results:"></h:outputText> 
+        				<h:outputText styleClass="standard" value="#{diggSearchForm.results.total}"></h:outputText>
+        		<h:outputText styleClass="standard_bold bold_green"  value="Last search TimeStamp:"></h:outputText> 
+        				<h:outputText styleClass="standard" value="#{diggSearchForm.results.timestamp}"></h:outputText>
+
+        	</h:panelGrid>
             <ui:repeat value="#{diggSearchForm.results.searchResultList}" var="resultItem">
             	<f:verbatim><br/><hr /></f:verbatim>
                 <h:panelGrid columns="2" styleClass="sectionGrid" columnClasses="standard_bold,standard" headerClass="bold_red">                	 
