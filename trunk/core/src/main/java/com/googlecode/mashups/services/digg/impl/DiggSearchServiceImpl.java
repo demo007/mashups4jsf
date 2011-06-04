@@ -219,7 +219,7 @@ public class DiggSearchServiceImpl implements DiggSearchService {
                 	DiggSearchService.DIGG_SEARCH_STORY_METHOD_V1));
         supportedParameters.add(new ServiceParameter(
         			DiggSearchServiceParameters.SEARCH_ARGS_TYPE,
-                	DiggSearchService.DIGG_SEARCH_STORY_TYPE));
+                	DiggSearchService.DIGG_SEARCH_STORY_TYPE_XML));
 
         /* Optional API parameters: filters the supported argument from the submitted parameters */ 
         for (ServiceParameter param : parameters) {

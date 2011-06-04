@@ -94,12 +94,12 @@ public class DiggSearchService2Impl implements DiggSearchService {
     private static final String SHORTURL_VIEW_COUNT_ATTRIBUTE = "view_count";
     
     // Thumbnail
-    private static final String THUMBNAIL_CONTENT_TYPE_ATTRIBUTE = "contentType";
-    private static final String THUMBNAIL_SRC_ATTRIBUTE = "src";
-    private static final String THUMBNAIL_HEIGHT_ATTRIBUTE = "height";
-    private static final String THUMBNAIL_WIDTH_ATTRIBUTE = "width";
+    private static final String THUMBNAIL_CONTENT_TYPE_ATTRIBUTE 	= "contentType";
+    private static final String THUMBNAIL_SRC_ATTRIBUTE 	  		= "src";
+    private static final String THUMBNAIL_HEIGHT_ATTRIBUTE 	  		= "height";
+    private static final String THUMBNAIL_WIDTH_ATTRIBUTE 	  		= "width";
     private static final String THUMBNAIL_ORIGINAL_HEIGHT_ATTRIBUTE = "originalheight";
-    private static final String THUMBNAIL_ORIGINAL_WIDTH_ATTRIBUTE = "originalwidth";
+    private static final String THUMBNAIL_ORIGINAL_WIDTH_ATTRIBUTE  = "originalwidth";
     
 
     public static DiggSearchService getInstance() {
@@ -138,7 +138,7 @@ public class DiggSearchService2Impl implements DiggSearchService {
         				+ "?" + ServiceParametersUtility.toParametersString(parameters));
         URLConnection	connection    = diggSearchUrl.openConnection();
         
-        //System.out.println("diggSearchUrl = "+ diggSearchUrl.toString());
+        System.out.println("diggSearchUrl = "+ diggSearchUrl.toString());
         //connection.addRequestProperty(REFERER, REFERER_VALUE);
         String line;
         BufferedReader	reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -169,8 +169,8 @@ public class DiggSearchService2Impl implements DiggSearchService {
         	results.setVersion(rootResults.getString(STORIES_VERSION_ATTRIBUTE));
         
         
-        //System.out.println("results Count = "+results.getCount());
-        //System.out.println("results Total = "+results.getTotal());
+        System.out.println("results Count = "+results.getCount());
+        System.out.println("results Total = "+results.getTotal());
         // Start collecting the list of results
         List<DiggSearchStoryResultItem> searchResultList = new ArrayList<DiggSearchStoryResultItem>();
 
@@ -260,8 +260,8 @@ public class DiggSearchService2Impl implements DiggSearchService {
         /* Required API parameters: Implicit fixed value parameters to the search API */
         //supportedParameters.add(new ServiceParameter(
         //        DiggSearchServiceParameters.SEARCH_ARGS_METHOD, DiggSearchService.DIGG_SEARCH_STORY_METHOD));
-        //supportedParameters.add(new ServiceParameter(
-        //        DiggSearchServiceParameters.SEARCH_ARGS_TYPE,DiggSearchService.DIGG_SEARCH_STORY_TYPE));
+        supportedParameters.add(new ServiceParameter(
+                DiggSearchServiceParameters.SEARCH_ARGS_TYPE,DiggSearchService.DIGG_SEARCH_STORY_TYPE_JSON));
 
         /* Optional API parameters: filters the supported argument from the submitted parameters */ 
         for (ServiceParameter param : parameters) {
