@@ -24,12 +24,16 @@ package com.googlecode.mashups.services.digg.api;
  * <story  att:( link, submit_date, diggs, id, comments, href, status, media)> 
  *     <description> 
  * 	   <title> 
- *     <user att:( icon, name, profileviews, registered )> 
+ *     <user att:( icon, name, profileviews, registered, 
+ *     			   fullname, links )> 
  *     <topic ( name, short_name )> 
  *     <container att:( name, short_name )> 
  *     <shorturl att:(short_url , view_count)> 
+ *     <thumbnail att:(contenttype, src, height, width, originalheight, originalwidth )>
  * </story>
  * </code>
+ * @version 2.0 
+ * Supports digg APIs version 2.0 
  */
 public class DiggSearchStoryResultItem {
     private String storyLink;
@@ -46,12 +50,21 @@ public class DiggSearchStoryResultItem {
     private String userName;
     private String userProfileviews;
     private String userRegistered;
+    private String userFullName;
+    private String userLinks;
     private String topicName;
     private String topicShortName;
     private String containerName;
     private String containerShortName;
     private String shorturl;
     private String shorturlViewCount;
+    private String thumbnailContentType;
+    private String thumbnailHeight;
+    private String thumbnailOriginalHeight;
+    private String thumbnailOriginalWidth;
+    private String thumbnailSrc;
+    private String thumbnailWidth;
+    
 
     /**
      * @return the storyLink
@@ -264,6 +277,34 @@ public class DiggSearchStoryResultItem {
     }
 
     /**
+	 * @return the userFullName
+	 */
+	public String getUserFullName() {
+		return userFullName;
+	}
+
+	/**
+	 * @param userFullName the userFullName to set
+	 */
+	public void setUserFullName(String userFullName) {
+		this.userFullName = userFullName;
+	}
+
+	/**
+	 * @return the userLinks
+	 */
+	public String getUserLinks() {
+		return userLinks;
+	}
+
+	/**
+	 * @param userLinks the userLinks to set
+	 */
+	public void setUserLinks(String userLinks) {
+		this.userLinks = userLinks;
+	}
+
+	/**
      * @return the topicName
      */
     public String getTopicName() {
@@ -353,7 +394,91 @@ public class DiggSearchStoryResultItem {
         this.shorturlViewCount = shorturlViewCount;
     }
 
-    @Override
+    /**
+	 * @return the thumbnailContentType
+	 */
+	public String getThumbnailContentType() {
+		return thumbnailContentType;
+	}
+
+	/**
+	 * @param thumbnailContentType the thumbnailContentType to set
+	 */
+	public void setThumbnailContentType(String thumbnailContentType) {
+		this.thumbnailContentType = thumbnailContentType;
+	}
+
+	/**
+	 * @return the thumbnailHeight
+	 */
+	public String getThumbnailHeight() {
+		return thumbnailHeight;
+	}
+
+	/**
+	 * @param thumbnailHeight the thumbnailHeight to set
+	 */
+	public void setThumbnailHeight(String thumbnailHeight) {
+		this.thumbnailHeight = thumbnailHeight;
+	}
+
+	/**
+	 * @return the thumbnailOriginalHeight
+	 */
+	public String getThumbnailOriginalHeight() {
+		return thumbnailOriginalHeight;
+	}
+
+	/**
+	 * @param thumbnailOriginalHeight the thumbnailOriginalHeight to set
+	 */
+	public void setThumbnailOriginalHeight(String thumbnailOriginalHeight) {
+		this.thumbnailOriginalHeight = thumbnailOriginalHeight;
+	}
+
+	/**
+	 * @return the thumbnailOriginalWidth
+	 */
+	public String getThumbnailOriginalWidth() {
+		return thumbnailOriginalWidth;
+	}
+
+	/**
+	 * @param thumbnailOriginalWidth the thumbnailOriginalWidth to set
+	 */
+	public void setThumbnailOriginalWidth(String thumbnailOriginalWidth) {
+		this.thumbnailOriginalWidth = thumbnailOriginalWidth;
+	}
+
+	/**
+	 * @return the thumbnailSrc
+	 */
+	public String getThumbnailSrc() {
+		return thumbnailSrc;
+	}
+
+	/**
+	 * @param thumbnailSrc the thumbnailSrc to set
+	 */
+	public void setThumbnailSrc(String thumbnailSrc) {
+		this.thumbnailSrc = thumbnailSrc;
+	}
+
+	/**
+	 * @return the thumbnailWidth
+	 */
+	public String getThumbnailWidth() {
+		return thumbnailWidth;
+	}
+
+	/**
+	 * @param thumbnailWidth the thumbnailWidth to set
+	 */
+	public void setThumbnailWidth(String thumbnailWidth) {
+		this.thumbnailWidth = thumbnailWidth;
+	}
+
+	@Override
     public String toString() {
 
         return "link: '" + storyLink + "', " 

@@ -23,8 +23,13 @@ import java.util.List;
 import com.googlecode.mashups.services.common.ServiceParameter;
 
 public interface DiggSearchService {
-    public static final String DIGG_SEARCH_SERVICE_URL  = "http://services.digg.com/1.0/endpoint";
-    public static final String DIGG_SEARCH_STORY_METHOD = "search.stories";
+	public static final String DIGG_SEARCH_SERVICE_URL_V1  = "http://services.digg.com/1.0/endpoint";
+	public static final String DIGG_SEARCH_SERVICE_URL_V2  = "http://services.digg.com/2.0/";
+    //public static final String DIGG_SEARCH_SERVICE_URL  = DIGG_SEARCH_SERVICE_URL_V2;
+    
+    public static final String DIGG_SEARCH_STORY_METHOD_V1 = "search.stories";
+    public static final String DIGG_SEARCH_STORY_METHOD_V2 = "search.search";
+    
     public static final String DIGG_SEARCH_STORY_TYPE   = "xml";
 
     public DiggSearchStoryResults getStoriesList(List<ServiceParameter> parameters) throws Exception;

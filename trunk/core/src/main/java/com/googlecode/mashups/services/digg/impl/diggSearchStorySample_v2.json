@@ -1,0 +1,393 @@
+{
+    "count": 10, 
+    "timestamp": 1307181261, 
+    "total": 148, 
+    "stories": [
+        {
+            "status": "upcoming", 
+            "description": "Hey JSF - you are FIRED! ", 
+            "title": "GAME OVER - Java Server Faces", 
+            "submit_date": 1209828739, 
+            "media": 0, 
+            "diggs": 5, 
+            "comments": 0, 
+            "id": "20080503083219:6407831", 
+            "shorturl": {
+                "short_url": "http://digg.com/news/story/GAME_OVER_Java_Server_Faces", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://www.comesolvego.com/2008/05/03/game-over-java-server-faces/", 
+            "href": "http://digg.com/news/story/GAME_OVER_Java_Server_Faces", 
+            "thumbnail": {
+                "src": "http://cdn1.diggstatic.com/story/GAME_OVER_Java_Server_Faces/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "vpetreski", 
+                "links": [], 
+                "registered": 1201450386, 
+                "profileviews": 0, 
+                "fullname": "Vanja Petreski", 
+                "icon": "http://cdn1.diggstatic.com/user/2785112/l.png"
+            }
+        }, 
+        {
+            "status": "upcoming", 
+            "container": {
+                "name": "*", 
+                "short_name": "*"
+            }, 
+            "description": "2) Request Business. Operation, get new. Copy. EJB Server Model. EJB Server Model. EJB Server JavaServer Faces technology simplifies building user. interfaces for... PDF format /download/21_keyword-java-server-faces-2-0/javaserver-faces.pdf.pdf [...]", 
+            "title": "JavaServer Faces download PDF file", 
+            "submit_date": 1283658352, 
+            "media": 0, 
+            "diggs": 1, 
+            "comments": 0, 
+            "id": "20100905034553:114cbca1-7c66-4c88-9d1f-4b339a44479d", 
+            "topic": {
+                "name": "*", 
+                "short_name": "*"
+            }, 
+            "shorturl": {
+                "short_url": "http://digg.com/news/business/javaserver_faces_download_pdf_file", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://khup.com/download/21_keyword-java-server-faces-2-0/javaserver-faces.pdf.html", 
+            "href": "http://digg.com/news/business/javaserver_faces_download_pdf_file", 
+            "thumbnail": {
+                "src": "http://cdn2.diggstatic.com/story/javaserver_faces_download_pdf_file/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "shintaw", 
+                "links": [
+                    {
+                        "date": 1307181249, 
+                        "href": "http://www.imagesbox.com", 
+                        "description": "Image Search Engine"
+                    }, 
+                    {
+                        "date": 1307181249, 
+                        "href": "http://khup.com", 
+                        "description": "PDF Search Engine"
+                    }, 
+                    {
+                        "date": 1307181249, 
+                        "href": "http://www.avun.com", 
+                        "description": "Rapidshare Search Engine"
+                    }
+                ], 
+                "registered": 1283293087, 
+                "profileviews": 0, 
+                "fullname": "Shinta Widyaningsih", 
+                "icon": "http://cdn3.diggstatic.com/img/user/l.png"
+            }
+        }, 
+        {
+            "status": "upcoming", 
+            "container": {
+                "name": "World News", 
+                "short_name": "world_news"
+            }, 
+            "description": "Java Server Faces Jsf. The quality articles are selected related closely with topic Java Server Faces Jsf", 
+            "title": "Java Server Faces Jsf", 
+            "submit_date": 1292065963, 
+            "media": 0, 
+            "diggs": 1, 
+            "comments": 0, 
+            "id": "20101211111243:237bb7e8-131a-45cc-8b15-af962eb5912c", 
+            "topic": {
+                "name": "World News", 
+                "short_name": "world_news"
+            }, 
+            "shorturl": {
+                "short_url": "http://digg.com/news/worldnews/java_server_faces_jsf", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://articlesadv.com/topic/java-server-faces-jsf/", 
+            "href": "http://digg.com/news/worldnews/java_server_faces_jsf", 
+            "thumbnail": {
+                "src": "http://cdn1.diggstatic.com/story/java_server_faces_jsf/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "angelosam", 
+                "links": [], 
+                "registered": 1288101798, 
+                "profileviews": 0, 
+                "fullname": null, 
+                "icon": "http://cdn2.diggstatic.com/img/user/l.png"
+            }
+        }, 
+        {
+            "status": "upcoming", 
+            "description": "JSF Tutorial  JavaServer Faces Tutorial : A beginner JSF tutorial that attempts to teach basics of JavaServer Faces with HelloWorld example. This tutorial also explains the JSF lifecycle and page navigation.", 
+            "title": "JSF Tutorial  JavaServer Faces Tutorial", 
+            "submit_date": 1205712964, 
+            "media": 2, 
+            "diggs": 2, 
+            "comments": 0, 
+            "id": "20080316171604:5715645", 
+            "shorturl": {
+                "short_url": "http://digg.com/news/story/JSF_Tutorial_JavaServer_Faces_Tutorial", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://www.developersbook.com/jsf/jsf-tutorial/jsf-tutorial.php", 
+            "href": "http://digg.com/news/story/JSF_Tutorial_JavaServer_Faces_Tutorial", 
+            "thumbnail": {
+                "src": "http://cdn2.diggstatic.com/story/JSF_Tutorial_JavaServer_Faces_Tutorial/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "markpo", 
+                "links": [], 
+                "registered": 1199712718, 
+                "profileviews": 0, 
+                "fullname": "Marl", 
+                "icon": "http://cdn3.diggstatic.com/img/user/l.png"
+            }
+        }, 
+        {
+            "status": "upcoming", 
+            "description": "Java Server Faces Interview Questions & AnswersJSF Interview Questions", 
+            "title": "Java Server Faces JSF Interview Questions & Answers", 
+            "submit_date": 1189737272, 
+            "media": 0, 
+            "diggs": 10, 
+            "comments": 0, 
+            "id": "20070913193432:3445972", 
+            "shorturl": {
+                "short_url": "http://digg.com/news/story/Java_Server_Faces_JSF_Interview_Questions_Answers", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://www.developersbook.com/javaserverfaces/interview-questions/jsf-interview-questions-faqs.php", 
+            "href": "http://digg.com/news/story/Java_Server_Faces_JSF_Interview_Questions_Answers", 
+            "thumbnail": {
+                "src": "http://cdn3.diggstatic.com/story/Java_Server_Faces_JSF_Interview_Questions_Answers/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "newengland12", 
+                "links": [], 
+                "registered": 1189362493, 
+                "profileviews": 0, 
+                "fullname": "", 
+                "icon": "http://cdn1.diggstatic.com/img/user/l.png"
+            }
+        }, 
+        {
+            "status": "upcoming", 
+            "container": {
+                "name": "Business", 
+                "short_name": "business"
+            }, 
+            "description": "Values. 3) Process. Validations. 4) Update. Model. Values. 5) Invoke. Application. 6) Render Managed Beans  any bean defined in xml. Backing Beans  term used to... swf format /view/10_keyword-beans-and-its-value/java-server-faces-jsf.pdf [...]", 
+            "title": "Java Server Faces (JSF) view file", 
+            "submit_date": 1286099662, 
+            "media": 0, 
+            "diggs": 1, 
+            "comments": 0, 
+            "id": "20101003095423:ae28b6cf-fe20-4768-be91-57824826b5af", 
+            "topic": {
+                "name": "Business", 
+                "short_name": "business"
+            }, 
+            "shorturl": {
+                "short_url": "http://digg.com/news/business/java_server_faces_jsf_view_file", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://khup.com/view/10_keyword-beans-and-its-value/java-server-faces-jsf.html", 
+            "href": "http://digg.com/news/business/java_server_faces_jsf_view_file", 
+            "thumbnail": {
+                "src": "http://cdn1.diggstatic.com/story/java_server_faces_jsf_view_file/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "shintaw", 
+                "links": [
+                    {
+                        "date": 1307181249, 
+                        "href": "http://www.imagesbox.com", 
+                        "description": "Image Search Engine"
+                    }, 
+                    {
+                        "date": 1307181249, 
+                        "href": "http://khup.com", 
+                        "description": "PDF Search Engine"
+                    }, 
+                    {
+                        "date": 1307181249, 
+                        "href": "http://www.avun.com", 
+                        "description": "Rapidshare Search Engine"
+                    }
+                ], 
+                "registered": 1283293087, 
+                "profileviews": 0, 
+                "fullname": "Shinta Widyaningsih", 
+                "icon": "http://cdn1.diggstatic.com/img/user/l.png"
+            }
+        }, 
+        {
+            "status": "upcoming", 
+            "description": "Great site for JavaServer Faces developers.", 
+            "title": "JavaServer Faces Tutorials", 
+            "submit_date": 1136843473, 
+            "media": 0, 
+            "diggs": 5, 
+            "comments": 0, 
+            "id": "20060109135113:180531", 
+            "shorturl": {
+                "short_url": "http://digg.com/news/story/JavaServer_Faces_Tutorials", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://jsftutorials.net/", 
+            "href": "http://digg.com/news/story/JavaServer_Faces_Tutorials", 
+            "thumbnail": {
+                "src": "http://cdn1.diggstatic.com/story/JavaServer_Faces_Tutorials/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "ionixx", 
+                "links": [], 
+                "registered": 1135617488, 
+                "profileviews": 0, 
+                "fullname": "", 
+                "icon": "http://cdn3.diggstatic.com/img/user/l.png"
+            }
+        }, 
+        {
+            "status": "upcoming", 
+            "description": "In this article, we see how to use JSF Tools for modeling the most important components of a traditional JSF project. We develop a complete functional JSF project by using the most important skills of JSF Tools like managed beans, converters, validators.", 
+            "title": "Java Server Faces (JSF) Tools", 
+            "submit_date": 1241781503, 
+            "media": 0, 
+            "diggs": 1, 
+            "comments": 0, 
+            "id": "20090508041823:12548609", 
+            "shorturl": {
+                "short_url": "http://digg.com/news/story/Java_Server_Faces_JSF_Tools", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://www.packtpub.com/article/java-server-faces-jsf-tools", 
+            "href": "http://digg.com/news/story/Java_Server_Faces_JSF_Tools", 
+            "thumbnail": {
+                "src": "http://cdn3.diggstatic.com/story/Java_Server_Faces_JSF_Tools/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "ramsai", 
+                "links": [], 
+                "registered": 1235559932, 
+                "profileviews": 0, 
+                "fullname": "Ramsai Karri", 
+                "icon": "http://cdn2.diggstatic.com/img/user/l.png"
+            }
+        }, 
+        {
+            "status": "upcoming", 
+            "description": "Java Server Faces (JSF) Interview Questions", 
+            "title": " Java Server Faces (JSF) Interview Questions", 
+            "submit_date": 1186151989, 
+            "media": 0, 
+            "diggs": 2, 
+            "comments": 0, 
+            "id": "20070803073949:2662710", 
+            "shorturl": {
+                "short_url": "http://digg.com/news/story/Java_Server_Faces_JSF_Interview_Questions", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://faqs.javabeat.net/jsf/java-server-faces-interview-questions-faqs-1.php", 
+            "href": "http://digg.com/news/story/Java_Server_Faces_JSF_Interview_Questions", 
+            "thumbnail": {
+                "src": "http://cdn3.diggstatic.com/story/Java_Server_Faces_JSF_Interview_Questions/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "krishnasa", 
+                "links": [], 
+                "registered": 1182044740, 
+                "profileviews": 0, 
+                "fullname": "Krishna Srinivasan", 
+                "icon": "http://cdn1.diggstatic.com/img/user/l.png"
+            }
+        }, 
+        {
+            "status": "upcoming", 
+            "description": "Java Server Faces(JSF) Articles", 
+            "title": "Java Server Faces(JSF) Articles", 
+            "submit_date": 1183799803, 
+            "media": 0, 
+            "diggs": 1, 
+            "comments": 0, 
+            "id": "20070707021643:2429211", 
+            "shorturl": {
+                "short_url": "http://digg.com/news/story/Java_Server_Faces_JSF_Articles", 
+                "view_count": 0
+            }, 
+            "promote_date": null, 
+            "link": "http://www.javabeat.net/articles/jsf.html", 
+            "href": "http://digg.com/news/story/Java_Server_Faces_JSF_Articles", 
+            "thumbnail": {
+                "src": "http://cdn1.diggstatic.com/story/Java_Server_Faces_JSF_Articles/t.png", 
+                "contentType": "image/png", 
+                "originalheight": 300, 
+                "height": 62, 
+                "width": 62, 
+                "originalwidth": 300
+            }, 
+            "user": {
+                "name": "krishnasa", 
+                "links": [], 
+                "registered": 1182044740, 
+                "profileviews": 0, 
+                "fullname": "Krishna Srinivasan", 
+                "icon": "http://cdn2.diggstatic.com/img/user/l.png"
+            }
+        }
+    ]
+}
