@@ -34,7 +34,14 @@ import com.googlecode.mashups.services.digg.api.DiggSearchStoryResultItem;
 import com.googlecode.mashups.services.digg.api.DiggSearchStoryResults;
 import com.googlecode.mashups.services.digg.exceptions.InvalidResultException;
 
-/* Implements DiggSearchService methods */
+
+/** 
+ * Implements DiggSearchService methods that support digg REST API v1.0 with XML results
+ * 
+ * @author moh.maher
+ *
+ * @version 1.0 
+ **/
 public class DiggSearchServiceImpl implements DiggSearchService {
 
     // XML Tags for Digg Stories
@@ -99,7 +106,7 @@ public class DiggSearchServiceImpl implements DiggSearchService {
         
         /* Safely prepare the search URL and make connection */
         try {
-            URL searchUrl = new URL(DIGG_SEARCH_SERVICE_URL + "?"
+            URL searchUrl = new URL(DIGG_SEARCH_SERVICE_URL_V1 + "?"
                     + ServiceParametersUtility.toParametersString(parameters));
             builder  = new SAXBuilder();
             document = builder.build(searchUrl);
@@ -208,9 +215,11 @@ public class DiggSearchServiceImpl implements DiggSearchService {
 
         /* Required API parameters: Implicit fixed value parameters to the search API */
         supportedParameters.add(new ServiceParameter(
-                DiggSearchServiceParameters.SEARCH_ARGS_METHOD, DiggSearchService.DIGG_SEARCH_STORY_METHOD));
+                	DiggSearchServiceParameters.SEARCH_ARGS_METHOD, 
+                	DiggSearchService.DIGG_SEARCH_STORY_METHOD_V1));
         supportedParameters.add(new ServiceParameter(
-                DiggSearchServiceParameters.SEARCH_ARGS_TYPE,DiggSearchService.DIGG_SEARCH_STORY_TYPE));
+        			DiggSearchServiceParameters.SEARCH_ARGS_TYPE,
+                	DiggSearchService.DIGG_SEARCH_STORY_TYPE));
 
         /* Optional API parameters: filters the supported argument from the submitted parameters */ 
         for (ServiceParameter param : parameters) {
