@@ -34,7 +34,7 @@ import com.googlecode.mashups.services.factory.DiggServicesFactory;
 @ManagedBean
 @RequestScoped
 public class DiggSearchForm {
-    private static final String    DEFAULT_COUNT_VALUE = "5";
+    private static final String    DEFAULT_COUNT_VALUE = "";
 
     private DiggSearchStoryResults results;
    
@@ -189,11 +189,13 @@ public class DiggSearchForm {
 		        DiggSearchServiceParameters.SEARCH_ARGS_SEARCH_QUERY,
 		        searchQuery));
 		//Count parameter
-	        count = validateCount(getCount(), DEFAULT_COUNT_VALUE);
-	        if (count == null || count.equals("")) {
-	            count = DEFAULT_COUNT_VALUE;
-	        }
-		searchParameters.add(new ServiceParameter(DiggSearchServiceParameters.SEARCH_ARGS_COUNT, count));
+        count = validateCount(getCount(), DEFAULT_COUNT_VALUE);
+        if (count != null && !count.equals("")) {
+            //count = DEFAULT_COUNT_VALUE;
+        	searchParameters.add(new ServiceParameter(
+        		DiggSearchServiceParameters.SEARCH_ARGS_COUNT, count));
+        }
+		
 		
 		//Offset parameter
 		if (offset != null && !offset.equals("")) {
