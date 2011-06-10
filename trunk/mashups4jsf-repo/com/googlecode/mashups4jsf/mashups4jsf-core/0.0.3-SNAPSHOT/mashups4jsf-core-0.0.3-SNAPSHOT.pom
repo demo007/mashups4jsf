@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.googlecode.mashups4jsf</groupId>
+	<artifactId>mashups4jsf-core</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.3-SNAPSHOT</version>
+	<name>Mashups4JSF Core Project</name>
+	<url>http://maven.apache.org</url>
+	
+	<repositories>       
+		<!-- defined for the wagon plugin -->
+		<repository>            
+			<id>maven2-repository.dev.java.net</id>            
+			<name>Java.net Repository for Maven</name>            
+			<url>http://download.java.net/maven/2/</url>        
+		</repository>    
+	</repositories>    
+	
+	
+	<distributionManagement>   
+		<repository>            
+			<uniqueVersion>false</uniqueVersion>            
+			<id>googlecode.com</id>            
+			<url>svn:https://mashups4jsf.googlecode.com/svn/trunk/mashups4jsf-repo</url>        
+		</repository> 		
+	</distributionManagement>    	
+	
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.myfaces.core</groupId>
+			<artifactId>myfaces-api</artifactId>
+			<version>1.1.5</version>
+			<scope>provided</scope>
+		</dependency>	
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.3</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>rome</groupId>
+			<artifactId>rome</artifactId>
+			<version>0.9</version>
+			<scope>provided</scope>			
+		</dependency> 		
+		
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+  			<artifactId>commons-fileupload</artifactId>
+  			<version>1.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+			<scope>compile</scope>
+		</dependency>		
+	</dependencies>
+
+	<build>
+	
+		<!-- START: The wagon plugin allows deploying the SVN repo -->
+		<extensions>            
+			<extension>                
+				<groupId>org.jvnet.wagon-svn</groupId>                
+				<artifactId>wagon-svn</artifactId>                
+				<version>1.8</version>            
+			</extension>        
+		</extensions>   
+		<!-- END: The wagon plugin allows deploying the SVN repo -->
+		
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>  
+				<artifactId>maven-compiler-plugin</artifactId>  
+				<configuration>  
+				  <source>1.5</source>  
+				  <target>1.5</target>  
+				</configuration>  
+			</plugin>  			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>xslt-maven-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<xslFile>src/main/resources-maven-jsf/misc/resolve_entities.xsl</xslFile>
+					<srcIncludes>**/*.xml</srcIncludes>
+					<srcDir>src/main/resources-maven-jsf/components</srcDir>
+					<destDir>target/resources-maven-jsf/components</destDir>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>transform</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>com.googlecode.mashups4jsf</groupId>
+				<artifactId>maven-jsf-plugin</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<configuration>
+					<templatesDir>src/main/java-templates</templatesDir>
+					<componentConfigsDir>target/resources-maven-jsf/components</componentConfigsDir>
+					<standardFacesConfig>src/main/resources-maven-jsf/standard-faces-config.xml</standardFacesConfig>
+				</configuration>
+				<executions>
+          			<execution>
+            			<phase>generate-sources</phase>
+            			<goals>
+              				<goal>generate-tld</goal>
+              				<goal>generate-components</goal>
+							<goal>generate-tags</goal>
+							<goal>generate-faces-config</goal>
+							<goal>generate-facelets-taglib</goal>
+	            		</goals>
+					</execution>
+	    		</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<reporting>
+		<plugins>
+			<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+        		<artifactId>maven-javadoc-plugin</artifactId>
+        		<version>2.0-beta-3</version>
+        		<configuration>
+        			<sourcepath>${pom.basedir}\src\main\java;${pom.basedir}\target\maven-jsf-plugin\main</sourcepath>
+        		</configuration>
+      		</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>surefire-report-maven-plugin</artifactId>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>taglist-maven-plugin</artifactId>
+				<version>2.0</version>
+			</plugin>
+			
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>1.0-beta-1</version>
+                <configuration>
+                    <threshold>Low</threshold>
+                </configuration>
+            </plugin>
+            
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+            </plugin>
+			
+			<plugin>
+            	<groupId>net.sourceforge.maven-taglib</groupId>
+            	<artifactId>maven-taglib-plugin</artifactId>
+            	<version>2.3</version>
+            	<configuration>
+              		<taglib.src.dir>${basedir}/target/classes/META-INF/</taglib.src.dir>
+              		<tldDocDir>${basedir}/target/site/tlddoc</tldDocDir>
+            	</configuration>
+          	</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+							
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>
