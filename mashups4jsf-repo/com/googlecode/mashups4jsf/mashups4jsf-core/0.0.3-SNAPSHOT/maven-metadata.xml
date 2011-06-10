@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.googlecode.mashups4jsf</groupId>
+  <artifactId>mashups4jsf-core</artifactId>
+  <version>0.0.3-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20110610185655</lastUpdated>
+  </versioning>
+</metadata>
