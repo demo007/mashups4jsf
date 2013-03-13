@@ -30,9 +30,11 @@ public class LocationServiceTest extends TestCase {
         LocationService locationService = GenericServicesFactory.getLocationService();
         
         try {
-            PlaceMark placeMark = locationService.getAddressFromLocation("30.064742", "31.249509");
+            PlaceMark placeMark = locationService.getAddressFromLocation("37.4216410", "-122.08550160");
             
-            System.out.println("Address for (\"30.2\", \"31.21\") is: " + placeMark.getAddress());
+            System.out.println("Address for (\"37.4216410\", \"-122.08550160\") is: " + placeMark.getAddress() + 
+            		           ", postalCode is: " + placeMark.getPostalCodeNumber());
+            
         } catch (Exception e) {
             e.printStackTrace();
             fail("Unable to get the address from the location ...");
@@ -50,5 +52,5 @@ public class LocationServiceTest extends TestCase {
             e.printStackTrace();
             fail("Unable to get the location from the address ...");
         }        
-    }    
+    }
 }
