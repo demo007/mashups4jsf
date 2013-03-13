@@ -6,12 +6,16 @@
       xmlns:mashup="http://code.google.com/p/mashups4jsf/">
 <h:head>
     <title><ui:insert name="title">Welcome to Mashups4JSF</ui:insert></title>
-	<link rel="stylesheet" type="text/css" href="../css/basic.css" />    
-	<mashup:resources googleMapKey="ABQIAAAAxrVS1QxlpJHXxQ2Vxg2bJBQlXZ5yM1jzRRpBQe8Fh97h51z6DxREE5Rp7Yq-bVDVF4satZXFh2kL6w"/>
+	<link rel="stylesheet" type="text/css" href="../css/basic.css" /> 
+	
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=true">
+    </script> 
 	
 	<style>
 		html, body { height: 100% }
-	</style>	
+	</style>
 	
 </h:head>
 <f:view contentType="text/html">
