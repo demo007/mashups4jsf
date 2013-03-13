@@ -84,14 +84,15 @@ public class LocationServiceImpl implements LocationService {
     
     public PlaceMark getAddressFromLocation(String latitude, String longitude) throws Exception {
         try {
-            URL            url       = new URL("http://maps.google.com/maps/geo?q=" 
+            URL            url       = new URL("http://maps.googleapis.com/maps/api/geocode/json?latlng=" 
                                      + latitude.trim()
                                      + "," 
                                      + longitude.trim() 
-                                     + "&output=json&sensor=false&key=abcdef");
+                                     + "&sensor=false");
+            
             PlaceMark      placeMark = new PlaceMark();
             JSONObject     json      = new JSONObject(readURL(url));
-            JSONArray      results   = (JSONArray) json.getJSONArray(Mashups4JSFConstants.PLACEMARK_LABEL);
+            JSONArray      results   = (JSONArray) json.getJSONArray(Mashups4JSFConstants.RESULTS_LABEL);
             
             JSONObject placeMarkPrimaryData = (JSONObject) results.get(0);
             
@@ -117,82 +118,41 @@ public class LocationServiceImpl implements LocationService {
     }
 
     /*
-     * The <code>getPlaceMarkPrimaryInformation</code> is used for getting all of the place marker
+     * <code>getPlaceMarkPrimaryInformation</code> is used for getting all of the place marker
      * primary information.
      */
     private void getPlaceMarkPrimaryInformation(PlaceMark placeMark, JSONObject placeMarkPrimaryData) {
         
-        // ID
+        // Address
         try {
-            placeMark.setId((String) placeMarkPrimaryData.get(Mashups4JSFConstants.ID_LABEL));            
-        } catch (JSONException exception) {
-        	log.debug("Unable to get the place mark id");        	
-        }
-        
-        // ADDRESS
-        try {
-            placeMark.setAddress((String) placeMarkPrimaryData.get(Mashups4JSFConstants.ADDRESS_LABEL));
+            placeMark.setAddress((String) placeMarkPrimaryData.get(Mashups4JSFConstants.FORMATTED_ADDRESS_LABEL));
         } catch (JSONException exception) {
         	log.debug("Unable to get the place mark address");          	
-        }        
+        }
         
+        // Postal code
         try {
-            
-            // ADDRESS DETAILS
-            JSONObject addressDetailsObject = (JSONObject) placeMarkPrimaryData.get(Mashups4JSFConstants.ADDR_DET_LABEL);            
-            
-            // ACCURACY
-            try {
-                placeMark.setAccuracy((Integer) addressDetailsObject.get(Mashups4JSFConstants.ACCURACY_LABEL));
-            } catch (JSONException exception) {
-            	log.debug("Unable to get the place accuracy");
-            }
-            
-            try {
-                
-                // COUNTRY                
-                JSONObject country = (JSONObject) addressDetailsObject.get(Mashups4JSFConstants.COUNTRY_LABEL);  
-                
-                // POSTAL CODE.
-                try { 
-                   String postalCode = ((JSONObject) ((JSONObject) ((JSONObject) country.get(Mashups4JSFConstants.ADM_AREA_LABEL)).get(Mashups4JSFConstants.LOCALITY_LABEL)).get(Mashups4JSFConstants.POSTAL_C_LABEL)).get(Mashups4JSFConstants.POSTAL_CN_LABEL).toString();
-
-                   placeMark.setPostalCodeNumber(postalCode);
-                } catch (Exception exception) {
-                    try {
-                        String postalCode = ((JSONObject) ((JSONObject) ((JSONObject) ((JSONObject) ((JSONObject) country.get(Mashups4JSFConstants.ADM_AREA_LABEL)).get(Mashups4JSFConstants.SUB_ADM_LABEL)).get(Mashups4JSFConstants.LOCALITY_LABEL)).get(Mashups4JSFConstants.DEP_LOCAL_LABEL)).get(Mashups4JSFConstants.POSTAL_C_LABEL)).get(Mashups4JSFConstants.POSTAL_CN_LABEL).toString();
-                        
-                        placeMark.setPostalCodeNumber(postalCode);
-                    } catch (Exception innerException) {
-                        try {
-                            String postalCode = ((JSONObject) ((JSONObject) ((JSONObject) ((JSONObject) country.get(Mashups4JSFConstants.ADM_AREA_LABEL)).get(Mashups4JSFConstants.SUB_ADM_LABEL)).get(Mashups4JSFConstants.LOCALITY_LABEL)).get(Mashups4JSFConstants.POSTAL_C_LABEL)).get(Mashups4JSFConstants.POSTAL_CN_LABEL).toString();
-                            
-                            placeMark.setPostalCodeNumber(postalCode);
-                        } catch (Exception innerException2) {
-                        	log.debug("Unable to get the place postal code");                           	
-                        }
-                    }
-                }
-                
-                // COUNTRYNAME
-                try {
-                    placeMark.setCountryName((String) country.get(Mashups4JSFConstants.CNTRY_NM_LABEL));
-                } catch (JSONException exception) {
-                	log.debug("Unable to get the place country name");                   	
-                }                
-                
-                // COUNTRYNAMECODE
-                try {
-                    placeMark.setCountryCode((String) country.get(Mashups4JSFConstants.CNTRY_CD_LABEL));
-                } catch (JSONException exception) {
-                	log.debug("Unable to get the place country code");                  	
-                }
-                
-            } catch (JSONException exception) {
-            	log.debug("Unable to get the place country");               	
-            }
+        	JSONArray results = (JSONArray) placeMarkPrimaryData.getJSONArray(Mashups4JSFConstants.ADDRESS_COMPONENT_LABEL);
+        	
+        	for (int i = 0; i < results.length(); ++i) {
+        		JSONObject jsonObject = results.getJSONObject(i);
+        		
+        		String shortName = jsonObject.getString("short_name");        		
+        		JSONArray types = jsonObject.getJSONArray("types");
+        		
+        		for (int j = 0; j < types.length(); ++j) {
+        			String attribute = types.getString(j);
+        			
+        			if ("postal_code".equals(attribute)) {
+        				placeMark.setPostalCodeNumber(shortName);
+        				break;
+        			}
+        		}
+        	}
+        	
+        	
         } catch (JSONException exception) {
-        	log.debug("Unable to get the place address details");            	
+        	log.debug("Unable to get the place mark address");          	
         }
     }    
 

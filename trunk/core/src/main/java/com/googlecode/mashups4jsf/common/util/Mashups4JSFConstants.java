@@ -16,6 +16,8 @@ public class Mashups4JSFConstants {
 	public static final String OK_MESSAGE      = "OK";
 
 	public static final String ID_LABEL        = "id";
+	public static final String FORMATTED_ADDRESS_LABEL = "formatted_address";	
+	public static final String ADDRESS_COMPONENT_LABEL = "address_components";
 	public static final String ADDRESS_LABEL   = "address";
 	public static final String ADDR_DET_LABEL  = "AddressDetails";
 	public static final String ACCURACY_LABEL  = "Accuracy";
