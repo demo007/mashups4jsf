@@ -22,9 +22,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.event.ValueChangeEvent;
 
-import com.googlecode.gmaps4jsf.component.marker.MarkerValue;
-import com.googlecode.gmaps4jsf.services.GMaps4JSFServiceFactory;
-import com.googlecode.gmaps4jsf.services.data.PlaceMark;
+import com.googlecode.gmaps4jsf.component.common.Position;
+import com.googlecode.mashups.services.factory.GenericServicesFactory;
+import com.googlecode.mashups.services.generic.api.PlaceMark;
 
 /**
  * @author hazems
@@ -38,11 +38,11 @@ public class Theater1 {
     String location;
     
     public void processValueChangeForMarker(ValueChangeEvent valueChangeEvent) {
-        MarkerValue value = (MarkerValue) valueChangeEvent.getNewValue();
+    	Position value = (Position) valueChangeEvent.getNewValue();
         
         if (value != null) {
             try {
-                PlaceMark placeMark = GMaps4JSFServiceFactory.getReverseGeocoderService().getPlaceMark(value.getLatitude(), value.getLongitude());
+                PlaceMark placeMark = GenericServicesFactory.getLocationService().getAddressFromLocation (value.getLatitude(), value.getLongitude());
                 
                 address    = placeMark.getAddress();
                 postalCode = placeMark.getPostalCodeNumber();

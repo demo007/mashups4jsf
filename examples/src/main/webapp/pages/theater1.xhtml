@@ -9,7 +9,6 @@
 <ui:composition template="../templates/layout.xhtml">
 
 <ui:define name="title">Welcome to the Theater (Part 1)</ui:define>
-<ui:define name="ajaxIncludes"></ui:define>
 
 <ui:define name="mashup">
     <h1>Mashup world integrated</h1>
@@ -18,12 +17,13 @@
 		<h:panelGrid columns="2" border="2" cellpadding="10px">
     		<m:map width="500px" height="400px" latitude="40.730885" longitude="-73.997383" jsVariable="map1" zoom="5">
     			<m:marker id="marker1" jsVariable="marker1" draggable="true" 
-    			          submitOnValueChange="true" valueChangeListener="#{theater1.processValueChangeForMarker}">		          
+    			          valueChangeListener="#{theater1.processValueChangeForMarker}">		          
     			    <m:htmlInformationWindow htmlText="Drag Me, and I will show you the weather"/>
+    			    <f:ajax render="weatherSection"/>	
     			</m:marker>    			
     		</m:map>
     		
-    		<h:panelGroup>	
+    		<h:panelGroup id="weatherSection">	
 				<b>
 					<h:outputText value="Weather Information:" rendered="#{theater1.address ne null}"/> <br />				
 					<h:outputText value="Address: #{theater1.address}" rendered="#{theater1.address ne null}"/> <br />

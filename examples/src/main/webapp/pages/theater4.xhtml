@@ -62,7 +62,7 @@
 					<h3><h:outputText value="Place Location on Map:" rendered="#{selectedPlace ne null}"/></h3>
                     
 					<m:map width="400px" height="300px"
-                           renderOnWindowLoad="false"
+                           partiallyTriggered="true" 
                            rendered="#{selectedPlace ne null}"
                            address="#{selectedPlace.longAddressName}" zoom="9">
                         <m:marker/>

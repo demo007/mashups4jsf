@@ -61,7 +61,7 @@
             <h:panelGrid id="grid" columns="2" cellpadding="10px">
                 <h:panelGroup id="placeMap">
                     <m:map width="400px" height="300px"
-                           renderOnWindowLoad="false"
+                           partiallyTriggered="true"
                            rendered="#{selectedPlace ne null}"
                            address="#{selectedPlace.longAddressName}" zoom="9">
                         <m:marker/>
