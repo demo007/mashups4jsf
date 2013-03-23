@@ -7,7 +7,7 @@
 	<groupId>com.googlecode.mashups4jsf</groupId>
 	<artifactId>mashups4jsf-core</artifactId>
 	<packaging>jar</packaging>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>Mashups4JSF Core Project</name>
 	<url>http://maven.apache.org</url>
 	
