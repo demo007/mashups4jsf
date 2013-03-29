@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to the JSF Mashup Remix</ui:define>
+<ui:define name="ajaxIncludes"></ui:define>
+
+<ui:define name="mashup">
+    
+    <h:form id="mashups4JSFForm">
+     		
+		  <h1>Mashup Remix</h1> 
+		  
+          <h:outputText value="Mashup World Integrated" />
+          <h:panelGrid style="padding-left:25px">
+              <h:outputLink value="demo1.xhtml">
+                  <f:verbatim>Integrating Google Maps + Twitter + YouTube + Yahoo! Weather</f:verbatim>
+              </h:outputLink>
+          </h:panelGrid>
+          
+          <h:outputText value="RSS Feed Consumer Component" />
+          <h:panelGrid style="padding-left:25px">
+              <h:outputLink value="demo2.xhtml">
+                  <f:verbatim>Consume RSS Feeds from JSF applications</f:verbatim>
+              </h:outputLink>
+          </h:panelGrid>
+          
+          <h:outputText value="Feed Production Annotation" />
+          <h:panelGrid style="padding-left:25px">
+              <h:outputLink value="demo3.xhtml">
+                  <f:verbatim>Produce RSS Feeds From Your Domain Model</f:verbatim>
+              </h:outputLink>
+          </h:panelGrid>
+    </h:form>
+</ui:define>    
+<ui:define name="footer">
+</ui:define>    
+
+</ui:composition>
+</html>  

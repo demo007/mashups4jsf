@@ -1,1 +1,0 @@
-This overview architecture is initial and subject to change. It just shows the core factories of the project and does not show the JSF components in details.
