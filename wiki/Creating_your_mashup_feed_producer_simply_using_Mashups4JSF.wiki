@@ -52,11 +52,11 @@ As shown here, you need to annotate the feed source class with the @Feed annotat
  # Feed Items which can be retrieved from any method that is annotated with the @FeedItems annotation. The feed items should be a Java List object that contains list of feed items.
 
 The feed item class should contain the following information:
-1. Item Title which can be retrieved from any method that is annotated with the @ItemTitle annotation or will be retrieved automatically by calling the getTitle() method of the feed item class. 
-2. Item Description which can be retrieved from any method that is annotated with the @ItemDescription annotation or will be retrieved automatically by calling the getDescription() method of the feed item class. 
-3. Item Link which can be retrieved from any method that is annotated with the @ItemLink annotation or will be retrieved automatically by calling the getLink() method of the feed item class. 
-4. Item Category which can be retrieved from any method that is annotated with the @ItemCategory annotation or will be retrieved automatically by calling the getCategory() method of the feed item class. 
-5. Item Author which can be retrieved from any method that is annotated with the @ItemAuthor annotation or will be retrieved automatically by calling the getAuthor() method of the feed item class. 
+ # Item Title which can be retrieved from any method that is annotated with the @ItemTitle annotation or will be retrieved automatically by calling the getTitle() method of the feed item class. 
+ # Item Description which can be retrieved from any method that is annotated with the @ItemDescription annotation or will be retrieved automatically by calling the getDescription() method of the feed item class. 
+ # Item Link which can be retrieved from any method that is annotated with the @ItemLink annotation or will be retrieved automatically by calling the getLink() method of the feed item class. 
+ # Item Category which can be retrieved from any method that is annotated with the @ItemCategory annotation or will be retrieved automatically by calling the getCategory() method of the feed item class. 
+ # Item Author which can be retrieved from any method that is annotated with the @ItemAuthor annotation or will be retrieved automatically by calling the getAuthor() method of the feed item class. 
 
 Let's check the feed item class (NewsItems).
 
@@ -109,7 +109,7 @@ public class NewsItem {
 As shown, we did nothing special, it is a simple POJO without any annotations.
 
 Finally, in order to produce the feed data, we need to do two other things in the web.xml:
-1. Declare the MashupFeedServlet of the Mashups4JSF as follows:
+ # Declare the MashupFeedServlet of the Mashups4JSF as follows:
 {{{
   <servlet>
 	 <servlet-name>MashupFeedServlet</servlet-name>
@@ -121,7 +121,7 @@ Finally, in order to produce the feed data, we need to do two other things in th
   </servlet-mapping>    
 }}}
 
-2. Map the feed class to the feed id which you will use to show the feed information:
+ # Map the feed class to the feed id which you will use to show the feed information:
 {{{
   <context-param>
       <param-name>NewsFeed</param-name>
