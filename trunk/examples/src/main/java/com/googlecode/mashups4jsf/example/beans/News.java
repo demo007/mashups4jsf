@@ -46,7 +46,7 @@ public class News {
     }
     
     @FeedItems
-    public List getNews() {
+    public List<NewsItem> getNews() {
     	return news;
     }
     
