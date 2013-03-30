@@ -46,10 +46,10 @@ public class News {
 }}}
 
 As shown here, you need to annotate the feed source class with the @Feed annotation. The feed source class should be the provider of the mashup feed information. It should contains the following information:
-1. Feed Title which can be retrieved from any method that is annotated with the @FeedTitle annotation or will be retrieved automatically by calling the getTitle() method of the feed source class. 
-2. Feed Description which can be retrieved from any method that is annotated with the @FeedDescription annotation or will be retrieved automatically by calling the getDescription() method of the feed source class. 
-3. Feed Link which can be retrieved from any method that is annotated with the @FeedLink annotation or will be retrieved automatically by calling the getLink() method of the feed source class. 
-4. Feed Items which can be retrieved from any method that is annotated with the @FeedItems annotation. The feed items should be a Java List object that contains list of feed items.
+# Feed Title which can be retrieved from any method that is annotated with the @FeedTitle annotation or will be retrieved automatically by calling the getTitle() method of the feed source class. 
+# Feed Description which can be retrieved from any method that is annotated with the @FeedDescription annotation or will be retrieved automatically by calling the getDescription() method of the feed source class. 
+# Feed Link which can be retrieved from any method that is annotated with the @FeedLink annotation or will be retrieved automatically by calling the getLink() method of the feed source class. 
+# Feed Items which can be retrieved from any method that is annotated with the @FeedItems annotation. The feed items should be a Java List object that contains list of feed items.
 
 The feed item class should contain the following information:
 1. Item Title which can be retrieved from any method that is annotated with the @ItemTitle annotation or will be retrieved automatically by calling the getTitle() method of the feed item class. 
