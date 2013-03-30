@@ -2,13 +2,13 @@ package com.googlecode.mashups.servlets;
 
 import java.io.IOException;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.googlecode.mashups.services.factory.GenericServicesFactory;
-import com.googlecode.mashups.services.generic.api.Feed;
 import com.googlecode.mashups.services.generic.api.FeedType;
 import com.googlecode.mashups4jsf.common.util.ExceptionMessages;
 import com.googlecode.mashups4jsf.common.util.Mashups4JSFConstants;
@@ -28,20 +28,17 @@ import com.googlecode.mashups4jsf.common.util.Mashups4JSFConstants;
  *
  */
 public class MashupFeedServlet extends HttpServlet {
-
 	private static final long serialVersionUID = -7608649162418733939L;
+	private ServletConfig servletConfig = null;
 
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-        // Read the servlet parameters.
+        // Read Servlet parameters.
         String feedClassParameter = request.getParameter(Mashups4JSFConstants.FEED_CLASS);
+        String feedIDParameter = request.getParameter(Mashups4JSFConstants.FEED_ID);        
         
-        if (feedClassParameter == null) {
-            throw new ServletException(Mashups4JSFConstants.FEED_ERROR_MESSAGE_MISSING_FEED_CLASS);
-        }
-        
-        // Generate the feed.
+        // Generate Feed.
         String   outputType        = request.getParameter(Mashups4JSFConstants.OUTPUT_TYPE);
         String   responseType      = "";
         Object   feedClassInstance = null;
@@ -49,10 +46,23 @@ public class MashupFeedServlet extends HttpServlet {
         FeedType feedType          = null;
         
         try {
-        	feedClass = Class.forName(feedClassParameter);
-            feedClassInstance = feedClass.newInstance();
-            
-            Feed feedAnnotation = (Feed) feedClass.getAnnotation(Feed.class);
+        	
+        	if (feedClassParameter != null) {
+        		// If the feedClass parameter is already specified, DO NOTHING.
+        	} else if (feedIDParameter != null) {
+        		
+        		// If the feedClass parameter is not specified, then get the feedID to resolve the feedClass from the <context-param>.
+        		feedClassParameter = (String) servletConfig.getServletContext().getInitParameter(feedIDParameter);
+        		
+        		if (feedClassParameter == null) {
+        			throw new ServletException("Unable to find the feed class whose id is: " + feedIDParameter);
+        		}
+        	} else {
+        		throw new ServletException("You have to specify either the feedClass or feedID parameters ...");
+        	}
+        	
+    		feedClass = Class.forName(feedClassParameter);
+    		feedClassInstance = feedClass.newInstance();        	
             
             if (outputType.equalsIgnoreCase(Mashups4JSFConstants.RSS_VALUE)) {
                 feedType = FeedType.RSS;
@@ -81,7 +91,15 @@ public class MashupFeedServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        doGet(request, response); 
     }
-
+	
+    @Override
+	public void init(ServletConfig servletConfig) throws ServletException {
+		this.servletConfig = servletConfig;
+	}
+	
+    public ServletConfig getServletConfig() {   
+    	return (this.servletConfig);
+    }
 }
