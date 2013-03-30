@@ -31,7 +31,7 @@
           
           <h:outputText value="Feed Production Annotation" />
           <h:panelGrid style="padding-left:25px">
-              <h:outputLink value="demo3.xhtml">
+              <h:outputLink value="#{facesContext.externalContext.requestContextPath}/MashupFeedServlet?feedID=NewsFeed&amp;output=rss">
                   <f:verbatim>Produce RSS Feeds From Your Domain Model</f:verbatim>
               </h:outputLink>
           </h:panelGrid>
