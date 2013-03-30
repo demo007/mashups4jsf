@@ -3,7 +3,7 @@ Producing Mashup Feeds using Mashups4JSF 1.0.0
 Mashups4JSF provides an easy way for creating mashup feed source producer from existing domain classes by just using mainly two annotations. Let see an example of how to define mashup feed producer (atom or rss) using Mashups4JSF.
 
 Assume the domain model have the following classes: News and NewsItems where News class has a list of NewsItems objects. To be able to export News data as Rss or Atom feed all what we should do is as follows:
-
+{{{
 package managedbeans;
 
 import java.util.ArrayList;
