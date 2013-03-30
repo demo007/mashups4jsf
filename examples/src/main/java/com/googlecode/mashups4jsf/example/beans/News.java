@@ -20,6 +20,7 @@ package com.googlecode.mashups4jsf.example.beans;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.googlecode.mashups.services.generic.api.Feed;
 import com.googlecode.mashups.services.generic.api.FeedDescription;
 import com.googlecode.mashups.services.generic.api.FeedItems;
@@ -49,17 +50,17 @@ public class News {
     	return news;
     }
     
-    @FeedTitle
+    //@FeedTitle (Optional)
     public String getTitle() {
     	return "News Title";
     }
     
-    @FeedDescription
+    //@FeedDescription (Optional)
     public String getDescription() {
     	return "News Description";
     }
     
-    @FeedLink
+    //@FeedLink (Optional)
     public String getLink() {
     	return "http://www.google.com";
     }

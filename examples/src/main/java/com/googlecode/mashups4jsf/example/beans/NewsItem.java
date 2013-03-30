@@ -18,91 +18,55 @@
  */
 package com.googlecode.mashups4jsf.example.beans;
 
-import com.googlecode.mashups.services.generic.api.FeedItem;
-import com.googlecode.mashups.services.generic.api.ItemAuthor;
-import com.googlecode.mashups.services.generic.api.ItemCategory;
-import com.googlecode.mashups.services.generic.api.ItemDescription;
-import com.googlecode.mashups.services.generic.api.ItemLink;
-import com.googlecode.mashups.services.generic.api.ItemTitle;
 
 /**
  * @author hazems
  *
  */
-@FeedItem
+//@FeedItem (Optional)
 public class NewsItem {
     String title;
     String desc;
     String link;
     String category;
     String author;
-    
-    /**
-     * @return the title
-     */
-    @ItemTitle
+
+    //@ItemTitle (Optional) 
     public String getTitle() {
         return title;
     }
-    /**
-     * @param title the title to set
-     */
     public void setTitle(String title) {
         this.title = title;
     }
 
-    /**
-     * @return the desc
-     */
-    @ItemDescription
-    public String getDesc() {
+    //@ItemDescription (Optional)
+    public String getDescription() {
         return desc;
     }
-    /**
-     * @param desc the desc to set
-     */
-    public void setDesc(String desc) {
+    public void setDescription(String desc) {
         this.desc = desc;
     }
 
-    /**
-     * @return the link
-     */
-    @ItemLink
+    //@ItemLink (Optional)
     public String getLink() {
         return link;
     }
-    /**
-     * @param link the link to set
-     */
     public void setLink(String link) {
         this.link = link;
     }
     
-    /**
-     * @return the category
-     */
-    @ItemCategory
+    //@ItemCategory (Optional)
     public String getCategory() {
         return category;
     }
-    /**
-     * @param category the category to set
-     */
     public void setCategory(String category) {
         this.category = category;
     }
     
-    /**
-     * @return the author
-     */
-    @ItemAuthor
+    //@ItemAuthor (Optional)
     public String getAuthor() {
         return author;
     }
-    /**
-     * @param author the author to set
-     */
     public void setAuthor(String author) {
         this.author = author;
     }
