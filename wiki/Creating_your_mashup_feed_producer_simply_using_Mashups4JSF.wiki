@@ -109,7 +109,7 @@ public class NewsItem {
 As shown, we did nothing special, it is a simple POJO without any annotations.
 
 Finally, in order to produce the feed data, we need to do two other things in the web.xml:
- # Declare the MashupFeedServlet of the Mashups4JSF as follows:
+ * Declare the MashupFeedServlet of the Mashups4JSF as follows:
 {{{
   <servlet>
 	 <servlet-name>MashupFeedServlet</servlet-name>
@@ -121,7 +121,7 @@ Finally, in order to produce the feed data, we need to do two other things in th
   </servlet-mapping>    
 }}}
 
- # Map the feed class to the feed id which you will use to show the feed information:
+ * Map the feed class to the feed id which you will use to show the feed information:
 {{{
   <context-param>
       <param-name>NewsFeed</param-name>
