@@ -1,1 +1,0 @@
-This component is used for loading all the Mashups4JSF libraries' resources. It contains no special attributes.
