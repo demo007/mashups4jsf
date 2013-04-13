@@ -6,4 +6,4 @@ This component gives you the ability to get any RSS Feed in your JSF page.
 || channelVar || true || The variable using which you will be able to access the RSS channel. || NA ||
 || itemVar || true || The variable using which you will be able to access the RSS item. Note that the returned item is of type (com.sun.syndication.feed.synd.SyndEntry). || NA ||
 || itemIndex || true || The RSS item index. || NA ||
-|| includeCustomModules || false || If set to true, this includes custom modules' attributes as JSF EL || false ||
+|| includeCustomModules || false || If set to true then custom modules will be accessible as JSF EL. || false ||
