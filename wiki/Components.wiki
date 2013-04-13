@@ -7,4 +7,4 @@
  * [atomFeedReader] component.
  * [rssFeedReader] component.
  * [jsonFeedReader] component. 
- * Feed Export Annotations.
+ * Feed Export Annotations [checkHowToDoSoByExample check].
