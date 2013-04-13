@@ -1,10 +1,10 @@
 #labels Featured
 *The library components:*
- * The [resources] component.
- * The [yahooWeather] component.
- * The [youTubePlayer] component.
- * The [youTubeVideoList] component.
- * The [googleSearchList] component.
- * The [diggSearchList] component.
- * The [atomFeedReader] component.
- * The [rssFeedReader] component.
+ * [yahooWeather] component.
+ * [youTubeVideoList] component.
+ * [googleSearchList] component.
+ * [diggSearchList] component.
+ * [atomFeedReader] component.
+ * [rssFeedReader] component.
+ * [jsonFeedReader] component. 
+ * Feed Export Annotations.
