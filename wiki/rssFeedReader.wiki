@@ -1,5 +1,3 @@
-<wiki:gadget url="http://mashups4jsf.googlecode.com/svn/wiki/ads/adsense.xml" border="0" width="780" height="100" />
-
 This component gives you the ability to get any RSS Feed in your JSF page.
 
 || Component Attribute   || Required || Description || Default value ||
@@ -8,3 +6,4 @@ This component gives you the ability to get any RSS Feed in your JSF page.
 || channelVar || true || The variable using which you will be able to access the RSS channel. || NA ||
 || itemVar || true || The variable using which you will be able to access the RSS item. Note that the returned item is of type (com.sun.syndication.feed.synd.SyndEntry). || NA ||
 || itemIndex || true || The RSS item index. || NA ||
+|| includeCustomModules || false || If set to true this will allows including the custom modules attributes in order to be available from EL || false ||
