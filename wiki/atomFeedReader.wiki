@@ -1,5 +1,3 @@
-<wiki:gadget url="http://mashups4jsf.googlecode.com/svn/wiki/ads/adsense.xml" border="0" width="780" height="100" />
-
 This component gives you the ability to get any ATOM Feed in your JSF page.
 
 || Component Attribute   || Required || Description || Default value ||
@@ -8,3 +6,4 @@ This component gives you the ability to get any ATOM Feed in your JSF page.
 || feedVar || true || The variable using which you will be able to access the ATOM feed. || NA ||
 || entryVar || true || The variable using which you will be able to access the Atom entry. Note that the returned entry is of type (com.sun.syndication.feed.synd.SyndEntry). || NA ||
 || entryIndex || true || The Atom entry index. || NA ||
+|| includeCustomModules || false || If set to true then custom modules will be accessible as JSF EL. || false ||
