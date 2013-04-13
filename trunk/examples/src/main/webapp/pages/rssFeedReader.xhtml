@@ -13,14 +13,15 @@
 
 <ui:define name="mashup">
     <h1>The RSS Feed Reader Component</h1>
-    <h3>RSS feeds from theServerSide.COM (http://feeds.feedburner.com/techtarget/tsscom/home)</h3>
+    <h3>RSS feeds from theServerSide.COM (http://feeds.pheedo.com/techtarget/tsscom/home)</h3>
     
     <h:form id="rssFeedReader">
-        <mashup:rssFeedReader feedURL="http://feeds.feedburner.com/techtarget/tsscom/home"
+        <mashup:rssFeedReader feedURL="http://feeds.pheedo.com/techtarget/tsscom/home"
                                  maximumCount="5"
                                  channelVar="channel"
                                  itemVar="item"
-                                 itemIndex="itemIndex">
+                                 itemIndex="itemIndex" 
+								 includeCustomModules="true">
                    <f:facet name="channel">
                         <h4>The Channel Description: #{channel.description}</h4>
                    </f:facet>
@@ -29,8 +30,8 @@
                         <b>The Item Index: </b>#{itemIndex}<br />                   
                         <b>The Item Title: </b>#{item.title}<br />                   
                         <b>The Item Link: </b><h:outputLink value="#{item.link}">#{item.link}</h:outputLink><br />
-                        <b>The Item Author: </b>#{item.author}<br />
-                        <b>The Item Category: </b>#{item.categories[0].name}<br /><br />
+                        <b>The Item Author: </b>#{jf.author['value']}<br />
+                        <b>Number of replies: </b>#{jf.replyCount['value']}<br /><br />
                    </f:facet>                
         </mashup:rssFeedReader>
         
