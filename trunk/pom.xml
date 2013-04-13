@@ -6,7 +6,7 @@
   <groupId>com.googlecode.mashups4jsf</groupId>
   <artifactId>mashups4jsf-project</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.3-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>Mashups4JSF Modules</name>
   <url>http://code.google.com/p/mashups4jsf/</url>
 
@@ -14,7 +14,6 @@
     <module>maven</module>
     <module>core</module>
 	<module>examples</module>
-	<module>icefaces-integration-example</module>
   </modules>
 
 </project>
