@@ -1,7 +1,0 @@
-This component gives you the ability to view and play an existing youTube video.
-
-|| Component Attribute   || Required || Description || Default value ||
-|| videoID || true || The video ID to be displayed. || NA ||
-|| width || false || The width of the player. || 425 ||
-|| height || false || The height of the player. || 344 ||
-|| bgcolor || false || The background color of the player. || #cccccc ||
