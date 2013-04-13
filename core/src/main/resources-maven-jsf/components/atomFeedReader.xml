@@ -66,5 +66,12 @@
 			<type>java.lang.String</type>			
 			<description>The Atom entry index.</description>
 		</attribute>
+		<attribute>
+			<name>includeCustomModules</name>
+			<required>true</required>
+			<type>java.lang.Boolean</type>			
+			<defaultValue>false</defaultValue>				
+			<description>If set to true then custom modules will be accessible for JSF EL.</description>
+		</attribute>		
 	</attributes>
 </component>

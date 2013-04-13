@@ -19,11 +19,16 @@
 package com.googlecode.mashups4jsf.component.common;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.render.Renderer;
+
+import org.jdom.Attribute;
+import org.jdom.Element;
 
 import com.googlecode.mashups.services.factory.GenericServicesFactory;
 import com.sun.syndication.feed.synd.SyndEntry;
@@ -69,7 +74,42 @@ public class RssFeedReaderRenderer extends Renderer {
             
             for (SyndEntry entry : (List<SyndEntry>) feed.getEntries()) {
                 context.getApplication().createValueBinding("#{" + rssFeedReader.getItemVar() + "}").setValue(context, entry);
-                context.getApplication().createValueBinding("#{" + rssFeedReader.getItemIndex() + "}").setValue(context, index++);        
+                context.getApplication().createValueBinding("#{" + rssFeedReader.getItemIndex() + "}").setValue(context, index++);    
+                
+                if (rssFeedReader.getIncludeCustomModules().booleanValue()) {
+                	
+	                //Parse (RSS / ATOM) custom modules ...
+	            	List<Element> foreignMarkupList = (List<Element>) entry.getForeignMarkup();
+	            	Map <String, Map> customModulesMap = new HashMap<String, Map>();
+	            	
+	                for (Element outerForeignMarkup : foreignMarkupList) {
+	                	
+	                	String prefix = outerForeignMarkup.getNamespacePrefix();
+	                	Map <String, Map> moduleElementsMap = new HashMap<String, Map>(); 
+	                	
+		                for (Element foreignMarkup : foreignMarkupList) {
+		                	    
+		                    if (prefix.equals(foreignMarkup.getNamespacePrefix())) {
+			                	Map <String, String> elementAttributesMap = new HashMap<String, String>(); 
+			                    List<Attribute> attributes = (List <Attribute>) foreignMarkup.getAttributes();  
+			                    
+			                	for (Attribute attribute : attributes) {
+			                        elementAttributesMap.put(attribute.getName(), attribute.getValue());
+			                    }
+			                    
+			                    elementAttributesMap.put("value", foreignMarkup.getValue());
+			                    
+			                    //ElementsMap Item ==> Element --> Element Attributes ...
+			                	moduleElementsMap.put(foreignMarkup.getName(), elementAttributesMap);
+		                    }
+		                }
+		                
+	                    customModulesMap.put(prefix, moduleElementsMap); 
+	                    
+	                    context.getApplication().createValueBinding("#{" + prefix + "}").setValue(context, moduleElementsMap);
+	                }
+                }
+                
                 encodeRecursive(context, itemFacet);
                 
                 if (index >= rssFeedReader.getMaximumCount()) {
