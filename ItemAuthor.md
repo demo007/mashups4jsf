@@ -1,0 +1,1 @@
+@ItemAuthor represents the item author.

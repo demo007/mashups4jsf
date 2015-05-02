@@ -1,0 +1,1 @@
+@ItemDescription represents the item description.

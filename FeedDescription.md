@@ -1,0 +1,1 @@
+@FeedDescription represents the feed description.

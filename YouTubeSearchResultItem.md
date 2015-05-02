@@ -1,0 +1,1 @@
+The YouTubeSearchResultItem is a bean that represents the youTube search result item information.
